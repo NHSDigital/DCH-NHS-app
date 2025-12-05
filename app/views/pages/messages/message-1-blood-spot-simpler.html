@@ -1,0 +1,55 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "/pages/messages/your-messages" %}
+
+{% set pageHeading = "NHS Screening" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-7">
+         <p><strong><u>Newborn blood spot screening results</u></strong></p>
+<p><strong><u><span></span></u></strong></p>
+Dear parent/carer,&nbsp;<br><br>The test results of newborn blood spot screening for your baby [insert baby&rsquo;s name] show that none of the conditions tested for are suspected.<br>
+<br>We tested your baby for:&nbsp;<br><br>
+<ul>
+    <li>congenital hypothyroidism (CHT)</li>
+    <li>cystic fibrosis (CF)</li>
+    <li>glutaric aciduria type 1 (GA1)</li>
+    <li>homocystinuria (pyridoxine unresponsive) (HCU)</li>
+    <li>isovaleric acidaemia (IVA)</li>
+    <li>maple syrup urine disease (MSUD)</li>
+    <li>medium-chain acyl-CoA dehydrogenase deficiency (MCADD)</li>
+    <li>phenylketonuria (PKU)</li>
+    <li>sickle cell disease (SCD)</li>
+</ul>
+The screening results show that your baby is not thought to have any of these 9 rare conditions but please remember that screening tests are not 100% accurate.<br>
+<br><br>If you have any questions about your baby&rsquo;s screening results, you should discuss this with your GP or health visitor, [insert name of health visitor], who can be contacted at [insert health visitor address] or by telephoning [insert health visitor phone number].<br><br>Yours sincerely,&nbsp;<br><br>[insert signature from child health information service]<br>[insert name from child health information service]<br><br><br></p>
+Visit the NHS website for information about:
+<div>
+    <ul>
+        <li>newborn blood spot screening, at&nbsp;<a href="http://www.nhs.uk/bloodspot">www.nhs.uk/bloodspot</a></li>
+    
+        <li>screening for sickle cell and thalassaemia, at&nbsp;<a href="http://www.nhs.uk/sct">www.nhs.uk/sct</a></li></ul>
+</div>
+<p>&nbsp;</p>
+<p><span>Visit&nbsp;<a href="http://www.nhs.uk/">www.nhs.uk</a> or call NHS 111 for general health advice and information.</span></p>       
+    </div>
+  </div>
+
+  {% endblock %}
