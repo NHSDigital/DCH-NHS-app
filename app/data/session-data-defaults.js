@@ -6,13 +6,13 @@ module.exports = {
   "web": "no", 
 
   // Set linked profile details
-  "linkedProfileFirstName": "Toby",
-  "linkedProfileLastName": "Day",
-  "linkedProfileAge": "83",
+  "linkedProfileFirstName": "Teddy",
+  "linkedProfileLastName": "Goodall",
+  "linkedProfileAge": "110",
 
   // Set user details
-  "userFirstName": "Mary",
-  "userLastName": "Swanson",
+  "userFirstName": "Jane",
+  "userLastName": "Goodall",
   "nhsNumber": "123 456 7890",
   "dob": "15 March 1984",
 
