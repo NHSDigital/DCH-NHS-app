@@ -31,16 +31,16 @@
        {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
         linkedProfile: {
-          name: data['nhsNumber']
-        }
+          name: data['linkedProfileFirstName'] + " " + data['nhsNumber']
+        }})
         <!-- Cards -->
         cards: [
           {
-            title: "Request medicines",
+            title: "Birth details",
             href: "/pages/your-health/repeat-prescription/select-medicines"
           },
           {
-            title: "Check if you need urgent medical help using 111 online",
+            title: "Profile summary",
             href: "#"
           }
         ]
