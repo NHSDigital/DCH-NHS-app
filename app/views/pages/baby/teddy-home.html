@@ -108,24 +108,12 @@
           heading: 'Messages',
           cards: [
             {
-              title: 'View your messages',
-              href: '/pages/messages-p9'
+              title: 'View messages related to Teddy',
+              href: '/pages/messages-linked-profiles'
             }
           ]
         }) }}
-      {% endif %}
-
-      {{ nhsappCardGroup({
-        stacked: true,
-        heading: 'Account',
-        cards: [
-          {
-            title: 'Manage services for another person',
-            href: '/pages/account-and-settings/linked-profiles'
-          }
-        ]
-      }) }}
-
+     
       {{ nhsappCard({
         classes: 'nhsapp-card--dark-blue',
         href: '#',
