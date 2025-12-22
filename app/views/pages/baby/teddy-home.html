@@ -19,24 +19,21 @@
           age: data['linkedProfileAge'], nhsNumber: data['nhsNumber']
         }
       })}}
-      {{ nhsappCardGroup({
-  stacked: true,
-  headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
-    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Services</h2>
-    <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/pages/services-p9">View all <span class="nhsuk-u-visually-hidden">services</span></a>
-  </div>',
-  cards: [
-    { title: "GP health record", href: "#" }
-  ]
-}) }}
+      
 
 {{ nhsappCardGroup({
   stacked: true,
   headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
-    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Your health</h2>
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Services/h2>
     <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/pages/your-health-p9">View all <span class="nhsuk-u-visually-hidden">your health</span></a>
   </div>',
   cards: [
+    { title: "Birth details", href: "/pages/your-health/prescriptions-p9" },
+    { title: "Profile summary", href: "/pages/your-health/upcoming-and-past-appointments-p9" },
+    { title: "Screening and reviews", href: "/pages/your-health/prescriptions-p9" },
+    { title: "Growth and measurements", href: "/pages/your-health/upcoming-and-past-appointments-p9" },
+    { title: "Immunisations", href: "/pages/your-health/prescriptions-p9" },
+    { title: "Health events", href: "/pages/your-health/upcoming-and-past-appointments-p9" },
     { title: "View and manage prescriptions", href: "/pages/your-health/prescriptions-p9" },
     { title: "Upcoming and past appointments", href: "/pages/your-health/upcoming-and-past-appointments-p9" }
   ]
@@ -44,13 +41,13 @@
 {{ nhsappCardGroup({
   stacked: true,
              headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
-          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Messages</h2>
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Advice and guidance</h2>
           <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/pages/your-health-p9">View all <span class="nhsuk-u-visually-hidden">messages</span></a> 
         </div>'
         ,
         cards: [
           {
-            title: "GP health record",
+            title: "Developmental milestones",
             href: "#"
           },
           {
