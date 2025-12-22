@@ -10,6 +10,11 @@ module.exports = {
   "linkedProfileLastName": "Goodall",
   "linkedProfileAge": "0.5",
 
+  "linkedProfileFirstName": "Lola",
+  "linkedProfileLastName": "Goodall",
+  "linkedProfileAge": "3",
+
+
   // Set user details
   "userFirstName": "Jane",
   "userLastName": "Goodall",
