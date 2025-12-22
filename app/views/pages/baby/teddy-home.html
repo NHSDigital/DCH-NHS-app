@@ -2,6 +2,8 @@
 
 {% set hub = "Home" %}
 
+{% set linkedProfile = true %}
+
 {% set pageHeading = "Home" %}
 
 {% block content %}
@@ -14,7 +16,7 @@
         logo: data['web'] !== "yes",
         linkedProfile: {
           name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
-          age: data['linkedProfileAge']
+          age: data['linkedProfileAge'], nhsNumber: data['nhsNumber']
         }
       })}}
       {{ nhsappCardGroup({
