@@ -9,13 +9,14 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <!-- DYNAMIC PAGE TITLE -->
+           <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
-        greetingName: data['userFirstName'] + " " + data['userLastName'],
-        nhsNumber: data['nhsNumber']
+        linkedProfile: {
+          name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+          age: data['linkedProfileAge']
+        }
       })}}
-
       {{ nhsappCardGroup({
         stacked: true,
         headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
