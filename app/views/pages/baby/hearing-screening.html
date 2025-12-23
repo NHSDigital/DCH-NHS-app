@@ -1,0 +1,203 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+{% set linkedProfile = true %}
+{% set pageHeading = "Hearing screening results" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          linkedProfile: {
+            name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+            age: data['linkedProfileAge'], 
+            nhsNumber: data['nhsNumber']
+          }
+        })}}
+      {% endif %}
+
+      <!-- Back link -->
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="/pages/baby/screening-and-reviews">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back
+        </a>
+      </div>
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">Hearing screening results</h1>
+
+      <!-- 1st test card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">1st test (AOAE)</h2>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Date</dt>
+              <dd class="nhsuk-summary-list__value">19 January 2024</dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Right Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Clear response</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen outcome</dt>
+              <dd class="nhsuk-summary-list__value">Complete</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Comments</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Left Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Clear response</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen outcome</dt>
+              <dd class="nhsuk-summary-list__value">Complete</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Comments</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Summary outcome</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- 2st test card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">2st test (AOAE)</h2>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Date</dt>
+              <dd class="nhsuk-summary-list__value">19 January 2024</dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Right Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Clear response</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen outcome</dt>
+              <dd class="nhsuk-summary-list__value">Complete</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Comments</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Left Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Clear response</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen outcome</dt>
+              <dd class="nhsuk-summary-list__value">Complete</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Comments</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Summary outcome</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- AABR test card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">AABR</h2>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Date</dt>
+              <dd class="nhsuk-summary-list__value">19 January 2024</dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Right Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Clear response</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen outcome</dt>
+              <dd class="nhsuk-summary-list__value">Complete</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Comments</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Left Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Clear response</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen outcome</dt>
+              <dd class="nhsuk-summary-list__value">Complete</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Comments</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Summary outcome</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Link to more info -->
+      <p>
+        <a href="#" class="nhsuk-link">Read about hearing screening programme</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
