@@ -1,0 +1,69 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+{% set pageHeading = "View and manage your health information" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          logo: true
+        })}}
+      {% endif %}
+
+      <!-- Back link -->
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="/pages/home">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back
+        </a>
+      </div>
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">View and manage your health information</h1>
+
+      <!-- About me section -->
+      <h2 class="nhsuk-heading-m">About me</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          { title: "Reasonable adjustments", href: "/pages/health-info/reasonable-adjustments" },
+          { title: "Contact and communication preferences", href: "/pages/health-info/contact-preferences" }
+        ]
+      }) }}
+
+      <!-- Health information section -->
+      <h2 class="nhsuk-heading-m">Health information</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          { title: "Blood pressure", href: "/pages/health-info/blood-pressure" },
+          { title: "Height", href: "/pages/health-info/height" },
+          { title: "Weight", href: "/pages/health-info/weight" },
+          { title: "Smoking status", href: "/pages/health-info/smoking-status" },
+          { title: "Alcohol intake", href: "/pages/health-info/alcohol-intake" }
+        ]
+      }) }}
+
+      <!-- Health events section -->
+      <h2 class="nhsuk-heading-m">Health events</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          { title: "Health events", href: "/pages/health-events" }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
