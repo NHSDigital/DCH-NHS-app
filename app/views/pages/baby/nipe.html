@@ -1,0 +1,265 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+{% set linkedProfile = true %}
+{% set pageHeading = "Newborn and infant physical examination (NIPE)" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          linkedProfile: {
+            name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+            age: data['linkedProfileAge'], 
+            nhsNumber: data['nhsNumber']
+          }
+        })}}
+      {% endif %}
+
+      <!-- Back link -->
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="/pages/baby/screening-and-reviews">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back
+        </a>
+      </div>
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">Newborn and infant physical examination (NIPE)</h1>
+
+      <!-- Details card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Details</h2>
+          
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Date of NIPE</dt>
+              <dd class="nhsuk-summary-list__value">20 January 2025</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen location</dt>
+              <dd class="nhsuk-summary-list__value">Hospital</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Site</dt>
+              <dd class="nhsuk-summary-list__value">Nottingham Women's Hospital</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screener</dt>
+              <dd class="nhsuk-summary-list__value">Susan Chester (Midwife)</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Completion of physical examination card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Completion of physical examination</h2>
+          
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Heart</dt>
+              <dd class="nhsuk-summary-list__value">Hip abnormalities and no risk factors</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Eyes</dt>
+              <dd class="nhsuk-summary-list__value">Hip abnormalities and no risk factors</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Testes</dt>
+              <dd class="nhsuk-summary-list__value">Not Applicable</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Hips</dt>
+              <dd class="nhsuk-summary-list__value">Hip abnormalities and no risk factors</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Physical exam/additional comments</dt>
+              <dd class="nhsuk-summary-list__value">No abnormalities</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Final examination details card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Final examination details</h2>
+          
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Risk factors</dt>
+              <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Abnormal hip risk factors</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">1st degree relative - childhood eye disorder</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Antenatal diagnosis of cardiac abnormality</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Sepsis - Requiring antibiotic treatment</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">BGG discussed</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">BGG for delay due to maternal medication</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">1st degree relative - heart abnormalities</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Antenatal diagnosis of urinary</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Jaundice - requiring phototherapy</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Risk of hypoglycaemia - monitoring carried out</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Eligible for BCG (Ational RF)</dt>
+              <dd class="nhsuk-summary-list__value">No</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Physical examination card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Physical examination</h2>
+          
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Colour</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Posture and behaviour</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Respiratory</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Skin</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Head and skull</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Face</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Ears</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Mouth and palate</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Neck and clavicles</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Chest</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Abdomen</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Umbilicus</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Femoral pulses</dt>
+              <dd class="nhsuk-summary-list__value">Present</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Upper limbs, hands</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Lower limbs, feet</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Back and spine</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Genitalia</dt>
+              <dd class="nhsuk-summary-list__value">Female normal</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Anus</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Reflexes</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Movements</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Lower passed</dt>
+              <dd class="nhsuk-summary-list__value">No abnormality suspected</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Observations card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Observations</h2>
+          
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Pulse oximetry</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Fit for discharge at time of NIPE</dt>
+              <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
