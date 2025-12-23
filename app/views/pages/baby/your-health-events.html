@@ -1,0 +1,102 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+{% set pageHeading = "Your health events" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          logo: true
+        })}}
+      {% endif %}
+
+      <!-- Back link -->
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="/pages/health-info">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back
+        </a>
+      </div>
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">Your health events</h1>
+
+      <p class="nhsuk-body-l nhsuk-u-margin-bottom-4">4 events</p>
+
+      <!-- 2025 section -->
+      <h2 class="nhsuk-heading-m">2025</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          { 
+            title: "Reasonable adjustments", 
+            description: "Nottingham medical centre",
+            href: "/pages/health-events/reasonable-adjustments" 
+          },
+          { 
+            title: "20 January 2025", 
+            description: "Nottingham medical centre",
+            href: "/pages/health-events/maternal-8-week" 
+          }
+        ]
+      }) }}
+
+      <!-- 2023 section -->
+      <h2 class="nhsuk-heading-m">2023</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          { 
+            title: "Maternal 6 week examination", 
+            description: "Nottingham medical centre",
+            href: "/pages/health-events/maternal-6-week" 
+          }
+        ]
+      }) }}
+
+      <!-- 2021 section -->
+      <h2 class="nhsuk-heading-m">2021</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          { 
+            title: "19 June 2021", 
+            description: "Nottingham medical centre",
+            href: "/pages/health-events/june-2021" 
+          },
+          { 
+            title: "5 May 2021", 
+            description: "Nottingham medical centre",
+            href: "/pages/health-events/may-2021" 
+          }
+        ]
+      }) }}
+
+      <!-- Hospital discharge summary section -->
+      <h2 class="nhsuk-heading-m">Hospital discharge summary report</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          { 
+            title: "Hospital discharge summary report", 
+            description: "Nottingham women's hospital",
+            href: "/pages/health-events/hospital-discharge" 
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
