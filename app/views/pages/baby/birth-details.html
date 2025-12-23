@@ -1,0 +1,71 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+{% set linkedProfile = true %}
+{% set pageHeading = "Birth details" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          linkedProfile: {
+            name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+            age: data['linkedProfileAge'], 
+            nhsNumber: data['nhsNumber']
+          }
+        })}}
+      {% endif %}
+
+      <!-- Back link -->
+      <a href="/pages/home-linked-profile" class="nhsuk-back-link__link">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Back
+      </a>
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">Birth details</h1>
+
+      <!-- Birth information section -->
+      <h2 class="nhsuk-heading-m">Birth information</h2>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Length of pregnancy</dt>
+          <dd class="nhsuk-summary-list__value">41 weeks</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Type of delivery</dt>
+          <dd class="nhsuk-summary-list__value">C-section</dd>
+        </div>
+      </dl>
+
+      <!-- Birth measurements section -->
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Weight</dt>
+          <dd class="nhsuk-summary-list__value">3.80 kg</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Length</dt>
+          <dd class="nhsuk-summary-list__value">38 cm</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Head circumference</dt>
+          <dd class="nhsuk-summary-list__value">53 cm</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Date</dt>
+          <dd class="nhsuk-summary-list__value">19 January 2025</dd>
+        </div>
+      </dl>
+
+    </div>
+  </div>
+
+{% endblock %}
