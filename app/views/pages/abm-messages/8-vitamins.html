@@ -1,18 +1,12 @@
 {% extends 'layout-app.html' %}
-
 {% set hub = "Messages" %}
-
 {% set backLink = true %}
 {% set backLinkURL = "/pages/messages/your-messages-abm" %}
-
-{% set pageHeading = "NHS Healthcare services" %}
+{% set pageHeading = "NHS Healthcare services | Advice on vitamins for babies and young children" %}
 {% set pageDescription = "Received today at 1:02pm" %}
-
 {% block content %}
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         title: pageHeading,
@@ -21,24 +15,38 @@
         description: pageDescription,
         descriptionMuted: true
       })}}
-
       <div class="nhsuk-u-margin-bottom-7">
-         <p><strong><u>Messages to support you and your baby</u></strong></p>
- <p><strong><u>[insert baby&rsquo;s name]</u></strong></p>
-<p><strong><u><span></span></u></strong></p>
-<p>As part of the NHS’ support to babies, parents, carers and families, you will receive a series of messages relevant to the age of your baby. </p>
-<p>These messages are sent via the NHS App. They offer trusted information on topics like:</p><ul>
-    <li>How to register for a GP</li>
-<li>What to expect from a health visitor appointment</li>
-<li>About your 6-8 week baby and mother checkups</li>
-<li>When to introduce solid food</li>
-<li>Vitamins for your baby</li>  
-    </ul>
-             <p><strong><u>If you do not want to receive these messages</u></strong></p>
-<p>This is a trial of a new service. If you would like to opt out of receiving these messages please visit
-https://www.nhs.uk/your-nhs-data-matters/manage-your-choice/
-</p>
+        <p><strong>Why vitamins matter</strong></p>
+        <p>Babies and young children may not get enough vitamins A, C and D, even if they feed well. Vitamins help babies grow and stay healthy. Taking vitamins is sometimes called 'vitamin supplementation'.</p>
+        
+        <p><strong>Advice on vitamins for babies and young children</strong></p>
+        <p>All children aged 6 months to 5 years are recommended to take daily vitamins of A, C and D.</p>
+        <p>Babies who have 500ml or more of formula a day do not need extra vitamins until they are having less formula.</p>
+        <p>You can buy vitamins at your local pharmacy. If you are receiving NHS Healthy Start payments, you can get these vitamins for free.</p>
+        
+        <p><strong>Questions about giving vitamins</strong></p>
+        <p>Before giving your baby vitamin supplements, speak to your pharmacist or health visitor for advice on which vitamin you should give your child.</p>
+        <p>Remember, supplements are not a replacement for healthy eating habits.</p>
+        
+        <p><strong>Be careful not to double dose</strong></p>
+        <p>Having too much of some vitamins can be harmful.</p>
+        <p>Keep to the dose recommended on the label, and be careful not to give your child 2 supplements at the same time.</p>
+        <p>Find out more about giving vitamins to children.</p>
+        
+        <p><strong>Receive email support for you and your baby.</strong></p>
+        <p>Our personalised emails are tailored to your pregnancy stage or your child's age.</p>
+        
+        <p><strong>Found this useful? Sign up for email support for you and your baby</strong></p>
+        <p>Our personalised weekly emails are tailored to your child's age.</p>
+        <p>Sign up for free and receive trusted NHS advice including:</p>
+        <ul>
+          <li>feeding and taking care of your baby</li>
+          <li>supporting your baby's health and development</li>
+          
+        </ul>
+          <p><strong>If you do not want to receive these messages</strong></p>
+        <p>This is a trial of a new service. If you would like to opt out of receiving these messages please visit https://www.nhs.uk/your-nhs-data-matters/manage-your-choice/</p>
+      </div>
     </div>
   </div>
-
-  {% endblock %}
+{% endblock %}
