@@ -1,0 +1,45 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "/pages/messages/your-messages-abm" %}
+
+{% set pageHeading = "NHS Healthcare services" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-7">
+         <p><strong><u>Messages to support you and your baby</u></strong></p>
+ <p><strong><u>[insert baby&rsquo;s name]</u></strong></p>
+<p><strong><u><span></span></u></strong></p>
+<p>As part of the NHS’ support to babies, parents, carers and families, you will receive a series of messages relevant to the age of your baby. </p>
+<p>These messages are sent via the NHS App. They offer trusted information on topics like:</p><ul>
+    <li>How to register for a GP</li>
+<li>What to expect from a health visitor appointment</li>
+<li>About your 6-8 week baby and mother checkups</li>
+<li>When to introduce solid food</li>
+<li>Vitamins for your baby</li>  
+    </ul>
+             <p><strong><u>If you do not want to receive these messages</u></strong></p>
+<p>This is a trial of a new service. If you would like to opt out of receiving these messages please visit
+https://www.nhs.uk/your-nhs-data-matters/manage-your-choice/
+Here you can choose not to be contacted for research and planning purposes.
+</p>
+    </div>
+  </div>
+
+  {% endblock %}
