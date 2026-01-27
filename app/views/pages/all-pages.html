@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% set pageHeading = "All pages" %}
+{% set pageDescription = "Quick access to all the pages for testing" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+      <p class="nhsuk-lede-text">
+        {{ pageDescription }}
+      </p>
+
+      <h2>Parent</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/home-p9">Home</a>
+        </li>
+        <li>
+          <a href="/pages/messages/your-messages">Messages</a>
+        </li>
+        <li>
+          <a href="/pages/messages/your-messages-p9">Messages (Profile)</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Linking</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/account-and-settings/linked-profiles">Proxy select</a>
+        </li>
+        <li>
+          <a href="/pages/account-and-settings/switch-profiles">Proxy confirm</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Child</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/baby/view-and-manage-infant">Home</a>
+        </li>
+        <li>
+          <a href="/pages/baby/birth-details">Birth details</a>
+        </li>
+        <li>
+          <a href="/pages/baby/nipe">NIPE</a>
+        </li>    
+        <li>
+          <a href="/pages/baby/hearing-screening">Hearing screening</a>
+        </li>    
+        <li>
+          <a href="/pages/baby/blood-spot">Bloodspot</a>
+        </li>                     
+      </ul>
+
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Misc</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/text-message">Text message</a>
+        </li>
+        <li>
+          <a href="/pages/ios-notification-message">Notification</a>
+        </li>
+      </ul>      
+
+
+    </div>
+  </div>
+{% endblock %}
