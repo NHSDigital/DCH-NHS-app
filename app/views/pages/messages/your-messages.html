@@ -3,7 +3,6 @@
 {% set hub = "Messages" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/pages/messages-" + data['accountType'] %}
 
 {% set pageHeading = "Your messages" %}
 
@@ -157,7 +156,7 @@
               <div class="nhsapp-card__below">
                 <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message2read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
                   <span class="nhsuk-u-visually-hidden"> with preview message of </span>
-                  Dear <span class="app-u-text-capitalize">{{ data['userFirstName'] }}</span>, The test results of newborn blood spot screening for your baby [INSERT BABY NAME] show that none of the conditions tested for are suspected.<br>
+                  Dear <span class="app-u-text-capitalize">{{ data['userFirstName'] }}</span>, The test results of newborn blood spot screening for your Teddy Goodall show that none of the conditions tested for are suspected.<br>
                 </p>
               </div>
             </div>
