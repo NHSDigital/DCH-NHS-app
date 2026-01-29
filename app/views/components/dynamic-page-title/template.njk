@@ -17,12 +17,12 @@
       {{ params.linkedProfile.name }}
     </h1>
     <p class="nhsuk-heading-s app-dynamic-page-title__description">
-      {{ params.linkedProfile.age }} years old
+      {{ params.linkedProfile.age }}
     </p>
   {%- else %}
     <h1 class="app-dynamic-page-title__heading {%- if params.titleSmall %} nhsuk-heading-l{% endif %}">
       {%- if params.greetingName %}
-      <span class="app-greeting"></span>, 
+      <span class="app-greeting"></span>
       <span class="app-dynamic-page-title__name">{{ params.greetingName }}</span>
       {%- else %}
         {%- if params.titleHiddenTextBefore %} 
