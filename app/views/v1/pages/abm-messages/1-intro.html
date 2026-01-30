@@ -1,0 +1,37 @@
+{% extends 'layout-app.html' %}
+{% set hub = "Messages" %}
+{% set backLink = true %}
+{% set backLinkURL = "/v1/pages/messages/your-messages-abm" %}
+{% set pageHeading = "NHS Best Start in Life" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+{% set version = 'v1' %}
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+      <div class="nhsuk-u-margin-bottom-7">
+        <p>As part of the NHS’ support to babies, parents, carers and families, you will receive a series of messages relevant to the age of your baby.</p>
+        <p>These messages are sent via the NHS App. They offer trusted information on topics like: </p>
+        <ul>
+          <li>How to register for a GP</li>
+          <li>What to expect from a health visitor appointment</li>
+          <li>About your 6-8 week baby and mother checkups</li>
+          <li>When to introduce solid food</li>
+          <li>Vitamins for your baby</li>  
+        </ul>
+        
+        <h2 class="nhsuk-heading-s nhsuk-u-padding-top-9">If you do not want to receive these messages</h2>
+        <p>This is a trial of a new service. If you would like to opt out of receiving these messages please visit https://www.nhs.uk/your-nhs-data-matters/manage-your-choice/</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
