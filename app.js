@@ -4,6 +4,7 @@ const NHSPrototypeKit = require('nhsuk-prototype-kit')
 const config = require('./app/config')
 const sessionDataDefaults = require('./app/data/session-data-defaults')
 const filters = require('./app/filters')
+const globals = require('./app/globals')
 const locals = require('./app/locals')
 
 const viewsPath = [
@@ -28,6 +29,10 @@ async function init() {
     filters,
     sessionDataDefaults
   })
+
+  for (const [name, global] of Object.entries(globals(prototype.nunjucks))) {
+    prototype.nunjucks?.addGlobal(name, global)
+  }
 
   prototype.start(config.port)
 }
