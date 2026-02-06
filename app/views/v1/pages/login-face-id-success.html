@@ -15,8 +15,8 @@
       </svg>
 
       <div class="app-login-face-id">
-        <img class="app-login-face-id__img app-login-face-id__img--face-id" src='/images/login/face-id-success.png' alt="">
-        <img class="app-login-face-id__img app-login-face-id__img--spinner" src='/images/login/spinner.png' alt="">
+        <img class="app-login-face-id__img app-login-face-id__img--face-id" src='/assets/images/login/face-id-success.png' alt="">
+        <img class="app-login-face-id__img app-login-face-id__img--spinner" src='/assets/images/login/spinner.png' alt="">
       </div>
 
     </div>
@@ -27,7 +27,7 @@
   {% block pageScripts %}
 
     {% if data['loginError'] === "no" %}
-      <script>
+      <script type="module">
         $(document).ready(function () {
             // Handler for .ready() called.
             window.setTimeout(function () {
@@ -36,7 +36,7 @@
         });
       </script>
     {% else %}
-      <script>
+      <script type="module">
         $(document).ready(function () {
             // Handler for .ready() called.
             window.setTimeout(function () {
