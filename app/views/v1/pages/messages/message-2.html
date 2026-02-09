@@ -91,12 +91,12 @@
 
   {% block pageScripts %}
     {% if data['replySentFocus'] === "true" %}
-      <script type="module">
+      <script>
         document.getElementById('messageSent').focus();
       </script>
     {% else %}
       <!-- JAVASCRIPT TO SHOW THE HIDDEN CONTENT -->
-      <script type="module">
+      <script>
         document.getElementById('showButton').addEventListener('click', function() {
           // Get a reference to the hidden div
           var hiddenDiv = document.getElementById('hiddenDiv');

@@ -50,7 +50,7 @@
 
 <!-- PAGE SCRIPTS  -->
 {% block pageScripts %}
-  <script type="module">
+  <script>
     // Update time
     function updateTime() {
       const now = new Date();
@@ -80,7 +80,7 @@
     setInterval(updateTime, 60000);
   </script>
 
-  <script type="module">
+  <script>
     // Wait for the DOM to be fully loaded
     document.addEventListener("DOMContentLoaded", function() {
         // Get the element with ID "ios-notification"

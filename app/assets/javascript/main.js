@@ -1,4 +1,4 @@
-import $ from 'jquery';
+// ES6 or Vanilla JavaScript
 
 // Greeting message
 

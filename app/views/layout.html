@@ -23,8 +23,8 @@
 
 {% block head %}
   <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-  <link href="/assets/sass/main.css" rel="stylesheet">
-  <link rel="/assets/manifest.json" href="/manifest.json">
+  <link href="/css/main.css" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
 {% endblock %}
 
 <!-- Set the page title -->
@@ -58,8 +58,8 @@
           text: "GitHub repo"
         },
         {
-          href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
-          text: "Reset data"
+          href: "/clear-data",
+          text: "Clear data"
         }
       ]
     }
@@ -67,14 +67,6 @@
 {% endblock %}
 
 {% block bodyEnd %}
+  <script type="module" src="/application.js"></script>
   {{ super() }}
-  <script type="module" src="/assets/javascript/jquery-4.0.0.min.js"></script>
-  <script type="module" src="/assets/javascript/main.js"></script>
-
-  <!-- Add any custom scripts -->
-  <script type="module">
-    import $ from '/assets/javascript/jquery-4.0.0.min.js';
-    window.$ = $;
-  </script>
-  {% block pageScripts %}{% endblock %}
 {% endblock %}
