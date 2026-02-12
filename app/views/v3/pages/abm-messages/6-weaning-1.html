@@ -1,0 +1,57 @@
+{% extends 'layout-app.html' %}
+{% set hub = "Messages" %}
+{% set backLink = true %}
+{% set backLinkURL = "/v1/pages/messages/your-messages-abm" %}
+{% set pageHeading = "NHS Best Start in Life" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+{% set version = 'v1' %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+<div class="nhsuk-u-margin-bottom-7">
+      <h1 class="nhsuk-heading-m">When to introduce solid foods</h1>
+
+        <h2 class="nhsuk-heading-s">Don't begin weaning too early</h2>
+        <p>Introducing solid foods is recommended by the NHS when babies are around 6 months old.</p>
+        <p>You may hear people say they started at 4 months, however the NHS recommends waiting to around 6 months when a baby is able to:</p>
+        <ul>
+          <li>stay in a sitting position, holding their head steady</li>
+          <li>coordinate their eyes, hands and mouth so they can look at their food, pick it up and put it in their mouth</li>
+          <li>swallow food (rather than spit it back out)</li>
+          <li>At this stage, babies need more than milk alone. Solid foods provide extra energy and nutrients to support healthy growth and development.</li>
+        </ul>
+        
+        <p>This process of introducing solid foods is sometimes called 'complementary feeding' or 'weaning'.</p>
+        <p>When you begin this may vary from baby to baby but should start around 6 months.</p>
+        
+        <h2 class="nhsuk-heading-s">Get advice on weaning</h2>
+        <p>Visit our NHS Best Start In Life weaning page for:</p>
+        <ul>
+          <li>expert advice</li>
+          <li>simple, healthy weaning recipe and meal ideas</li>
+          <li>tips from other parents</li>
+        </ul>
+        <p>You can also speak to your health visitor if you have any questions.</p>
+
+        <h2 class="nhsuk-heading-s">If your baby is ready to start weaning</h2>
+        <p>Find out in this video how you can start introducing your baby to solid foods.</p>
+
+
+        <h2 class="nhsuk-heading-s nhsuk-u-padding-top-9">Found this useful? Sign up for email support for you and your baby</h2>
+        <p>Sign up for free to receive regular emails tailored to your stage of pregnancy or your child's age.</p>
+        
+        <h2 class="nhsuk-heading-s">If you do not want to receive these messages</h2>
+        <p>This is a trial of a new service. If you would like to opt out of receiving these messages please visit https://www.nhs.uk/your-nhs-data-matters/manage-your-choice/</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}        

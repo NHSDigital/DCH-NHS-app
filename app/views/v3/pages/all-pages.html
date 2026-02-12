@@ -1,0 +1,116 @@
+{% extends 'layout.html' %}
+
+{% set pageHeading = "All pages" %}
+{% set pageDescription = "Quick access to all the pages for testing" %}
+{% set version = 'v1' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+      <p class="nhsuk-lede-text">
+        {{ pageDescription }}
+      </p>
+
+            <h2>Starters</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/ios-notification-message">Notification</a>
+        </li>        
+        <li>
+          <a href="/v1/pages/abm-messages/all-abm-messages">All age based messages in SMS format</a>
+        </li>
+        <li>
+          <a href="/v1/pages/messages/your-messages-abm">All age based messages in app</a>
+        </li>
+
+      </ul>     
+
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+ 
+
+      <h2>Parent</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/home-p9">Home</a>
+        </li>
+        <li>
+          <a href="/v1/pages/abm-messages/all-abm-messages">List of age based messages (jumping off point for age based messaging)</a>
+        </li>
+      </ul>
+        <li>
+          <a href="/v1/pages/messages/your-messages">List of messages (jumping off point for blood spot)</a>
+        </li>
+      </ul>
+   <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Blood spot all clear notification messages - different variants. need to add the SCID / CF variants</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/messages/message-1">Blood spot message we tested before Christmas</a>
+        </li>
+        <li>
+          <a href="v1/pages/messages/message-1-blood-spot-simpler">Simpler message</a>
+        </li>
+        <li>
+          <a href="/v1/pages/messages/message-1-blood-spot-simpler-callout">Simpler message with 'none suspected' call out</a>
+        </li>        
+      </ul>
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Linking</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/account-and-settings/linked-profiles">Change profile</a>
+        </li>
+        <li>
+          <a href="/v1/pages/account-and-settings/switch-profiles">Change confirm</a>
+        </li>
+        <li>
+          <a href="pages/account-and-settings/switch-profiles-back">Change back</a>
+        </li>        
+      </ul>
+
+      
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Child</h2>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/baby/view-and-manage-infant">Home</a>
+        </li>
+        <li>
+          <a href="/v1/pages/baby/birth-details">Birth details</a>
+        </li>
+        <li>
+          <a href="/v1/pages/baby/nipe">NIPE</a>
+        </li>    
+        <li>
+          <a href="/v1/pages/baby/hearing-screening">Hearing screening</a>
+        </li>    
+        <li>
+          <a href="/v1/pages/baby/blood-spot">Bloodspot</a>
+        </li>                     
+      </ul>
+
+
+
+
+    </div>
+  </div>
+{% endblock %}

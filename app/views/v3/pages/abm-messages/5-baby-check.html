@@ -1,0 +1,59 @@
+{% extends 'layout-app.html' %}
+{% set hub = "Messages" %}
+{% set backLink = true %}
+{% set backLinkURL = "/v1/pages/messages/your-messages-abm" %}
+{% set pageHeading = "NHS Best Start in Life" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+{% set version = 'v1' %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+<div class="nhsuk-u-margin-bottom-7">
+      <h1 class="nhsuk-heading-m">Your baby’s 6 to 8 week health consultation</h1>
+
+        <p>This appointment happens with the GP 6 to 8 weeks after your child is born.</p>
+        <p>It's to check for any general problems with your baby.</p>
+        <p>This is so any potential issues can be identified and treated as early as possible.</p>
+        <p>A health visitor will also see you and baby separately to this GP appointment for a full health and development review.</p>
+        
+        <h2 class="nhsuk-heading-s">What to expect</h2>
+        <p>This check focuses on how your baby is developing including to make sure everything is progressing as expected.</p>
+        <p>It specifically looks for any issues with their:</p>
+        <ul>
+          <li>eyes</li>
+          <li>heart</li>
+          <li>hips</li>
+          <li>testicles (balls), if they're a boy</li>
+          <li>growth and development</li>
+        </ul>
+        <p>This helps to find any problems so they can be treated as early as possible.</p>
+
+        <h2 class="nhsuk-heading-s">How to prepare for your baby consultation</h2>
+        <p>To get the most from your consultation, it's helpful to:</p>
+        <ul>
+          <li>think about or write down any concerns or questions you have about your baby's health, feeding, or development</li>
+          <li>bring your baby's red book (Personal Child Health Record)</li>
+        </ul>   
+
+        <h2 class="nhsuk-heading-s">If you are worried about something</h2>
+        <p>You do not need to wait for this appointment if you are worried about something. Contact your GP practice straight away if you have any concerns.</p>
+
+
+        <h2 class="nhsuk-heading-s nhsuk-u-padding-top-9">Found this useful? Sign up for email support for you and your baby</h2>
+        <p>Sign up for free to receive regular emails tailored to your stage of pregnancy or your child's age.</p>
+        
+        <h2 class="nhsuk-heading-s">If you do not want to receive these messages</h2>
+        <p>This is a trial of a new service. If you would like to opt out of receiving these messages please visit https://www.nhs.uk/your-nhs-data-matters/manage-your-choice/</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}        
