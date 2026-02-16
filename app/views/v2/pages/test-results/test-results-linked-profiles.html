@@ -1,0 +1,46 @@
+{% extends 'layout-app.html' %}
+{% set version = "v2" %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Test results" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <h2 class="app-card__section-heading">GP surgery</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "GP-ordered test results",
+            href: "#"
+          },
+          {
+            title: "Newborn and infant physical exam",
+            href: "/" + version + "/pages/test-results/nipe"
+          },
+          {
+            title: "Newborn hearing screening results",
+            href: "/" + version + "/pages/test-results/hearing-screening"
+          },                    
+          {
+            title: "Bloodspot test results",
+            href: "/" + version + "/pages/test-results/blood-spot"
+          }          
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

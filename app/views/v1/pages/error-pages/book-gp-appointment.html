@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/services-p9" %}
+{% set backLinkURL = "pages/services-p9" %}
 
 {% set pageHeading = "We could not connect to your GP system" %}
 
@@ -16,7 +17,7 @@
 
       <p>You can try refreshing the page.</p>
 
-      <form id="gpAppointment" method="post" action="/v1/pages/error-pages/book-gp-appointment-next">
+      <form id="gpAppointment" method="post" action="pages/error-pages/book-gp-appointment-next">
         <input type="hidden" name="gpAppointmentError" value="no">
 
         {{ button({

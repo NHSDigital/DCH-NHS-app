@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/services/gp-appointment-select-appointment-v4" %}
+{% set backLinkURL = "pages/services/gp-appointment-select-appointment-v4" %}
 
 {% set pageHeading = "Tell us how we can help" %}
 
@@ -13,9 +14,9 @@
     <div class="nhsuk-grid-column-full">
 
       {% if data['appointment-location'] == "Phone"  %}
-      <form id="form" method="post" action="/v1/pages/services/gp-appointment-phone-number" novalidate="novalidate">
+      <form id="form" method="post" action="pages/services/gp-appointment-phone-number" novalidate="novalidate">
         {% else %}
-      <form id="form" method="post" action="/v1/pages/services/gp-appointment-confirm" novalidate="novalidate">
+      <form id="form" method="post" action="pages/services/gp-appointment-confirm" novalidate="novalidate">
       {% endif %}
         {{ textarea({
           name: "gp-appointment-reason",

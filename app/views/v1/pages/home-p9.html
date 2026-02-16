@@ -1,6 +1,7 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
-{% set version = 'v1' %}
+
 
 
 {% set hub = "Home" %}
@@ -23,12 +24,12 @@
         stacked: true,
         headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
           <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Services</h2>
-          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/v1/pages/services-p9">View all <span class="nhsuk-u-visually-hidden">services</span></a> 
+          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="pages/services-p9">View all <span class="nhsuk-u-visually-hidden">services</span></a> 
         </div>',
         cards: [
           {
             title: "Request medicines",
-            href: "/v1/pages/your-health/repeat-prescription/select-medicines"
+            href: "pages/your-health/repeat-prescription/select-medicines"
           },
           {
             title: "Check if you need urgent medical help using 111 online",
@@ -41,7 +42,7 @@
         stacked: true,
         headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
           <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Your health</h2>
-          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/v1/pages/your-health-p9">View all <span class="nhsuk-u-visually-hidden">your health</span></a> 
+          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="pages/your-health-p9">View all <span class="nhsuk-u-visually-hidden">your health</span></a> 
         </div>',
         cards: [
           {
@@ -50,11 +51,11 @@
           },
           {
             title: "View and manage prescriptions",
-            href: "/v1/pages/your-health/prescriptions-p9"
+            href: "pages/your-health/prescriptions-p9"
           },
           {
             title: "Upcoming and past appointments",
-            href: "/v1/pages/your-health/upcoming-and-past-appointments-p9"
+            href: "pages/your-health/upcoming-and-past-appointments-p9"
           }
         ]
       }) }}
@@ -66,7 +67,7 @@
           cards: [
             {
               title: 'View your messages',
-              href: '/v1/pages/messages/your-messages',
+              href: 'pages/messages/your-messages',
               prefixIcon: 'messagesUnread',
               linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
               badgeLarge: {
@@ -83,7 +84,7 @@
           cards: [
             {
               title: 'View your messages',
-              href: '/v1/pages/messages/your-messages'
+              href: 'pages/messages/your-messages'
             }
           ]
         }) }}
@@ -95,7 +96,7 @@
         cards: [
           {
             title: 'Manage services for another person',
-            href: '/v1/pages/account-and-settings/linked-profiles'
+            href: 'pages/account-and-settings/linked-profiles'
           }
         ]
       }) }}

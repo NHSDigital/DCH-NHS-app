@@ -1,4 +1,5 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Messages" %}
 
@@ -6,7 +7,7 @@
 
 
 {% set pageHeading = "Cannot send your reply" %}
-{% set version = 'v1' %}
+
 {% block content %}
 
   <div class="nhsuk-grid-row">
@@ -20,7 +21,7 @@
 
       <p>There was a technical problem. This might be temporary.</p>
 
-      <form method="post" action="/v1/pages/messages/message-sending">
+      <form method="post" action="pages/messages/message-sending">
         <input type="hidden" name="messageSendingError" value="false">
         {{ button({
           text: "Try again",

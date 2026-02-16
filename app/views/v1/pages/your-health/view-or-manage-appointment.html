@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/your-health/hospital-appointments" %}
+{% set backLinkURL = "pages/your-health/hospital-appointments" %}
 
 {% set pageHeading = "This service is provided by HealthCall" %}
 {% set pageDescription = "Your hospital has chosen this personal health record service provider" %}
@@ -32,7 +33,7 @@
             {{ button({
               text: "Continue",
               classes: "nhsuk-button--reverse nhsapp-button",
-              href: "/v1/pages/your-health/appointment"
+              href: "pages/your-health/appointment"
             }) }}
 
             <p class="nhsuk-u-margin-bottom-0"><a class="nhsuk-link" href="#">Find out more about personal health record services</a></p>

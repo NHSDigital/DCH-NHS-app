@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/services/gp-appointment-clinician" %}
+{% set backLinkURL = "pages/services/gp-appointment-clinician" %}
 
 {% set pageHeading = "Next available appointment" %}
 
@@ -20,7 +21,7 @@
 
       <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-6">Monday 20 November 2023</h2>
 
-      <form id="form" method="post" action="/v1/pages/services/gp-appointment-confirm" novalidate="novalidate">
+      <form id="form" method="post" action="pages/services/gp-appointment-confirm" novalidate="novalidate">
 
         {% if "Dr K Cooper" in data['gp-appointment-clinician'] or data['gp-appointment-clinician'] == "" or "none" in data['gp-appointment-clinician'] %}
           <div class="nhsuk-form-group">
@@ -65,7 +66,7 @@
         {% endif %}
 
         <p class="nhsuk-u-margin-bottom-6">
-          <a href="/v1/pages/services/gp-appointment-select" class="nhsuk-link--no-visited-state">View more appointment times</a>
+          <a href="pages/services/gp-appointment-select" class="nhsuk-link--no-visited-state">View more appointment times</a>
         </p>
 
         {% if data['web'] === "yes" %}

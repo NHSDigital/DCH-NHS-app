@@ -1,8 +1,9 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Home" %}
 {% set pageHeading = "Your health events" %}
-{% set version = 'v1' %}
+
 {% block content %}
 
   <div class="nhsuk-grid-row">
@@ -17,7 +18,7 @@
 
       <!-- Back link -->
       <div class="nhsuk-back-link">
-        <a class="nhsuk-back-link__link" href="/v1/pages/health-info">
+        <a class="nhsuk-back-link__link" href="pages/health-info">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
@@ -39,12 +40,12 @@
           { 
             title: "Reasonable adjustments", 
             description: "Nottingham medical centre",
-            href: "/v1/pages/health-events/reasonable-adjustments" 
+            href: "pages/health-events/reasonable-adjustments" 
           },
           { 
             title: "20 January 2025", 
             description: "Nottingham medical centre",
-            href: "/v1/pages/health-events/maternal-8-week" 
+            href: "pages/health-events/maternal-8-week" 
           }
         ]
       }) }}
@@ -58,7 +59,7 @@
           { 
             title: "Maternal 6 week examination", 
             description: "Nottingham medical centre",
-            href: "/v1/pages/health-events/maternal-6-week" 
+            href: "pages/health-events/maternal-6-week" 
           }
         ]
       }) }}
@@ -72,12 +73,12 @@
           { 
             title: "19 June 2021", 
             description: "Nottingham medical centre",
-            href: "/v1/pages/health-events/june-2021" 
+            href: "pages/health-events/june-2021" 
           },
           { 
             title: "5 May 2021", 
             description: "Nottingham medical centre",
-            href: "/v1/pages/health-events/may-2021" 
+            href: "pages/health-events/may-2021" 
           }
         ]
       }) }}
@@ -91,7 +92,7 @@
           { 
             title: "Hospital discharge summary report", 
             description: "Nottingham women's hospital",
-            href: "/v1/pages/baby/hospital-discharge" 
+            href: "pages/baby/hospital-discharge" 
           }
         ]
       }) }}

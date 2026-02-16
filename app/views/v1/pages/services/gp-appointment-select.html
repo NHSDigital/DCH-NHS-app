@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/services/gp-appointment-next-available" %}
+{% set backLinkURL = "pages/services/gp-appointment-next-available" %}
 
 {% set pageHeading = "Select appointment date and time" %}
 {% set pageDescription = "The next available appointment is Monday 20 November." %}
@@ -136,7 +137,7 @@
         </button>
       </div>
 
-      <form id="appointmentWrapper" tabindex="0" method="post" action="/v1/pages/services/gp-appointment-confirm" novalidate="novalidate">
+      <form id="appointmentWrapper" tabindex="0" method="post" action="pages/services/gp-appointment-confirm" novalidate="novalidate">
 
         <!-- Tab content -->
         <div id="date-1" class="appointments" style="display: block;">

@@ -1,8 +1,9 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Home" %}
 {% set pageHeading = "View and manage your health information" %}
-{% set version = 'v1' %}
+
 {% block content %}
 
   <div class="nhsuk-grid-row">
@@ -17,7 +18,7 @@
 
       <!-- Back link -->
       <div class="nhsuk-back-link">
-        <a class="nhsuk-back-link__link" href="/v1/pages/home">
+        <a class="nhsuk-back-link__link" href="pages/home">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
@@ -34,8 +35,8 @@
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
-          { title: "Reasonable adjustments", href: "/v1/pages/health-info/reasonable-adjustments" },
-          { title: "Contact and communication preferences", href: "/v1/pages/health-info/contact-preferences" }
+          { title: "Reasonable adjustments", href: "pages/health-info/reasonable-adjustments" },
+          { title: "Contact and communication preferences", href: "pages/health-info/contact-preferences" }
         ]
       }) }}
 
@@ -45,11 +46,11 @@
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
-          { title: "Blood pressure", href: "/v1/pages/health-info/blood-pressure" },
-          { title: "Height", href: "/v1/pages/health-info/height" },
-          { title: "Weight", href: "/v1/pages/health-info/weight" },
-          { title: "Smoking status", href: "/v1/pages/health-info/smoking-status" },
-          { title: "Alcohol intake", href: "/v1/pages/health-info/alcohol-intake" }
+          { title: "Blood pressure", href: "pages/health-info/blood-pressure" },
+          { title: "Height", href: "pages/health-info/height" },
+          { title: "Weight", href: "pages/health-info/weight" },
+          { title: "Smoking status", href: "pages/health-info/smoking-status" },
+          { title: "Alcohol intake", href: "pages/health-info/alcohol-intake" }
         ]
       }) }}
 
@@ -59,7 +60,7 @@
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
-          { title: "Health events", href: "/v1/pages/health-events" }
+          { title: "Health events", href: "pages/health-events" }
         ]
       }) }}
 

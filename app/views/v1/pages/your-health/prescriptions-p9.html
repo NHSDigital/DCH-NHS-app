@@ -1,4 +1,5 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Your health" %}
 
@@ -25,12 +26,12 @@
           {
             title: "Requested medicines",
             description: "Check if your GP has approved the medicines you requested in the app",
-            href: "/v1/pages/your-health/requested-medicines"
+            href: "pages/your-health/requested-medicines"
           },
           {
             title: "Check if your prescriptions are ready",
             description: "View prescriptions being prepared by the pharmacy",
-            href: "/v1/pages/your-health/your-approved-prescriptions"
+            href: "pages/your-health/your-approved-prescriptions"
           },
           {
             title: "Choose a pharmacy",
@@ -50,7 +51,7 @@
         icon: "cross",
         title: "Access services",
         description: "Request medicines you take often",
-        URL: "/v1/pages/your-health/repeat-prescription/select-medicines",
+        URL: "pages/your-health/repeat-prescription/select-medicines",
         linkText: "Request medicines"
       })}}
 

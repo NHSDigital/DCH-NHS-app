@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
-{% set version = 'v1' %}
+
 {% set pageHeading = "Select an appointment type" %}
 
 {% block content %}
@@ -11,7 +12,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <form id="form" method="post" action="/v1/pages/page-templates/question-page-checkboxes" novalidate="novalidate">
+      <form id="form" method="post" action="pages/page-templates/question-page-checkboxes" novalidate="novalidate">
 
         {{ radios({
           idPrefix: "gp-appointment-type",

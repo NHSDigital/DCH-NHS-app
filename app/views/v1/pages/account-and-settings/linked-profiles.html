@@ -1,7 +1,8 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Linked profiles" %}
-{% set version = 'v1' %}
+
 
 {% set backLink = true %}
 
@@ -26,7 +27,7 @@
         cards: [
           {
             title: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
-            href: "/v1/pages/account-and-settings/switch-profiles",
+            href: "pages/account-and-settings/switch-profiles",
             description: data['linkedProfileAge']
           }
         ]

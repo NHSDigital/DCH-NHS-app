@@ -1,10 +1,11 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
 
-{% set backLinkURL = "/v1/pages/services/gp-appointment-type" %}
+{% set backLinkURL = "pages/services/gp-appointment-type" %}
 
 {% set pageHeading = "Select an appointment" %}
 
@@ -21,7 +22,7 @@
       })}}
 
       <div class="nhsapp-section-heading nhsuk-u-margin-bottom-5" style="align-items: center;">
-        <a href="/v1/pages/services/gp-appointment-filters-v2" class="app-link--with-icon app-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">
+        <a href="pages/services/gp-appointment-filters-v2" class="app-link--with-icon app-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">
           <svg class="app-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20.3302 7.19995H3.66016C3.52209 7.19995 3.41016 7.31188 3.41016 7.44995V8.46995C3.41016 8.60802 3.52209 8.71995 3.66016 8.71995H20.3302C20.4682 8.71995 20.5802 8.60802 20.5802 8.46995V7.44995C20.5802 7.31188 20.4682 7.19995 20.3302 7.19995Z" />
             <path d="M17.6598 11.24H6.33984C6.20177 11.24 6.08984 11.3519 6.08984 11.49V12.51C6.08984 12.6481 6.20177 12.76 6.33984 12.76H17.6598C17.7979 12.76 17.9098 12.6481 17.9098 12.51V11.49C17.9098 11.3519 17.7979 11.24 17.6598 11.24Z" />
@@ -44,7 +45,7 @@
         </a>
         {% if data['gp-appointment-clinician-sex'] == "" and data['gp-appointment-clinician'] == "" %}
           {% else %}
-          <form id="form-clear" method="post" action="/v1/pages/services/gp-appointment-select-appointment-v4" novalidate="novalidate">
+          <form id="form-clear" method="post" action="pages/services/gp-appointment-select-appointment-v4" novalidate="novalidate">
             <input type="hidden" name="gp-appointment-clinician" value="">
             <input type="hidden" name="gp-appointment-clinician-sex" value="">
             <input type="hidden" name="gp-appointment-location" value="">
@@ -74,7 +75,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm3" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm3" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="8:00am">
             <input type="hidden" name="appointment-date" value="Wednesday 13 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -98,7 +99,7 @@
           "Dr Louise Williams (Female)" in data['gp-appointment-clinician'] 
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm4" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm4" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="8:30am">
             <input type="hidden" name="appointment-date" value="Wednesday 13 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Louise Williams (Female)">
@@ -122,7 +123,7 @@
           "Dr Max Smith (Male)" in data['gp-appointment-clinician'] 
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm5" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm5" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="10:00am">
             <input type="hidden" name="appointment-date" value="Wednesday 13 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Max Smith (Male)">
@@ -146,7 +147,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm6" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm6" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="10:30am">
             <input type="hidden" name="appointment-date" value="Wednesday 13 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -177,7 +178,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm9" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm9" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="8:00am">
             <input type="hidden" name="appointment-date" value="Thursday 14 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -201,7 +202,7 @@
           "Dr Louise Williams (Female)" in data['gp-appointment-clinician'] 
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm10" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm10" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="8:30am">
             <input type="hidden" name="appointment-date" value="Thursday 14 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Louise Williams (Female)">
@@ -225,7 +226,7 @@
           "Dr Max Smith (Male)" in data['gp-appointment-clinician'] 
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm11" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm11" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="10:00am">
             <input type="hidden" name="appointment-date" value="Thursday 14 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Max Smith (Male)"> 
@@ -256,7 +257,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
           <li class="nhsapp-card">
-            <form id="appointmentForm14" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm14" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="8:00am">
               <input type="hidden" name="appointment-date" value="Friday 15 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -281,7 +282,7 @@
             data['gp-appointment-clinician'] == "" and "Male" not in data['gp-appointment-clinician-sex'] 
           %}
         <li class="nhsapp-card">
-          <form id="appointmentForm15" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm15" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="8:30am">
             <input type="hidden" name="appointment-date" value="Friday 15 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Louise Williams (Female)">
@@ -305,7 +306,7 @@
           "Dr Max Smith (Male)" in data['gp-appointment-clinician'] 
         %}
         <li class="nhsapp-card">
-          <form id="appointmentForm16" method="post" action="/v1/pages/services/gp-appointment-reason">
+          <form id="appointmentForm16" method="post" action="pages/services/gp-appointment-reason">
             <input type="hidden" name="appointment-time" value="10:00am">
             <input type="hidden" name="appointment-date" value="Friday 15 November 2024">
             <input type="hidden" name="appointment-clinician" value="Dr Max Smith (Male)">  
@@ -342,7 +343,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
           <li class="nhsapp-card">
-            <form id="appointmentForm19" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm19" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="8:00am">
               <input type="hidden" name="appointment-date" value="Monday 18 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -367,7 +368,7 @@
             data['gp-appointment-clinician'] == "" and "Male" not in data['gp-appointment-clinician-sex'] 
           %}
           <li class="nhsapp-card">
-            <form id="appointmentForm20" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm20" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="8:30am">
               <input type="hidden" name="appointment-date" value="Monday 18 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Louise Williams (Female)">
@@ -392,7 +393,7 @@
             data['gp-appointment-clinician'] == "" and "Female" not in data['gp-appointment-clinician-sex'] 
           %}
           <li class="nhsapp-card">
-            <form id="appointmentForm21" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm21" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="10:00am">
               <input type="hidden" name="appointment-date" value="Monday 18 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Max Smith (Male)"> 
@@ -416,7 +417,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
           <li class="nhsapp-card">
-            <form id="appointmentForm22" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm22" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="10:30am">
               <input type="hidden" name="appointment-date" value="Monday 18 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -447,7 +448,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
           <li class="nhsapp-card">
-            <form id="appointmentForm25" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm25" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="8:00am">
               <input type="hidden" name="appointment-date" value="Tuesday 19 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -472,7 +473,7 @@
             data['gp-appointment-clinician'] == "" and "Male" not in data['gp-appointment-clinician-sex'] 
           %}
           <li class="nhsapp-card">
-            <form id="appointmentForm26" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm26" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="8:30am">
               <input type="hidden" name="appointment-date" value="Tuesday 19 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Louise Williams (Female)">
@@ -497,7 +498,7 @@
             data['gp-appointment-clinician'] == "" and "Female" not in data['gp-appointment-clinician-sex'] 
           %}
           <li class="nhsapp-card">
-            <form id="appointmentForm27" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm27" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="10:00am">
               <input type="hidden" name="appointment-date" value="Monday 18 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Max Smith (Male)">
@@ -528,7 +529,7 @@
         "Dr Sarah Clarke (Female)" in data['gp-appointment-clinician']  
         %}
             <li class="nhsapp-card">
-              <form id="appointmentForm30" method="post" action="/v1/pages/services/gp-appointment-reason">
+              <form id="appointmentForm30" method="post" action="pages/services/gp-appointment-reason">
                 <input type="hidden" name="appointment-time" value="8:00am">
                 <input type="hidden" name="appointment-date" value="Wednesday 20 November 2024">
                 <input type="hidden" name="appointment-clinician" value="Dr Sarah Clarke (Female)">
@@ -553,7 +554,7 @@
               data['gp-appointment-clinician'] == "" and "Male" not in data['gp-appointment-clinician-sex'] 
             %}
           <li class="nhsapp-card">
-            <form id="appointmentForm31" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm31" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="8:30am">
               <input type="hidden" name="appointment-date" value="Wednesday 20 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Louise Williams (Female)">
@@ -578,7 +579,7 @@
             data['gp-appointment-clinician'] == "" and "Female" not in data['gp-appointment-clinician-sex'] 
           %}
           <li class="nhsapp-card">
-            <form id="appointmentForm32" method="post" action="/v1/pages/services/gp-appointment-reason">
+            <form id="appointmentForm32" method="post" action="pages/services/gp-appointment-reason">
               <input type="hidden" name="appointment-time" value="10:00am">
               <input type="hidden" name="appointment-date" value="Wednesday 20 November 2024">
               <input type="hidden" name="appointment-clinician" value="Dr Max Smith (Male)">  

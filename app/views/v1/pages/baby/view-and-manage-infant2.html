@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Home" %}
 {% set linkedProfile = true %}
 {% set pageHeading = "View and manage your health information" %}
-{% set version = 'v1' %}
+
 {% block content %}
 
   <div class="nhsuk-grid-row">
@@ -17,7 +18,7 @@
 
 <!-- Your manual back link -->
 <div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="/v1/pages/account-and-settings/switch-profiles">
+  <a class="nhsuk-back-link__link" href="pages/account-and-settings/switch-profiles">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -33,10 +34,10 @@
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
-          { title: "Birth details", href: "/v1/pages/baby/birth-details" },
-          { title: "Newborn and infant physical exam", href: "/v1/pages/baby/nipe" },
-          { title: "Hearing screening results", href: "/v1/pages/baby/hearing-screening" },
-          { title: "Bloodspot test results", href: "/v1/pages/baby/blood-spot" }
+          { title: "Birth details", href: "pages/baby/birth-details" },
+          { title: "Newborn and infant physical exam", href: "pages/baby/nipe" },
+          { title: "Hearing screening results", href: "pages/baby/hearing-screening" },
+          { title: "Bloodspot test results", href: "pages/baby/blood-spot" }
         ]
       }) }}
 
@@ -46,7 +47,7 @@
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
-          { title: "View and manage your health information", href: "/v1/pages/health-info-child" }
+          { title: "View and manage your health information", href: "pages/health-info-child" }
         ]
       }) }}
 

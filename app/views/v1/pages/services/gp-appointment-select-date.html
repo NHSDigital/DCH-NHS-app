@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/services/gp-appointment-clinician" %}
+{% set backLinkURL = "pages/services/gp-appointment-clinician" %}
 
 {% set pageHeading = "Select date of appointment" %}
 
@@ -18,7 +19,7 @@
         titleSecondary: true
       })}}
 
-      <form id="form" tabindex="0" method="post" action="/v1/pages/services/gp-appointment-select-appointment" novalidate="novalidate">
+      <form id="form" tabindex="0" method="post" action="pages/services/gp-appointment-select-appointment" novalidate="novalidate">
 
         <div id="one" class="tabcontent">
 

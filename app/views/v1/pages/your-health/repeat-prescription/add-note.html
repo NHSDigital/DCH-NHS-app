@@ -1,4 +1,5 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
@@ -11,7 +12,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form id="form" method="post" action="/v1/pages/your-health/repeat-prescription/check-the-pharmacy" novalidate="novalidate">
+      <form id="form" method="post" action="pages/your-health/repeat-prescription/check-the-pharmacy" novalidate="novalidate">
 
         {{ characterCount({
           "name": "prescription-request-note",

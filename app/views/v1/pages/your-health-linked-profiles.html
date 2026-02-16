@@ -1,7 +1,8 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Your health" %}
-{% set version = 'v1' %}
+
 {% set linkedProfile = true %}
 
 {% set pageHeading = "Your health" %}
@@ -29,11 +30,11 @@
           },
           {
             title: "View and manage prescriptions",
-            href: "/v1/pages/your-health/prescriptions-linked-profiles"
+            href: "pages/your-health/prescriptions-linked-profiles"
           },
           {
             title: "Upcoming and past appointments",
-            href: "/v1/pages/your-health/upcoming-and-past-appointments-linked-profiles"
+            href: "pages/your-health/upcoming-and-past-appointments-linked-profiles"
           }
         ]
       })}}

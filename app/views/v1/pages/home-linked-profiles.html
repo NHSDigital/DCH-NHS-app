@@ -1,7 +1,8 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Home" %}
-{% set version = 'v1' %}
+
 
 {% set linkedProfile = true %}
 
@@ -25,12 +26,12 @@
         stacked: true,
         headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
           <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Services</h2>
-          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/v1/pages/services-p9">View all <span class="nhsuk-u-visually-hidden">services</span></a> 
+          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="pages/services-p9">View all <span class="nhsuk-u-visually-hidden">services</span></a> 
         </div>',
         cards: [
           {
             title: "Find NHS services near you",
-            href: "/v1/pages/services-linked-profiles"
+            href: "pages/services-linked-profiles"
           }
         ]
       })}}

@@ -1,4 +1,5 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
@@ -83,7 +84,7 @@
             </ul>
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/v1/pages/your-health/repeat-prescription/select-medicines">Edit<span class="nhsuk-u-visually-hidden"> medicines</span></a>
+            <a href="pages/your-health/repeat-prescription/select-medicines">Edit<span class="nhsuk-u-visually-hidden"> medicines</span></a>
           </dd>
         </div>
 
@@ -95,7 +96,7 @@
             {{ data['prescription-request-note'] or "No notes added" }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/v1/pages/your-health/repeat-prescription/add-note">Edit<span class="nhsuk-u-visually-hidden"> Notes for your GP surgery</span></a>
+            <a href="pages/your-health/repeat-prescription/add-note">Edit<span class="nhsuk-u-visually-hidden"> Notes for your GP surgery</span></a>
           </dd>
         </div>
 
@@ -113,13 +114,13 @@
             </p>
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/v1/pages/your-health/repeat-prescription/check-the-pharmacy">Edit<span class="nhsuk-u-visually-hidden"> Your nominated pharmacy</span></a>
+            <a href="pages/your-health/repeat-prescription/check-the-pharmacy">Edit<span class="nhsuk-u-visually-hidden"> Your nominated pharmacy</span></a>
           </dd>
         </div>
 
       </dl>
 
-      <form id="form" method="post" action="/v1/pages/your-health/repeat-prescription/prescription-requested-2" novalidate="novalidate">
+      <form id="form" method="post" action="pages/your-health/repeat-prescription/prescription-requested-2" novalidate="novalidate">
 
         <input type="hidden" name="prescription-requested" value="true">
 

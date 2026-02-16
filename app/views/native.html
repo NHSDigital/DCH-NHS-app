@@ -25,9 +25,9 @@
         // Check if the app is running in standalone mode (added to home screen)
         if (window.navigator.standalone) {
           // Check if we're not already on the desired start page
-          if (window.location.pathname !== '/v1/pages/login') {
+          if (window.location.pathname !== 'pages/login') {
             // Redirect to the desired start page
-            window.location.replace('/v1/pages/login');
+            window.location.replace('pages/login');
           }
         }
       </script>

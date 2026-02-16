@@ -2,7 +2,7 @@
 {{ header({
   service: {
     text: 'App<span class="nhsuk-u-visually-hidden"> homepage</span>' | safe,
-    href: "/{{ version }}/pages/home-" + data['accountType']
+    href: "pages/home-" + data['accountType']
   },
   account: {
     classes: 'nhsapp-u-hide-until-tablet',
@@ -13,7 +13,7 @@
       },
       {
         text: 'Account',
-        href:  "/{{ version }}/pages/account-and-settings-" + data['accountType']
+        href:  "pages/account-and-settings-" + data['accountType']
       },
       {
         text: 'Log out',
@@ -25,19 +25,19 @@
     items: [
       {
         text: 'Home',
-        href: "/{{ version }}/pages/home-" + data['accountType']
+        href: "pages/home-" + data['accountType']
       },
       {
         text: 'Services',
-        href:  "/{{ version }}/pages/services-" + data['accountType']
+        href:  "pages/services-" + data['accountType']
       },
       {
         text: 'Your health',
-        href:  "/{{ version }}/pages/your-health-" + data['accountType']
+        href:  "pages/your-health-" + data['accountType']
       },
       {
         text: 'Messages',
-        href:  "/{{ version }}/pages/messages-" + data['accountType']
+        href:  "pages/messages-" + data['accountType']
       },
       {
         text: 'Help and support',
@@ -46,7 +46,7 @@
       },
       {
         text: 'Account',
-        href:  "/{{ version }}/pages/account-and-settings-" + data['accountType'],
+        href:  "pages/account-and-settings-" + data['accountType'],
         classes: 'nhsapp-u-hide-from-tablet'
       },
       {

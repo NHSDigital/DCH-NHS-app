@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/your-health/appointment" %}
+{% set backLinkURL = "pages/your-health/appointment" %}
 
 {% set pageHeading = "Appointment letter" %}
 
@@ -85,10 +86,10 @@
       </div>
 
       <div class="nhsapp-button-group">
-        <a href="/v1/pages/your-health/appointment" class="nhsuk-button nhsuk-button--secondary nhsapp-button">
+        <a href="pages/your-health/appointment" class="nhsuk-button nhsuk-button--secondary nhsapp-button">
           Go to your appointment
         </a>
-        <a href="/v1/pages/your-health/hospital-appointments" class="nhsuk-link nhsuk-link--no-visited-state">Return to all appointments</a>
+        <a href="pages/your-health/hospital-appointments" class="nhsuk-link nhsuk-link--no-visited-state">Return to all appointments</a>
       </div>
 
       <!-- SECTION -->

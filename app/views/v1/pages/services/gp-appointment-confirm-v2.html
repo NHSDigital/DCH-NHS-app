@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/services/gp-appointment-reason" %}
+{% set backLinkURL = "pages/services/gp-appointment-reason" %}
 
 {% set pageHeading = "Check your appointment details before confirming" %}
 
@@ -81,7 +82,7 @@
       </dl>
 
 
-      <form id="form" method="post" action="/v1/pages/services/gp-appointment-confirmed" novalidate="novalidate">
+      <form id="form" method="post" action="pages/services/gp-appointment-confirmed" novalidate="novalidate">
 
         <!--{% if data['web'] === "yes" %}
 

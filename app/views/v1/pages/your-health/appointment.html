@@ -1,9 +1,10 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/v1/pages/your-health/view-or-manage-appointment" %}
+{% set backLinkURL = "pages/your-health/view-or-manage-appointment" %}
 
 {% set pageHeading = "Orthopaedics appointment" %}
 
@@ -77,7 +78,7 @@
       <h3 class="nhsuk-heading-s">To do</h3>
 
       <div class="nhsapp-card"> 
-        <form id="appointmentForm1" method="post" action="/v1/pages/your-health/appointment-letter">
+        <form id="appointmentForm1" method="post" action="pages/your-health/appointment-letter">
           <input type="hidden" name="appointment-letter" value="read">
           <div class="nhsapp-card__container">   
             <div class="nhsapp-card__content">
@@ -107,7 +108,7 @@
               <div class="nhsapp-card__above">
                 <strong class="nhsapp-tag nhsapp-tag--green nhsuk-u-static-margin-bottom-3">Finished</strong>
               </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/v1/pages/your-health/appointment-letter">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/appointment-letter">
                 Appointment letter
               </a>
               <div class="nhsapp-card__below">

@@ -1,4 +1,5 @@
 {% extends 'layout-app.html' %}
+{% set version = "v1" %}
 
 {% set hub = "Services" %}
 
@@ -110,7 +111,7 @@
       {{ button({
         text: "Continue",
         classes: "nhsapp-button",
-        href: "/v1/pages/your-health/repeat-prescription/check-request"
+        href: "pages/your-health/repeat-prescription/check-request"
       }) }}
 
     </div>
