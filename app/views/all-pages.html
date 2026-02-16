@@ -1,31 +1,44 @@
 {% extends 'layout.html' %}
-
 {% set pageHeading = "All pages" %}
 {% set pageDescription = "Quick access to all the pages for testing" %}
-
-
-
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-
 {% block beforeContent %}
-  {{ backLink({
-    "text": "Back",
-    "classes": "nhsuk-u-margin-bottom-0",
-    href: "/"
-  }) }}
 {% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
       <h1>{{ pageHeading }}</h1>
-
       <p class="nhsuk-lede-text">
         {{ pageDescription }}
       </p>
 
-            <h2>Starters</h2>
+  <h2>v2</h2>
+    <h3>Pages</h3>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v2/pages/ios-notification-message">Notification</a>
+        </li>        
+        <li>
+          <a href="/v2/pages/abm-messages/all-abm-messages">All age based messages in SMS format</a>
+        </li>
+        <li>
+          <a href="/v2/pages/abm-messages/your-messages-abm">All age based messages in app</a>
+        </li>
+        <li>
+          <a href="/v2/pages/home-p9">Parent home</a>
+        </li>        
+        <li>
+          <a href="/v2/pages/home-linked-profiles">Child home</a>
+        </li>        
+      </ul>        
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+
+
+  <h2>v1</h2>
+    <h3>Starters</h3>
       <ul clas="nhsuk-list">
         <li>
           <a href="pages/ios-notification-message">Notification</a>
@@ -33,8 +46,11 @@
         <li>
           <a href="pages/abm-messages/all-abm-messages">All age based messages in SMS format</a>
         </li>
+         <li>
+          <a href="pages/abm-messages/all-abm-messages">**NEW**12 Feb updates***All age based messages in SMS format</a>
+        </li>
         <li>
-          <a href="pages/messages/your-messages-abm">All age based messages in app</a>
+          <a href="pages/messages/your-messages-abm">**NEW**12 Feb updates***All age based messages in app</a>
         </li>
 
       </ul>     
@@ -44,7 +60,7 @@
 
  
 
-      <h2>Parent</h2>
+      <h3>Parent</h3>
       <ul clas="nhsuk-list">
         <li>
           <a href="pages/home-p9">Home</a>
@@ -59,7 +75,7 @@
       </ul>
    <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
 
-      <h2>Blood spot all clear notification messages - different variants. need to add the SCID / CF variants</h2>
+      <h3>Blood spot all clear notification messages - different variants. need to add the SCID / CF variants</h3>
       <ul clas="nhsuk-list">
         <li>
           <a href="pages/messages/message-1">Blood spot message we tested before Christmas</a>
@@ -73,7 +89,7 @@
       </ul>
       <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
 
-      <h2>Linking</h2>
+      <h3>Linking</h3>
       <ul clas="nhsuk-list">
         <li>
           <a href="pages/account-and-settings/linked-profiles">Change profile</a>
@@ -90,7 +106,7 @@
 
       <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
 
-      <h2>Child</h2>
+      <h3>Child</h3>
       <ul clas="nhsuk-list">
         <li>
           <a href="pages/baby/view-and-manage-infant">Home</a>
@@ -108,10 +124,6 @@
           <a href="pages/baby/blood-spot">Bloodspot</a>
         </li>                     
       </ul>
-
-
-
-
     </div>
   </div>
 {% endblock %}

@@ -28,7 +28,7 @@
         <div class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
-              <form id="switchProfile" action="pages/profile/switch-profiles-back" method="post" novalidate>
+              <form id="switchProfile" action="/{{ version }}/pages/profile/switch-profiles-back" method="post" novalidate>
                 <input type="hidden" name="accountType" value="p9">
                 <a onclick="document.getElementById('switchProfile').submit();" href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
                   Switch back to your profile

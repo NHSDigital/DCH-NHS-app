@@ -24,7 +24,7 @@
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
-              <a href="pages/your-health/repeat-prescription/select-medicines" class="nhsapp-card__link nhsuk-link--no-visited-state">
+              <a href="/{{ version }}/pages/your-health/repeat-prescription/select-medicines" class="nhsapp-card__link nhsuk-link--no-visited-state">
                 Request medicines
               </a>
             </div>
@@ -45,9 +45,9 @@
             <div class="nhsapp-card__container">
               <div class="nhsapp-card__content">
                 {% if data['gpAppointmentError'] == "yes"  %}
-                  <a href="pages/error-pages/book-gp-appointment" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                  <a href="/{{ version }}/pages/error-pages/book-gp-appointment" class="nhsapp-card__link nhsuk-link--no-visited-state">
                 {% else %}
-                  <a href="pages/services/gp-appointment-type" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                  <a href="/{{ version }}/pages/services/gp-appointment-type" class="nhsapp-card__link nhsuk-link--no-visited-state">
                 {% endif %}
                   Check for available GP appointments
                 </a>
