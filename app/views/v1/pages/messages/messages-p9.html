@@ -98,7 +98,7 @@
                 </span>
               </div>
               <!-- FORM AND HIDDEN INPUT ONLY USED FOR PROTOTYPING PURPOSES TO PASS DATA -->
-              <form id="message1" method="post" action="pages/messages/message-1">
+              <form id="message1" method="post" action="/v1/pages/messages/message-1">
                 {% if data['message1read'] === "false" %}
                 <input type="hidden" name="message1read" value="false">
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
