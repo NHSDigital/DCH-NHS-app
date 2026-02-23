@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Services" %}
@@ -20,9 +20,9 @@
 
       <p>If you need to use health services on behalf of someone else, contact their GP surgery or try again later.</p>
 
-      {% include "pages/error-pages/error-code.html" %}
+      {% include "/{{ version }}/pages/error-/{{ version }}/pages/error-code.html" %}
 
-      {% include "pages/error-pages/medical-note.html" %}
+      {% include "/{{ version }}/pages/error-/{{ version }}/pages/medical-note.html" %}
 
     </div>
   </div>

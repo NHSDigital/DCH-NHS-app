@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Home" %}
@@ -32,7 +32,7 @@
         cards: [
           {
             title: "View your messages",
-            href: "pages/messages-p5",
+            href: "/{{ version }}/pages/messages-p5",
             icon: true,
             messages: data['messages']
           }

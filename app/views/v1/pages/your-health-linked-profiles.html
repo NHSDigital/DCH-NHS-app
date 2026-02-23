@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Your health" %}
@@ -30,11 +30,11 @@
           },
           {
             title: "View and manage prescriptions",
-            href: "pages/your-health/prescriptions-linked-profiles"
+            href: "/{{ version }}/pages/your-health/prescriptions-linked-profiles"
           },
           {
             title: "Upcoming and past appointments",
-            href: "pages/your-health/upcoming-and-past-appointments-linked-profiles"
+            href: "/{{ version }}/pages/your-health/upcoming-and-past-appointments-linked-profiles"
           }
         ]
       })}}

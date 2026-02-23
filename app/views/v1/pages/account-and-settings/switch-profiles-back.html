@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Linked profiles" %}
@@ -20,7 +20,7 @@
       })}}
 
 <p class="nhsuk-u-margin-bottom-6"><strong>Age:</strong> 0 years 3 weeks 2 days old<br> <strong>GP surgery:</strong> F0001</p>
-      <form action="/v1/pages/home-p9" method="post" novalidate>
+      <form action="/{{ version }}/pages/home-p9" method="post" novalidate>
 
         <input type="hidden" name="accountType" value="p9">
 

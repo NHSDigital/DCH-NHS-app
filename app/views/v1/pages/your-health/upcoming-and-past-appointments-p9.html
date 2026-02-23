@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Your health" %}
@@ -34,7 +34,7 @@
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/referrals">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/referrals">
                 Referrals
               </a>
             </div>
@@ -44,7 +44,7 @@
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/hospital-appointments">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/hospital-appointments">
                 Hospital appointments
               </a>
             </div>

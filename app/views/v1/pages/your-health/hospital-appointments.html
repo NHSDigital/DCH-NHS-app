@@ -1,10 +1,10 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "pages/your-health/upcoming-and-past-appointments-p9" %}
+{% set backLinkURL = "/{{ version }}/pages/your-health/upcoming-and-past-appointments-p9" %}
 
 {% set pageHeading = "Hospital appointments" %}
 {% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
@@ -42,7 +42,7 @@
                 <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
               </div>
               {% endif %}
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/view-or-manage-appointment" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/view-or-manage-appointment" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
                 Orthopaedic appointment
               </a>
               <div class="nhsapp-card__below">
@@ -93,7 +93,7 @@
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/past-appointments">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/past-appointments">
                 View more past appointments
               </a>
             </div>

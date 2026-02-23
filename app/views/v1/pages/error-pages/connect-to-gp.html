@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Services" %}
@@ -16,7 +16,7 @@
 
       <p>Try again in a few hours, or contact the GP surgery of the person you were trying to access health services for.</p>
 
-      {% include "pages/error-pages/error-code.html" %}
+      {% include "/{{ version }}/pages/error-/{{ version }}/pages/error-code.html" %}
 
     </div>
   </div>

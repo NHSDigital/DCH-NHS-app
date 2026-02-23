@@ -1,10 +1,10 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Messages" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "pages/services/gp-appointment-select-appointment-v4" %}
+{% set backLinkURL = "/{{ version }}/pages/services/gp-appointment-select-appointment-v4" %}
 
 {% set pageHeading = "Filter by" %}
 
@@ -19,7 +19,7 @@
         titleSmall: true
       })}}
 
-      <form id="form" method="post" action="pages/services/gp-appointment-select-appointment-v4" novalidate="novalidate">
+      <form id="form" method="post" action="/{{ version }}/pages/services/gp-appointment-select-appointment-v4" novalidate="novalidate">
 
         {{ checkboxes({
           idPrefix: "gp-appointment-clinician",
@@ -56,7 +56,7 @@
             <span class="nhsuk-u-visually-hidden"> filters</span>
           </button>
         </form>
-          <form id="form-clear" method="post" action="pages/services/gp-appointment-filters-v2" novalidate="novalidate">
+          <form id="form-clear" method="post" action="/{{ version }}/pages/services/gp-appointment-filters-v2" novalidate="novalidate">
             <input type="hidden" name="gp-appointment-clinician" value="">
             <input type="hidden" name="gp-appointment-clinician-sex" value="">
             <input type="hidden" name="gp-appointment-location" value="">

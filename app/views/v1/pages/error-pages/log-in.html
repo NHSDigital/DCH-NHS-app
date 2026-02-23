@@ -13,7 +13,7 @@
 
       <p>This may be a temporary problem. You can go back and try logging in again.</p>
 
-      <form id="form" method="post" action="pages/login" novalidate="novalidate">
+      <form id="form" method="post" action="/{{ version }}/pages/login" novalidate="novalidate">
 
         <input type="hidden" name="loginError" value="no">
 
@@ -24,9 +24,9 @@
         
       </form>
 
-      {% include "pages/error-pages/error-code.html" %}
+      {% include "/{{ version }}/pages/error-/{{ version }}/pages/error-code.html" %}
 
-      {% include "pages/error-pages/medical-note.html" %}
+      {% include "/{{ version }}/pages/error-/{{ version }}/pages/medical-note.html" %}
 
     </div>
   </div>

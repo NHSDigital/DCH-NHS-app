@@ -1,5 +1,5 @@
 {% extends 'layout-app-splash-screen.html' %}
-
+{% set version = "v1" %}
 {% set overlay = true %}
 
 {% set pageHeading = "Sign in to the NHS App" %}
@@ -29,7 +29,7 @@
     $(document).ready(function () {
         // Handler for .ready() called.
         window.setTimeout(function () {
-            location.href = "pages/login-face-id-success";
+            location.href = "/{{ version }}/pages/login-face-id-success";
         }, 1000);
     });
   </script>

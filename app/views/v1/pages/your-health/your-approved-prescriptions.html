@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Your health" %}
@@ -28,7 +28,7 @@
               <div class="nhsapp-card__above">
                 <strong class="nhsapp-tag nhsapp-tag--green nhsuk-u-static-margin-bottom-3">Ready to collect</strong>
               </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/your-prescription">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/your-prescription">
                 One off prescription 
               </a>
               <div class="nhsapp-card__below">
@@ -60,7 +60,7 @@
                   <strong class="nhsapp-tag nhsapp-tag--green nhsuk-u-static-margin-bottom-3">Ready to collect</strong>
                 {% endif %}
               </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/your-prescription-2" aria-label="Repeat prescription 1 of 2">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/your-prescription-2" aria-label="Repeat prescription 1 of 2">
                 Repeat prescription
               </a>
               <div class="nhsapp-card__below">
@@ -97,7 +97,7 @@
               <div class="nhsapp-card__above">
                 <strong class="nhsapp-tag nhsapp-tag--purple nhsuk-u-static-margin-bottom-3">Pharmacy preparing prescription</strong>
               </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/your-prescription-3" aria-label="Repeat prescription 2 of 2">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/your-prescription-3" aria-label="Repeat prescription 2 of 2">
                 Repeat prescription
               </a>
               <div class="nhsapp-card__below">
@@ -122,7 +122,7 @@
       <div class="nhsapp-card">
         <div class="nhsapp-card__container">
           <div class="nhsapp-card__content">
-            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/past-prescriptions">
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/past-prescriptions">
               Past prescriptions
             </a>
           </div>

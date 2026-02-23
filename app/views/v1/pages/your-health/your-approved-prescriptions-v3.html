@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Your health" %}
@@ -82,7 +82,7 @@
       <div class="nhsapp-card">
         <div class="nhsapp-card__container">
           <div class="nhsapp-card__content">
-            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="pages/your-health/past-prescriptions">
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/your-health/past-prescriptions">
               Past prescriptions
             </a>
             <div class="nhsapp-card__below">

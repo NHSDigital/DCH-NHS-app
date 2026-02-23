@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-
+{% set version = "v2" %}
 {% block pageTitle %}
   NHS App prototype for Digital Child Health
 {% endblock %}
@@ -11,13 +11,6 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1>
-      <p class="nhsuk-lede-text">
-        This needs updating with all the different versions. 
-      </p>
-      </h1>
-
-
       <h1>Digital Child Health NHS App prototype</h1>
       <p class="nhsuk-lede-text">
         A prototype for Digital Child Health to test new design components and patterns for the NHS App.
@@ -27,37 +20,115 @@
           
        <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
 
-      <h2>Digital child health journeys</h2>
-          <a href="pages/all-pages">New index page with links to all journeys</a>
+      <h2>V2</h2>
+          <h3>Pages</h3>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v2/pages/ios-notification-message">Notification</a>
+        </li>        
+        <li> 
+          <a href="/v2/pages/abm-messages/all-abm-messages">All age based messages in SMS format</a>
+        </li>
+        <li>
+          <a href="/v2/pages/abm-messages/your-messages-abm">All age based messages in app</a>
+        </li>
+        <li>
+          <a href="/v2/pages/home-p9">Parent home</a>
+        </li>        
+        <li>
+          <a href="/v2/pages/home-linked-profiles">Child home</a>
+        </li>        
+      </ul>     
       
-       <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
-
-      <h2>Digital child health journeys</h2>
-          <a href="pages/home-p9">Blood spot notification all clear message</a>
-
+       
       <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
 
-   <h2>Custom prototype settings</h2>
+<h2>v1</h2>
+    <h3>Starters</h3>
       <ul clas="nhsuk-list">
-      <li><a href="/data-settings">View or change the prototype settings</a>. 
-      </li>
         <li>
-          <a href="pages/">Pages templates and layouts</a>
+          <a href="/v1/pages/ios-notification-message">Notification</a>
+        </li>        
+        <li>
+          <a href="/v1/pages/abm-messages/all-abm-messages">All age based messages in SMS format</a>
+        </li>
+         <li>
+          <a href="/v1/pages/abm-messages/your-messages-abm">All age based messages in app</a>
+        </li>
+
+      </ul>     
+
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+ 
+
+      <h3>Parent</h3>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/home-p9">Home</a>
         </li>
         <li>
-          <a href="/components/">Components</a>
-        </li>
-        <li>
-          <a href="/native">Make your prototype feel more app-like</a>
-        </li>
-        <li>
-          <a href="/frame">View prototype in a mobile frame</a>
+          <a href="/v1/pages/abm-messages/all-abm-messages">List of age based messages (jumping off point for age based messaging)</a>
         </li>
       </ul>
+        <li>
+          <a href="/v1/pages/messages/your-messages">List of messages (jumping off point for blood spot)</a>
+        </li>
+      </ul>
+   <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
 
-      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+      <h3>Blood spot all clear notification messages - different variants. need to add the SCID / CF variants</h3>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/messages/message-1">Blood spot message we tested before Christmas</a>
+        </li>
+        <li>
+          <a href="/v1/pages/messages/message-1-blood-spot-simpler">Simpler message</a>
+        </li>
+        <li>
+          <a href="/v1/pages/messages/message-1-blood-spot-simpler-callout">Simpler message with 'none suspected' call out</a>
+        </li>        
+      </ul>
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
 
+      <h3>Linking</h3>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/account-and-settings/linked-profiles">Change profile</a>
+        </li>
+        <li>
+          <a href="/v1/pages/account-and-settings/switch-profiles">Change confirm</a>
+        </li>
+        <li>
+          <a href="/v1/pages/account-and-settings/switch-profiles-back">Change back</a>
+        </li>        
+      </ul>
+
+      
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h3>Child</h3>
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/v1/pages/baby/view-and-manage-infant">Home</a>
+        </li>
+        <li>
+          <a href="/v1/pages/baby/birth-details">Birth details</a>
+        </li>
+        <li>
+          <a href="/v1/pages/baby/nipe">NIPE</a>
+        </li>    
+        <li>
+          <a href="/v1/pages/baby/hearing-screening">Hearing screening</a>
+        </li>    
+        <li>
+          <a href="/v1/pages/baby/blood-spot">Bloodspot</a>
+        </li>                     
+      </ul>
    
+ <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">      
 
       <h2>Help improve the NHS App prototype</h2>
 

@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Services" %}
@@ -134,7 +134,7 @@
         </button>
       </div>
 
-        <form id="appointmentWrapper" tabindex="0" method="post" action="pages/services/gp-appointment-confirm" novalidate="novalidate">
+        <form id="appointmentWrapper" tabindex="0" method="post" action="/{{ version }}/pages/services/gp-appointment-confirm" novalidate="novalidate">
 
           <!-- Tab content -->
           <div id="date-1" class="appointments" style="display: block">

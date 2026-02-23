@@ -1,5 +1,5 @@
 {% extends 'layout-app-splash-screen.html' %}
-
+{% set version = "v1" %}
 {% set overlay = true %}
 
 {% set pageHeading = "Sign in to the NHS App" %}
@@ -31,7 +31,7 @@
         $(document).ready(function () {
             // Handler for .ready() called.
             window.setTimeout(function () {
-                location.href = "pages/home-p9";
+                location.href = "/{{ version }}/pages/home-p9";
             }, 1000);
         });
       </script>
@@ -40,7 +40,7 @@
         $(document).ready(function () {
             // Handler for .ready() called.
             window.setTimeout(function () {
-                location.href = "pages/error-pages/log-in";
+                location.href = "/{{ version }}/pages/error-/{{ version }}/pages/log-in";
             }, 1000);
         });
       </script>

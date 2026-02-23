@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Linked profiles" %}
@@ -41,7 +41,7 @@
         </li>
       </ul>
 
-      <form action="/v1/pages/baby/view-and-manage-infant"
+      <form action="/{{ version }}/pages/baby/view-and-manage-infant"
       
       " method="post" novalidate>
 

@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends 'layout-app-v1.html' %}
 {% set version = "v1" %}
 
 {% set hub = "Services" %}
@@ -16,7 +16,7 @@
 
       <p>If you need help with a prescription now, contact your GP or pharmacy directly.</p>
 
-      {% include "pages/error-pages/error-code.html" %}
+      {% include "/{{ version }}/pages/error-/{{ version }}/pages/error-code.html" %}
 
       <h2 class="nhsuk-heading-m">Other things you can do</h2>
 
