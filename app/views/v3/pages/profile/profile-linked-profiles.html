@@ -43,6 +43,18 @@
         </div>
       </div>
 
+      <h2 class="app-card__section-heading">Personal details</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Birth details",
+            href: "/" + version + "/pages/baby/birth-details"
+          }
+          ]
+      })}}
+
 
     </div>
   </div>
