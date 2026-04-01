@@ -1,0 +1,32 @@
+{% extends 'layout-app.html' %}
+{% set version = "v4" %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Vaccinations" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Your vaccinations",
+            href: "/" + version + "/pages/vaccinations/vaccine-record-linked-profiles"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
