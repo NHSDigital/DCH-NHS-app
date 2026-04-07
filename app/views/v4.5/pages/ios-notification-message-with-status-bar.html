@@ -1,0 +1,17 @@
+{% extends 'layout-ios-locked-screen.html' %}
+{% set version = "v4.5" %}
+
+{% set statusBar = true %}
+
+{% block content %}
+    
+  <a id="ios-notification" class="ios-notification" href="/{{ version }}/pages/login">
+    <img class="ios-notification-icon" src='/assets/images/nhs-icon-512.png' alt="">
+    <div class="ios-notification-message">
+      <div class="ios-notification-app">NHS Screening</div>
+      <div class="ios-notification-content">You have a new message</div>
+    </div>
+    <div class="ios-notification-time">now</div>
+  </a>
+
+{% endblock %}

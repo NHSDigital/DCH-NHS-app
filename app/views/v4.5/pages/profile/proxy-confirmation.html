@@ -1,0 +1,100 @@
+{% extends 'layout-app.html' %}
+{% set version = "v4.5" %}
+
+{% set hub = "Proxy confirmation" %}
+{% set pageHeading = "Proxy confirmation" %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+<div class="nhsuk-panel" style="background:#fff; color:#212b32;">
+  <h1 class="nhsuk-panel__title">
+    Application complete
+  </h1>
+  <div class="nhsuk-panel__body">
+    Your reference number
+  </div>
+  <div class="nhsuk-panel__body">
+    <strong>CH123456</strong>
+  </div><br>  
+  <div class="nhsuk-panel__body">
+    We've sent your application to your GP surgery.
+  </div>  
+</div>
+
+<p>We've sent you an email containing your reference number. You can use this if you need to follow up your application with your GP surgery.</p>
+<p>You've been logged out to protect your information.</p>
+
+      <h2 class="nhsuk-heading-m">
+        What happens next
+      </h2>
+      <p>Before giving you access, the GP surgery may need to check:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>proof of parental responsibility, for example a birth certificate</li>
+        <li>with anyone else that shares parental responsibility with you</li>
+        <li>for any safeguarding issues</li>
+      </ul>
+      <p>This will usually be done in a few days, but may take up to a month.</p>
+      <p>Contact the GP surgery if you have any questions about your application.</p>
+
+
+      <h2 class="nhsuk-heading-m">
+        How to access GP services
+      </h2>
+
+      <p>Once your GP surgery has set up access, you will automatically be able to use GP services for your child.</p>
+      <p>If this access is set up, you can use the NHS App or log in to the NHS website.</p>
+      <p>Select <strong>Switch profiles</strong> from the home screen to see if Frankie Smith’s profile is linked, and to use these services.</p>
+      <p>If their profile does not appear under <strong>Linked profiles</strong> after a month, contact your GP surgery.</p>
+      <p><a href="#" class="nhsuk-link">Find out more about switching profiles to manage services for another person</a></p>
+
+
+      <h2 class="nhsuk-heading-m">
+        When your access will stop
+      </h2>
+
+      <p>Most GP surgeries have an automatic cut-off age, between 11-14, to protect young people's confidentiality.</p>
+      <p>If your online access ends, you will still be able to manage your child's health and care at the GP surgery in the same way you do now.</p>
+      <p>You can ask your GP surgery to restore access.</p>
+      <p>Your GP surgery will usually check the child agrees to your access (consents) before they restore it, unless there is a reason why the child cannot understand and make an informed decision (called lacking capacity.)</p>
+      <p><a href="#" class="nhsuk-link">Find out more about proxy access on the NHS website.</a></p>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %}
+    <nav class="app-bottom-navigation" id="bottomNav" style="display:block">
+      <div class="nhsuk-width-container">
+        <div class="nhsuk-grid-row">
+          <ul class="app-bottom-navigation__list">
+            <li class="app-bottom-navigation__item">
+              <a class="app-bottom-navigation__link" href="/v4/pages/home-p9">
+                {{ nhsappIcon('home') }}
+                <span class="app-bottom-navigation__label">Home</span>
+              </a>
+            </li>
+            <li class="app-bottom-navigation__item">
+              <a class="app-bottom-navigation__link" href="/v4/pages/messages/messages-p9">
+                {{ nhsappIcon('messages') }}
+                <span class="app-bottom-navigation__label">Messages</span>
+              </a>
+            </li>
+            <li class="app-bottom-navigation__item">
+              <a class="app-bottom-navigation__link" href="/v4/pages/profile/profile-p9">
+                <svg class="nhsapp-icon nhsapp-icon__profile" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 24 24">
+                  <path d="M11.96 2C15.4764 2 18.5619 3.83225 20.334 6.59473C21.2505 8.0214 21.8178 9.69504 21.9072 11.4951C21.9158 11.6656 21.9199 11.8372 21.9199 12.0098C21.9199 17.5343 17.4645 22.0195 11.96 22.0195C6.4554 22.0195 2 17.5343 2 12.0098C2 11.8372 2.0041 11.6656 2.0127 11.4951C2.05597 10.6271 2.21073 9.78789 2.46191 8.99121C3.73559 4.94016 7.50355 2.00002 11.96 2ZM9.96973 14.5C8.05383 14.5002 6.47164 16.1318 6.20898 18.248C7.71904 19.657 9.73958 20.5195 11.96 20.5195C14.1484 20.5195 16.1437 19.6827 17.6465 18.3096C17.4058 16.1635 15.8052 14.5 13.8799 14.5H9.96973ZM11.9297 6.83984C9.98983 6.84001 8.41016 8.42046 8.41016 10.3604C8.41035 12.3001 9.98995 13.8797 11.9297 13.8799C13.8696 13.8799 15.45 12.3002 15.4502 10.3604C15.4502 8.42035 13.8697 6.83984 11.9297 6.83984Z" />
+                </svg>
+                <span class="app-bottom-navigation__label">Profile</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  {% endblock %}
+

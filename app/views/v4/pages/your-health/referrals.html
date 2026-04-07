@@ -1,0 +1,52 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+{% set version = "v4" %}
+{% set backLink = true %}
+
+{% set pageHeading = "Referrals" %}
+{% set pageDescription = "View and manage your referrals" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <!-- PANEL LINK CARD - Your health -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Referrals to action",
+            href: "/" + version + "/pages/#",
+            description: '0 referrals to action'
+          }
+        ]
+      })}}
+
+      <hr>
+
+      <!-- PANEL LINK CARD - Your health -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Pending referrals",
+            href: "/" + version + "/pages/#",
+            description: '0 pending referrals'
+          }
+        ]
+      })}}      
+
+
+    </div>
+  </div>
+
+  {% endblock %}
