@@ -1,0 +1,142 @@
+{% extends 'layout-app.html' %}
+{% set version = "v4" %}
+{% set hub = "Profile" %}
+{% set backLink = true %}
+{% set pageHeading = "Contact preferences" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="symptoms-hint">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        What can we contact you about?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint" id="symptoms-hint">
+      Select all the things you would like to be contacted about
+    </div>
+    <div>
+      <div style="background:#fff; border-radius:8px; padding:1.5em 1em; margin-bottom:1.5em; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <span class="nhsuk-label" style="font-weight:700;">Opt out of all communications</span>
+          <div class="nhsuk-hint" style="margin-bottom:0;">You will not receive any messages, tips, or research invitations.</div>
+        </div>
+        <div style="display: inline-block; vertical-align: middle; margin-left: 1em;">
+          <input type="checkbox" id="toggle-optout" name="optout" style="display:none;">
+          <label for="toggle-optout" id="toggle-label-optout" style="cursor: pointer; width: 48px; height: 28px; background: #ccc; display: inline-block; border-radius: 28px; position: relative; transition: background 0.2s;">
+            <span style="content: ''; position: absolute; left: 4px; top: 4px; width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: left 0.2s; display: block;" id="toggle-knob-optout"></span>
+          </label>
+        </div>
+      </div>
+      <hr style="border:0; border-top:2px solid #d8dde0; margin:2em 0;">
+      <div style="background:#fff; border-radius:8px; padding:1.5em 1em; margin-bottom:1.5em; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <span class="nhsuk-label" style="font-weight:700;">Age based messages</span>
+          <div class="nhsuk-hint" style="margin-bottom:0;">Get messages relevant to your age or your child's age.</div>
+        </div>
+        <div style="display: inline-block; vertical-align: middle; margin-left: 1em;">
+          <input type="checkbox" id="toggle-abm" name="abm" style="display:none;">
+          <label for="toggle-abm" style="cursor: pointer; width: 48px; height: 28px; background: #ccc; display: inline-block; border-radius: 28px; position: relative; transition: background 0.2s;">
+            <span style="content: ''; position: absolute; left: 4px; top: 4px; width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: left 0.2s; display: block;" id="toggle-knob-abm"></span>
+          </label>
+        </div>
+      </div>
+      <div style="background:#fff; border-radius:8px; padding:1.5em 1em; margin-bottom:1.5em; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <span class="nhsuk-label" style="font-weight:700;">Weekly baby tips</span>
+          <div class="nhsuk-hint" style="margin-bottom:0;">Receive weekly tips and advice for your baby's development.</div>
+        </div>
+        <div style="display: inline-block; vertical-align: middle; margin-left: 1em;">
+          <input type="checkbox" id="toggle-weekly" name="weekly" style="display:none;">
+          <label for="toggle-weekly" style="cursor: pointer; width: 48px; height: 28px; background: #ccc; display: inline-block; border-radius: 28px; position: relative; transition: background 0.2s;">
+            <span style="content: ''; position: absolute; left: 4px; top: 4px; width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: left 0.2s; display: block;" id="toggle-knob-weekly"></span>
+          </label>
+        </div>
+      </div>
+      <div style="background:#fff; border-radius:8px; padding:1.5em 1em; margin-bottom:1.5em; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <span class="nhsuk-label" style="font-weight:700;">Research opportunities</span>
+          <div class="nhsuk-hint" style="margin-bottom:0;">Be invited to take part in NHS research studies and surveys.</div>
+        </div>
+        <div style="display: inline-block; vertical-align: middle; margin-left: 1em;">
+          <input type="checkbox" id="toggle-research" name="research" style="display:none;">
+          <label for="toggle-research" style="cursor: pointer; width: 48px; height: 28px; background: #ccc; display: inline-block; border-radius: 28px; position: relative; transition: background 0.2s;">
+            <span style="content: ''; position: absolute; left: 4px; top: 4px; width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: left 0.2s; display: block;" id="toggle-knob-research"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<script>
+  function setupToggle(toggleId, knobId, labelId) {
+    const toggle = document.getElementById(toggleId);
+    const knob = document.getElementById(knobId);
+    const label = labelId ? document.getElementById(labelId) : toggle.nextElementSibling;
+    function updateToggle() {
+      if (toggle.checked) {
+        label.style.background = '#007f3b';
+        knob.style.left = '24px';
+      } else {
+        label.style.background = '#ccc';
+        knob.style.left = '4px';
+      }
+    }
+    toggle.addEventListener('change', updateToggle);
+    updateToggle();
+  }
+  setupToggle('toggle-abm', 'toggle-knob-abm');
+  setupToggle('toggle-weekly', 'toggle-knob-weekly');
+  setupToggle('toggle-research', 'toggle-knob-research');
+  setupToggle('toggle-optout', 'toggle-knob-optout', 'toggle-label-optout');
+
+  // Opt out toggle logic
+  const optout = document.getElementById('toggle-optout');
+  const optoutLabel = document.getElementById('toggle-label-optout');
+  const abm = document.getElementById('toggle-abm');
+  const weekly = document.getElementById('toggle-weekly');
+  const research = document.getElementById('toggle-research');
+  function updateOptoutState() {
+    if (optout.checked) {
+      abm.checked = false;
+      weekly.checked = false;
+      research.checked = false;
+      abm.disabled = true;
+      weekly.disabled = true;
+      research.disabled = true;
+      abm.nextElementSibling.style.opacity = 0.5;
+      weekly.nextElementSibling.style.opacity = 0.5;
+      research.nextElementSibling.style.opacity = 0.5;
+      optoutLabel.style.background = '#007f3b';
+    } else {
+      abm.disabled = false;
+      weekly.disabled = false;
+      research.disabled = false;
+      abm.nextElementSibling.style.opacity = 1;
+      weekly.nextElementSibling.style.opacity = 1;
+      research.nextElementSibling.style.opacity = 1;
+      optoutLabel.style.background = '#ccc';
+    }
+  }
+  optout.addEventListener('change', updateOptoutState);
+  updateOptoutState();
+</script>
+
+        {{ button({
+          text: "Save preferences",
+          classes: "nhsapp-button"
+        }) }}
+
+    <p class="nhsuk-body">Find out more about your data protection rights 
+      <a href="https://www.nhs.uk/your-nhs-data-matters/manage-your-choice">www.nhs.uk/your-nhs-data-matters/manage-your-choice</a>
+    </p>
+
+    </div>
+  </div>
+
+{% endblock %}

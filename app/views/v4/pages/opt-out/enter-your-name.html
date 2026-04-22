@@ -1,0 +1,50 @@
+{% extends 'layout-app.html' %}
+{% set version = "v4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Enter your name
+      </h1>
+    </legend>
+
+      <div class="nhsuk-hint">
+  Enter the exact name you used when you registered with your GP practice.
+</div>
+
+
+<div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="first-name">
+      First name
+    </label>
+    <input class="nhsuk-input" id="first-name" name="firstName" type="text" autocomplete="given-name">
+  </div>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="last-name">
+      Last name
+    </label>
+    <input class="nhsuk-input" id="last-name" name="lastName" type="text" autocomplete="family-name">
+  </div>
+
+    
+     
+      {{ button({
+        text: "Continue",
+        classes: "nhsapp-button",
+        href: "/" + version + "/pages/opt-out/enter-date-of-birth.html"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
