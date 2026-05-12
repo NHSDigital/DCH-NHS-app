@@ -1,0 +1,101 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.3" %}
+
+{% set hub = "Home" %}
+{% set linkedProfile = true %}
+{% set pageHeading = "Newborn and infant physical examination (NIPE)" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE 
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          linkedProfile: {
+            name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+            age: data['linkedProfileAge'], 
+            nhsNumber: data['nhsNumber']
+          }
+        })}}
+      {% endif %} -->
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">Newborn and infant physical examination (NIPE)</h1>
+
+    <!-- About NIPE -->
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+            <h2 class="nhsuk-heading-m">About the examination </h2>
+               <p>The newborn physical examination checks for any problems with your baby. It's usually done within 72 hours of them being born.</p>
+              
+        
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Examination results</dt>
+              <dd class="nhsuk-summary-list__value">Complete - Examination Complete</dd>
+            </div>         
+          </dl> 
+        
+
+               <p>Learn more about <a href="https://www.nhs.uk/baby/newborn-screening/physical-examination/">newborn physical examination.</a></p>
+        </div>
+      </div>
+      
+    <!-- Birth information card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+      <!-- Details section -->
+      <h2 class="nhsuk-heading-m">Details</h2>   
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Date of screening</dt>
+          <dd class="nhsuk-summary-list__value">21 September 2025</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Screen location</dt>
+          <dd class="nhsuk-summary-list__value">Hospital</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Facility</dt>
+          <dd class="nhsuk-summary-list__value">Nottingham Women's Hospital</dd>
+        </div>
+      </dl>
+      </div></div>
+
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+      <!-- Conclusion of physical examination section -->
+      <h2 class="nhsuk-heading-m">Conclusion of physical examination</h2>
+      
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Eyes</dt>
+          <dd class="nhsuk-summary-list__value">No abnormalities and no risk factors</dd>
+        </div>        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Heart</dt>
+          <dd class="nhsuk-summary-list__value">No abnormalities and no risk factors</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Hips</dt>
+          <dd class="nhsuk-summary-list__value">No abnormalities and no risk factors</dd>
+        </div>        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Testes</dt>
+          <dd class="nhsuk-summary-list__value">No abnormalities</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Physical exam/additional comments</dt>
+          <dd class="nhsuk-summary-list__value">No abnormalities</dd>
+        </div>
+      </dl>
+      </div></div>
+
+{% endblock %}

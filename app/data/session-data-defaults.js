@@ -9,8 +9,31 @@ module.exports = {
   "linkedProfileFirstName": "Teddy",
   "linkedProfileLastName": "Goodall",
   "nhsNumber": "123 456 7899",
-  "linkedProfileAge": "0 years 3 weeks 2 days old",
+  "linkedProfileAge": "0 years 3 weeks 2",
 
+  // Set linked profile details
+  "linkedProfile2FirstName": "Lucy",
+  "linkedProfile2LastName": "Swanson",
+  "nhsNumber": "123 456 7899",
+  "linkedProfile2Age": "16",
+
+  // Set linked profile details
+  "linkedProfile3FirstName": "Mary",
+  "linkedProfile3LastName": "Gibson",
+  "nhsNumber": "123 456 7899",
+  "linkedProfile3Age": "77",
+
+  // Set linked profile details
+  "linkedProfile4FirstName": "Michael",
+  "linkedProfile4LastName": "Goodall",
+  "nhsNumber": "123 456 7899",
+  "linkedProfile4Age": "46",
+
+  // Set linked profile details
+  "linkedProfile5FirstName": "Ellen",
+  "linkedProfile5LastName": "Murphy",
+  "nhsNumber": "123 456 7899",
+  "linkedProfile5Age": "53",
 
   // Set user details
   "userFirstName": "Jane",

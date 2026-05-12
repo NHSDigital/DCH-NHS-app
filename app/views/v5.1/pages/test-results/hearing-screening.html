@@ -1,0 +1,158 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.1" %}
+
+{% set hub = "Home" %}
+{% set linkedProfile = true %}
+{% set pageHeading = "Hearing screening results" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE 
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          linkedProfile: {
+            name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+            age: data['linkedProfileAge'], 
+            nhsNumber: data['nhsNumber']
+          }
+        })}}
+      {% endif %} -->
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">Newborn hearing screening results</h1>
+
+      <!-- Summary  card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Screen results</dt>
+              <dd class="nhsuk-summary-list__value">Clear Response - No Follow-up Required</dd>
+            </div>         
+          </dl>
+            <p>
+                <a href="https://www.nhs.uk/baby/newborn-screening/hearing-test/" class="nhsuk-link">Read about hearing screening programme</a>
+            </p>  
+        </div>
+      </div>      
+
+      
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">1st Automated Otoacoustic Emission Test (AOAE)</h2>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test date</dt>
+              <dd class="nhsuk-summary-list__value">23rd September 2025</dd>
+            </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Screen location</dt>
+          <dd class="nhsuk-summary-list__value">Hospital</dd>
+        </div>            
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test location</dt>
+              <dd class="nhsuk-summary-list__value">Nottingham Women's Hospital</dd>
+            </div>            
+          </dl>
+
+        <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-2">Right Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Result</dt>
+              <dd class="nhsuk-summary-list__value">Clear Response - No Follow-up Required</dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-2">Left Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Result</dt>
+              <dd class="nhsuk-summary-list__value">Clear Response - No Follow-up Required</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- 2st test card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">2nd Automated Otoacoustic Emission Test (AOAE)</h2>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test date</dt>
+              <dd class="nhsuk-summary-list__value">25th September 2025</dd>
+            </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Screen location</dt>
+          <dd class="nhsuk-summary-list__value">Hospital</dd>
+        </div>            
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test location</dt>
+              <dd class="nhsuk-summary-list__value">Nottingham Women's Hospital</dd>
+            </div>              
+          </dl>
+
+        <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-2">Right Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Result</dt>
+              <dd class="nhsuk-summary-list__value">Clear Response - No Follow-up Required</dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-2">Left Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Result</dt>
+              <dd class="nhsuk-summary-list__value">Clear Response - No Follow-up Required</dd>
+            </div>
+          </dl>       
+        </div>
+      </div>
+
+      <!-- AABR test card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m"> Automated Auditory Brainstem Response (AABR)</h2>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test date</dt>
+              <dd class="nhsuk-summary-list__value">29th September 2025</dd>
+            </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">Screen location</dt>
+          <dd class="nhsuk-summary-list__value">Hospital</dd>
+        </div>            
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test location</dt>
+              <dd class="nhsuk-summary-list__value">Nottingham Women's Hospital</dd>
+            </div>              
+          </dl>
+
+        <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-2">Right Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Result</dt>
+              <dd class="nhsuk-summary-list__value">Clear Response - No Follow-up Required</dd>
+            </div>
+          </dl>
+
+          <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-2">Left Ear</h3>
+          <dl class="nhsuk-summary-list nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Result</dt>
+              <dd class="nhsuk-summary-list__value">Clear Response - No Follow-up Required</dd>
+            </div>
+          </dl>     
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

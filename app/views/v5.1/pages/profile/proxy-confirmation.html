@@ -1,0 +1,68 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.1" %}
+
+{% set hub = "Proxy confirmation" %}
+{% set pageHeading = "Proxy confirmation" %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+<div class="nhsuk-panel" style="background:#fff; color:#212b32;">
+  <h1 class="nhsuk-panel__title">
+    Application complete
+  </h1>
+  <div class="nhsuk-panel__body">
+    Your reference number
+  </div>
+  <div class="nhsuk-panel__body">
+    <strong>CH123456</strong>
+  </div><br>  
+  <div class="nhsuk-panel__body">
+    We've sent your application to your GP surgery.
+  </div>  
+</div>
+
+<p>We've sent you an email containing your reference number. You can use this if you need to follow up your application with your GP surgery.</p>
+<p>You've been logged out to protect your information.</p>
+
+      <h2 class="nhsuk-heading-m">
+        What happens next
+      </h2>
+      <p>Before giving you access, the GP surgery may need to check:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>proof of parental responsibility, for example a birth certificate</li>
+        <li>with anyone else that shares parental responsibility with you</li>
+        <li>for any safeguarding issues</li>
+      </ul>
+      <p>This will usually be done in a few days, but may take up to a month.</p>
+      <p>Contact the GP surgery if you have any questions about your application.</p>
+
+
+      <h2 class="nhsuk-heading-m">
+        How to access GP services
+      </h2>
+
+      <p>Once your GP surgery has set up access, you will automatically be able to use GP services for your child.</p>
+      <p>If this access is set up, you can use the NHS App or log in to the NHS website.</p>
+      <p>Select <strong>Switch profiles</strong> from the home screen to see if Frankie Smith’s profile is linked, and to use these services.</p>
+      <p>If their profile does not appear under <strong>Linked profiles</strong> after a month, contact your GP surgery.</p>
+      <p><a href="#" class="nhsuk-link">Find out more about switching profiles to manage services for another person</a></p>
+
+
+      <h2 class="nhsuk-heading-m">
+        When your access will stop
+      </h2>
+
+      <p>Most GP surgeries have an automatic cut-off age, between 11-14, to protect young people's confidentiality.</p>
+      <p>If your online access ends, you will still be able to manage your child's health and care at the GP surgery in the same way you do now.</p>
+      <p>You can ask your GP surgery to restore access.</p>
+      <p>Your GP surgery will usually check the child agrees to your access (consents) before they restore it, unless there is a reason why the child cannot understand and make an informed decision (called lacking capacity.)</p>
+      <p><a href="#" class="nhsuk-link">Find out more about proxy access on the NHS website.</a></p>
+
+    </div>
+  </div>
+
+  {% endblock %}

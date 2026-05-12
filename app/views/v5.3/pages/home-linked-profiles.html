@@ -1,0 +1,94 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.3" %}
+
+{% set hub = "Home" %}
+
+{% set linkedProfile = true %}
+{% set backLink = true %}
+
+{% set pageHeading = "Home" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <!--
+      {{ dynamicPageTitle({
+        linkedProfile: {
+          name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName']
+        }
+      })}}
+      -->
+      
+      <!--
+      <ol class="nhsapp-cards nhsapp-cards--new nhsapp-cards--stacked">
+          <li class="nhsapp-card nhsapp-card--new">
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+              <div class="nhsapp-card__content"><p class="nhsapp-card__title">NHS number</p>
+                <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">412 876 5439</p>
+                </div>
+              </div>
+            </div>  
+            </li>
+      </ol>
+      -->
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [      
+          {
+            title: "Prescriptions",
+            href: "/" + version + "/pages/prescriptions/prescriptions-linked-profiles"
+          },
+          {
+            title: "Appointments",
+            href: "/" + version + "/pages/appointments/appointments-linked-profiles"
+          },
+          {
+            title: "Test results",
+            href: "/" + version + "/pages/test-results/test-results-linked-profiles"
+          },
+          {
+            title: "Vaccinations",
+            href: "/" + version + "/pages/vaccinations/vaccinations-linked-profiles"
+          },
+          {
+            title: "Health conditions",
+            href: "/" + version + "/pages/health-conditions/health-conditions-linked-profiles"
+          },
+          {
+            title: "Documents",
+            href: "/" + version + "/pages/documents/documents-linked-profiles"
+          }
+        ]
+      }) }}
+
+      <h2 class="app-card__section-heading">NHS information and support</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        classes: 'nhsapp-cards--secondary',
+        cards: [
+          {
+            title: "Check your symptoms using 111 online",
+            href: "/" + version + "/pages/111-online"
+          },
+          {
+            title: "Health A to Z",
+            href: "/" + version + "/pages/health-a-z"
+          },
+          {
+            title: "Find services near you",
+            href: "#"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
