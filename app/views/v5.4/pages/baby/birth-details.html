@@ -1,0 +1,104 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.2" %}
+
+{% set hub = "Home" %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Birth details" %}
+
+{% set backLink = true %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-xl">Teddy's birth details</h1>
+        <ol class="nhsapp-cards nhsapp-cards--new nhsapp-cards--stacked">
+          <li class="nhsapp-card nhsapp-card--new">
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+              <div class="nhsapp-card__content"><p class="nhsapp-card__title">NHS number</p>
+                <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">412 876 5439</p>
+                </div>
+              </div>
+            </div>  
+            </li>          
+          <li class="nhsapp-card nhsapp-card--new">
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+                <div class="nhsapp-card__content"><p class="nhsapp-card__title">Birth date</p>
+                  <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0"></p>21 September 2025</p>
+                  </div> 
+                </div>
+            </div>
+          </li>
+
+          <li class="nhsapp-card nhsapp-card--new">
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+              <div class="nhsapp-card__content"><p class="nhsapp-card__title">Birth time</p>
+                <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">03:44</p>
+                      </div>
+                </div>
+              </div>
+            </li>
+  
+  
+          <li class="nhsapp-card nhsapp-card--new"> 
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+              <div class="nhsapp-card__content"><p class="nhsapp-card__title">Birthplace</p>
+                <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">Nottingham Women’s Hospital</p>          
+                </div>
+                </div>
+            </div>
+          </li>      
+      </ol>
+
+       <h2 class="nhsuk-heading-s">About Teddy</h2>
+        <ol class="nhsapp-cards nhsapp-cards--new nhsapp-cards--stacked">
+          <li class="nhsapp-card nhsapp-card--new">
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+                <div class="nhsapp-card__content"><p class="nhsapp-card__title">Sex at birth</p>
+                  <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">Male</p>
+                  </div> 
+                </div>
+            </div>
+          </li>
+
+          <li class="nhsapp-card nhsapp-card--new">
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+              <div class="nhsapp-card__content"><p class="nhsapp-card__title">Birth weight</p>
+                <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">3,570g</p>
+                      </div>
+                </div>
+              </div>
+            </li>
+
+          <li class="nhsapp-card nhsapp-card--new"> 
+            <div class="nhsapp-card__container nhsapp-card__container--new">
+              <div class="nhsapp-card__content"><p class="nhsapp-card__title">Gestational age</p>
+                <div class="nhsapp-card__below">
+                  <p class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">39.0</p>          
+                </div>
+                </div>
+            </div>
+          </li>
+      </ol>      
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}

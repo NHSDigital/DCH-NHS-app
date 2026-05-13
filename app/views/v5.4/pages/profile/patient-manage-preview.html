@@ -1,0 +1,89 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Profile" %}
+{% set version = "v5.2" %}
+
+
+{% set backLink = true %}
+
+  {% set pageHeading = "You care for " ~ data.linkedProfileFirstName ~ " " ~ data.linkedProfileLastName %}
+  {% set careName = " " ~ data.linkedProfileFirstName %}
+  {% set Age = " " ~ data.linkedProfileAge %}
+  {% set summaryName = data.linkedProfileFirstName ~ " " ~ data.linkedProfileLastName %}
+
+
+{% block content %}
+
+  
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+{% from "inset-text/macro.njk" import insetText %}
+
+{% set insetTextHtml %}
+  <p>You can act on their behalf.</p>
+{% endset %}
+
+{{ insetText({
+  html: insetTextHtml
+}) }}
+
+      <form action="/{{ version }}/pages/account-and-settings/switch-profiles" method="post" novalidate>
+
+        <input type="hidden" name="accountType" value="p9">
+
+{% from "button/macro.njk" import button %}
+
+{{ button({
+  text: "Switch to" + careName + "'s profile",
+  classes: "nhsapp-button"
+}) }}
+      </form>
+
+
+
+{% from "summary-list/macro.njk" import summaryList %}
+
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: summaryName
+      }
+    },
+    {
+      key: {
+        text: "Age"
+      },
+      value: {
+        text: Age ~ " years old"
+      }
+    }
+  ]
+}) }}
+
+<form action="#" method="post" novalidate>
+
+{% from "button/macro.njk" import button %}
+
+{{ button({
+  text: "Remove" ~ careName ~ "'s profile",
+  classes: 'nhsuk-button--secondary nhsapp-button'
+}) }}
+
+</form>
+
+
+
+    </div>
+  </div>
+  {% endblock %}

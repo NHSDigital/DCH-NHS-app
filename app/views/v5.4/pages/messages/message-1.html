@@ -1,0 +1,73 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.2" %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "NHS Screening" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+
+      <fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+    Newborn blood spot screening results
+  </legend>
+</fieldset>
+
+      <p class="nhsuk-body">
+          A newborn bloodspot screening test was completed on 7 May for someone who:
+      </p>
+
+      <div class="nhsuk-body">
+  <ul>
+    <li>was born on 1 May</li>
+    <li>has a first name beginning with R</li>
+    <li>has an NHS number ending 4667</li>
+  </ul>
+
+  <h2 class="nhsuk-heading-m">Bloodspot test result</h2>
+  <p>None of the conditions tested for are suspected. No further action is required.</p>
+
+  <h2 class="nhsuk-heading-m">How to see the full result</h2>
+  <p>If you have family or carer access for this person, you can see the detailed result in their profile under 'test results'. If you don't, you can request it by using the 'apply to access services for someone else' link.</p>
+</div>
+
+<fieldset class="nhsuk-fieldset nhsuk-u-padding-top-4">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+    More about newborn screening
+  </legend>
+</fieldset>
+
+<p class="nhsuk-body">
+Visit the NHS website for information about:
+</p>
+
+
+<div>
+    <ul>
+        <li>newborn blood spot screening, at&nbsp;<a href="http://www.nhs.uk/bloodspot">www.nhs.uk/bloodspot</a></li>
+    
+        <li>screening for sickle cell and thalassaemia, at&nbsp;<a href="http://www.nhs.uk/sct">www.nhs.uk/sct</a></li></ul>
+</div>
+<p>&nbsp;</p>
+<p><span>Visit&nbsp;<a href="http://www.nhs.uk/">www.nhs.uk</a> or call NHS 111 for general health advice and information.</span></p>       
+    </div>
+  </div>
+
+  {% endblock %}

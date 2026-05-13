@@ -1,0 +1,55 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.2" %}
+
+{% set hub = "Apply to access services for someone else" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Manage health services for others" %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+    <p>Use this service to send an application to your GP surgery for review. Your GP will check the other person approves your access, if they can understand this.</p>
+    <p>You need to be at the same GP surgery as the person you want to help.</p>
+
+      <h2 class="nhsuk-heading-s">
+        Before you start
+      </h2>
+      
+<div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>Discuss setting up this access with the person you want to help, if they can understand this.</p>
+</div>
+
+      <p>You'll need to give details of the person you'd like to help. We'll ask for their:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>name</li>
+        <li>date of birth</li>
+        <li>NHS number or postcode <span class="nhsuk-u-secondary-text">(using their NHS number is the best way for us to identify them)</span></li>
+      </ul>
+      <p>If you're applying to help someone aged 16 or over, we'll email them your answers.</p>
+
+  <a href="/{{ version }}/pages/profile/proxy-confirmation.html" class="nhsuk-button nhsapp-button" data-module="nhsuk-button" role="button">
+    Start now
+  </a>
+
+  <p>By using this service, you agree to the <a href="https://www.nhs.uk/nhs-services/gps/gp-services-for-someone-else-proxy-access/proxy-application-service/terms-of-use/" class="nhsuk-link" rel="noopener noreferrer" target="_blank">terms of use</a> and <a href="https://www.nhs.uk/nhs-services/gps/gp-services-for-someone-else-proxy-access/proxy-application-service/privacy-policy/" class="nhsuk-link" rel="noopener noreferrer" target="_blank">privacy policy</a>.</p>
+
+
+    </div>
+  </div>
+
+  {% endblock %}
+
