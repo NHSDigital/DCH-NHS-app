@@ -3,36 +3,36 @@ module.exports = {
   // Insert values here
 
   // Defaults page view to native
-  "web": "no", 
+  "web": "no",
 
   // Set linked profile details
   "linkedProfileFirstName": "Teddy",
   "linkedProfileLastName": "Goodall",
-  "nhsNumber": "123 456 7899",
-  "linkedProfileAge": "0 years 3 weeks 2",
+  "linkedProfileNhsNumber": "123 456 7891",
+  "linkedProfileAge": "0 years 3 weeks old",
 
   // Set linked profile details
   "linkedProfile2FirstName": "Lucy",
   "linkedProfile2LastName": "Swanson",
-  "nhsNumber": "123 456 7899",
+  "linkedProfile2NhsNumber": "123 456 7892",
   "linkedProfile2Age": "16",
 
   // Set linked profile details
   "linkedProfile3FirstName": "Mary",
   "linkedProfile3LastName": "Gibson",
-  "nhsNumber": "123 456 7899",
+  "linkedProfile3NhsNumber": "123 456 7893",
   "linkedProfile3Age": "77",
 
   // Set linked profile details
   "linkedProfile4FirstName": "Michael",
   "linkedProfile4LastName": "Goodall",
-  "nhsNumber": "123 456 7899",
+  "linkedProfile4NhsNumber": "123 456 7894",
   "linkedProfile4Age": "46",
 
   // Set linked profile details
   "linkedProfile5FirstName": "Ellen",
   "linkedProfile5LastName": "Murphy",
-  "nhsNumber": "123 456 7899",
+  "linkedProfile5NhsNumber": "123 456 7895",
   "linkedProfile5Age": "53",
 
   // Set user details
@@ -46,11 +46,12 @@ module.exports = {
 
   
   // Messages
-  "message1read": "false", 
-  "message2read": "true", 
+  // Use true/false booleans (not strings) so Nunjucks truthiness checks work correctly
+  "message1read": false,
+  "message2read": true,
   "messages": 1, // This displays in the messages badge - set this to the number of unread messages - For example, if 'message1read = true' and 'message2read = false', then set the 'messages' number to 1
-  "messageSendingError": "true", // Shows 'cannot send your reply' screen for message 2
-  
+  "messageSendingError": true, // Shows 'cannot send your reply' screen for message 2
+
 
   // Set account type - p9, p5 or linked-profiles
   "accountType": "p9",
@@ -93,6 +94,7 @@ module.exports = {
   "appointments": 4,
 
   // Errors
+  // Use string comparisons in templates: {% if data['loginError'] === "yes" %}
   "loginError": "no",
   "gpAppointmentError": "no",
 
