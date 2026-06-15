@@ -2,7 +2,7 @@
 
 module.exports = {
   // Service name
-  serviceName: 'Service name goes here',
+  serviceName: 'Digital Child Health',
 
   // Port to run on locally
   port: 3000
