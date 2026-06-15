@@ -13,6 +13,19 @@
   padding: 0;
 }
 
+// Makes a <button> render as an inline link.
+// Use when a form submission action is semantically an action, not navigation.
+.app-button-as-link {
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
 .nhsuk-link--no-visited-state {
   .nhsuk-icon {
     fill: currentColor !important;
