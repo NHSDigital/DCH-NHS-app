@@ -1,3 +1,15 @@
-<a class="nhsuk-back-link" href="{% if backLinkURL %}{{ backLinkURL }}{% else %}javascript: window.history.go(-1){% endif %}">
+{% if backLinkURL %}
+<a class="nhsuk-back-link" href="{{ backLinkURL }}">
   {% if backLinkText %}{{ backLinkText }}{% else %}Back{% endif %}
 </a>
+{% else %}
+{#
+  No backLinkURL set — render a button that mimics the back-link style.
+  Using javascript: href is an anti-pattern: it breaks CSP, confuses screen
+  readers, and is flagged by accessibility audits. A <button> is the correct
+  element for a JS-driven action.
+#}
+<button class="nhsuk-back-link app-back-link-button" type="button" onclick="window.history.go(-1)">
+  {% if backLinkText %}{{ backLinkText }}{% else %}Back{% endif %}
+</button>
+{% endif %}
