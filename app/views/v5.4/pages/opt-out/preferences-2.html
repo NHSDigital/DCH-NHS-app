@@ -22,37 +22,10 @@
 
 
 
-    {% from "radios/macro.njk" import radios %}
-    {% from "fieldset/macro.njk" import fieldset %}
-    {% from "hint/macro.njk" import hint %}
 
-    {{ radios({
-    idPrefix: "example-hints",
-    name: "exampleHints",
-    fieldset: {
-    legend: {
-    text: "Unsubscribe from Age-Based Messages",
-    size: "l",
-    isPageHeading: true
-    }
-    },
-    hint: {
-    text: "Select 1 option"
-    },
-    items: [
-    {
-    value: "No",
-    text: "No, keep my messages"
-    },
-    {
-    value: "Yes",
-    text: "Yes, stop my messages"
-    }
-    ]
-    }) }}
 
     {{ button({
-    text: "Save",
+    text: "Ubsubscribe",
     classes: "nhsapp-button"
     }) }}
 
