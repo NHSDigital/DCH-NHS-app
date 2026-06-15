@@ -35,27 +35,7 @@
 {% block head %}
   {{ super() }}
   <meta name="theme-color" content="#f0f4f5">
-
-  <!-- CHANGES HTML BACKGROUND COLOUR IF VARIABLE 'WEB' ON PAGE IS TRUE -->
-  {% if data['web'] === "yes" %}
-
-  <style>
-    #hc_extension_bkgnd {
-      background-color: #d8dde0 !important;
-    }
-  </style>
-
-  {% else %}
-    <style>
-      html {
-        background-color: #f0f4f5;
-      }
-
-      #hc_extension_bkgnd {
-        background-color: #f0f4f5 !important;
-      }
-    </style>
-  {% endif %}
+  {# Background colours are set via .nhs-app-web / .nhs-app-native body classes in SCSS — no inline styles needed #}
 {% endblock %}
 
 <!-- HEADER -->
