@@ -25,33 +25,24 @@
 
         {{ input({
         label: {
-            text: "First Name"
+        text: "First name"
         },
         id: "first-name",
-        name: "first-name",
-        classes: "nhsuk-input--width-20"
+        name: "first-name"
         }) }}
 
-
-
-        <div>{% from "input/macro.njk" import input %}
-
-            {{ input({
-            label: {
-                text: "Last Name"
-            },
-            id: "last-name",
-            name: "last-name",
-            classes: "nhsuk-input--width-20"
-            }) }}
-        </div>
-
-
+        {{ input({
+        label: {
+        text: "Last name"
+        },
+        id: "last-name",
+        name: "last-name"
+        }) }}
 
         {{ button({
         text: "Continue",
         classes: "nhsapp-button",
-        href: "/" + version + "/pages/opt-out/enter-date-of-birth.html"
+        href: "/" + version + "/pages/opt-out/enter-your-nhs-number.html"
         }) }}
 
     </div>
