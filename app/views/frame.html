@@ -3,6 +3,13 @@
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
+{#
+  iframeSrc should be set by the including page, e.g.:
+    {% set iframeSrc = "/" + version + "/pages/home-p9" %}
+  Defaults to the home page if not supplied.
+#}
+{% set resolvedIframeSrc = iframeSrc if iframeSrc else "/" %}
+
 {% block beforeContent %}
   {{ backLink({
     "text": "Back",
@@ -21,7 +28,7 @@
     <iframe
       id="inlineFrameExample"
       title="Inline Frame Example"
-      src="pages/home-p9">
+      src="{{ resolvedIframeSrc }}">
     </iframe>
   </div>
 
