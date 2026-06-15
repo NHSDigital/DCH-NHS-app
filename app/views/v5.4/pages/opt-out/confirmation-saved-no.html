@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Your choice has been saved.
+      </h1>
+      <p> This is to confirm that you will no longer receive age-based messages from us. Even though you’ve stopped your message, support and guidance for you and your baby is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
+        <br>
+        If you would like to provide some feedback about this service, you can do so at insert link.</p>
+    </legend>
+
+    <h2 class="nhsuk-fieldset__heading">
+      More Information
+    </h2>
+    <p> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/"class="nhsuk-link--no-visited-state>privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+ </div>
+</div>
+{% endblock %}

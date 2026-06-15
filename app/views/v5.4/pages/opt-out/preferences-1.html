@@ -3,7 +3,7 @@
 {% set hub = "Profile" %}
 {% set backLink = true %}
 {% set pageHeading = "Unsubscribe from Age-Based Messages" %}
-{% set pageDescription = "You are currently receiving age-based messages. These are sent at key moments in your baby's first year with reminders and guidance about appointments, check-ups and more. Would you like to stop receiving NHS age-based messages about your baby?." %}
+{% set pageDescription = "You are currently receiving age-based messages. These are sent at key moments in your baby's first year with reminders and guidance about appointments, check-ups and more." %}
 
 {% block content %}
 
@@ -31,8 +31,8 @@
     name: "exampleHints",
     fieldset: {
     legend: {
-    text: "Unsubscribe from Age-Based Messages",
-    size: "l",
+    text: "Would you like to stop receiving NHS age-based messages?",
+    size: "m",
     isPageHeading: true
     }
     },
@@ -41,12 +41,12 @@
     },
     items: [
     {
-    value: "No",
-    text: "No, keep my messages"
+    value: "Yes",
+    text: "Yes, stop sending me messages"
     },
     {
-    value: "Yes",
-    text: "Yes, stop my messages"
+    value: "No",
+    text: "No, keep sending me messages"
     }
     ]
     }) }}
@@ -56,9 +56,7 @@
     classes: "nhsapp-button"
     }) }}
 
-    <p class="nhsuk-body">Find out more about your data protection rights
-      <a href="https://www.nhs.uk/your-nhs-data-matters/manage-your-choice">www.nhs.uk/your-nhs-data-matters/manage-your-choice</a>
-    </p>
+
 
   </div>
 </div>
