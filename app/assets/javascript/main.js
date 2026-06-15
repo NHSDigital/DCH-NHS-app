@@ -1,5 +1,8 @@
 import $ from 'jquery';
 
+// Expose jQuery globally so inline pageScripts blocks can use $(...)
+window.$ = $;
+
 // Greeting message
 
 var thehours = new Date().getHours();

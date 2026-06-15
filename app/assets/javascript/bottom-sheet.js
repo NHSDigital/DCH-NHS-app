@@ -2,6 +2,13 @@ const $ = document.querySelector.bind(document)
 
 const openSheetButton = $("#open-sheet")
 const sheet = $("#sheet")
+
+// Guard: this script is bundled globally but the bottom sheet is only present
+// on certain pages. Exit early to avoid TypeErrors on pages without #sheet.
+if (!sheet || !openSheetButton) {
+  // nothing to initialise on this page
+} else {
+
 const sheetContents = sheet.querySelector(".app-bottom-sheet__contents")
 const draggableArea = sheet.querySelector(".app-bottom-sheet__draggable-area")
 const html = document.querySelector("html")
@@ -108,3 +115,5 @@ window.addEventListener("touchmove", onDragMove)
 
 window.addEventListener("mouseup", onDragEnd)
 window.addEventListener("touchend", onDragEnd)
+
+} // end of bottom sheet guard

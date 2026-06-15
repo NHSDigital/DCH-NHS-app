@@ -3,6 +3,29 @@
   @include nhsuk-font-size(19);
 }
 
+// Used on <button> elements that carry .nhsuk-back-link.
+// .nhsuk-back-link already resets border, background, cursor and padding —
+// we only need to add what the framework doesn't cover for <button> elements.
+// DO NOT add padding: 0 here — .nhsuk-back-link sets padding-left to create
+// space for the chevron ::before pseudo-element and that must not be overridden.
+.app-back-link-button {
+  appearance: none;          // removes system button chrome (Safari/iOS)
+  font-family: inherit;      // <button> does not inherit font-family by default
+}
+
+// Makes a <button> render as an inline link.
+// Use when a form submission action is semantically an action, not navigation.
+.app-button-as-link {
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
 .nhsuk-link--no-visited-state {
   .nhsuk-icon {
     fill: currentColor !important;

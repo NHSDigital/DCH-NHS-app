@@ -24,7 +24,7 @@
 {% block head %}
   <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
   <link href="/assets/sass/main.css" rel="stylesheet">
-  <link rel="/assets/manifest.json" href="/manifest.json">
+  <link rel="manifest" href="/assets/manifest.json">
 {% endblock %}
 
 <!-- Set the page title -->
@@ -68,13 +68,9 @@
 
 {% block bodyEnd %}
   {{ super() }}
-  <script type="module" src="/assets/javascript/jquery-4.0.0.min.js"></script>
+  <!-- main.js is bundled by esbuild (including jQuery via alias) — do not load jQuery separately -->
   <script type="module" src="/assets/javascript/main.js"></script>
 
   <!-- Add any custom scripts -->
-  <script type="module">
-    import $ from '/assets/javascript/jquery-4.0.0.min.js';
-    window.$ = $;
-  </script>
   {% block pageScripts %}{% endblock %}
 {% endblock %}

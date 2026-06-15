@@ -5,6 +5,24 @@
   }
 }
 
+// Background colours per view mode — set via body class, not inline styles.
+// .nhs-app-native is the default; .nhs-app-web is applied when data['web'] === "yes"
+.nhs-app-native html,
+.nhs-app-native {
+  background-color: #f0f4f5;
+
+  // High-contrast extension support
+  #hc_extension_bkgnd {
+    background-color: #f0f4f5 !important;
+  }
+}
+
+.nhs-app-web {
+  #hc_extension_bkgnd {
+    background-color: #d8dde0 !important;
+  }
+}
+
 // App main container
 .app-width-container {
   padding-top: 60px; // to give correct spacing for sticky header

@@ -21,7 +21,10 @@ async function init() {
   const prototype = await NHSPrototypeKit.init({
     serviceName: config.serviceName,
     buildOptions: {
-      alias: { jquery: '/assets/javascript/jquery-4.0.0.min.js' },
+      // Use a filesystem path for the alias so esbuild can resolve it at build
+      // time. A URL path (/assets/...) is only valid at runtime in the browser
+      // and would silently fall back to resolving jquery from node_modules.
+      alias: { jquery: './app/assets/javascript/jquery-4.0.0.min.js' },
       entryPoints
     },
     viewsPath,

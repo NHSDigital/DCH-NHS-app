@@ -23,6 +23,9 @@ pids
 .settings/
 *.sublime-workspace
 
+# JetBrains module files
+*.iml
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
