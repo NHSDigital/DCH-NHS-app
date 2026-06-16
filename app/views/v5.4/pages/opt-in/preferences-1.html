@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+{% set hub = "Profile" %}
+{% set backLink = true %}
+{% set pageHeading = "Unsubscribe from Age-Based Messages" %}
+{% set pageDescription = "You can choose whether to receive NHS age-based messages about your baby. These are sent at key moments in your baby's first year with reminders and guidance about appointments, check-ups and more." %}
+
+{% block content %}
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {{ dynamicPageTitle({
+    title: pageHeading,
+    titleSmall: true,
+    titleHiddenTextBefore: "Message from",
+    description: pageDescription,
+    descriptionMuted: true
+    })}}
+
+    {{ radios({
+idPrefix: "example-hints",
+name: "exampleHints",
+fieldset: {
+legend: {
+text: "What would you like to do?",
+size: "m",
+isPageHeading: true
+}
+},
+hint: {
+text: "Select 1 option"
+},
+items: [
+{
+value: "Stop",
+text: "I don’t want to receive any messages"
+},
+{
+value: "Continue",
+text: "No, keep sending me messages"
+}
+]
+}) }}
+    {{ button({
+    text: "Save",
+    classes: "nhsapp-button"
+    href: "/" + version + "/pages/opt-in/saved-stop.html"
+    }) }}
+
+
+
+  </div>
+</div>
+
+{% endblock %}
