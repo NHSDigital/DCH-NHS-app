@@ -19,7 +19,7 @@
     description: pageDescription,
     descriptionMuted: true
     })}}
-
+      <form method="post" action="/handle-preferences-1">
     {{ radios({
 idPrefix: "example-hints",
 name: "exampleHints",
@@ -47,9 +47,8 @@ text: "No, keep sending me messages"
     {{ button({
     text: "Save",
     classes: "nhsapp-button"
-    href: "/" + version + "/pages/opt-in/saved-stop.html"
     }) }}
-
+      </form>
 
 
   </div>
