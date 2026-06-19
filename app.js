@@ -6,6 +6,7 @@ const sessionDataDefaults = require('./app/data/session-data-defaults')
 const filters = require('./app/filters')
 const globals = require('./app/globals')
 const locals = require('./app/locals')
+const routes = require('./app/routes')
 
 const viewsPath = [
   'app/views/',
@@ -27,6 +28,7 @@ async function init() {
       alias: { jquery: './app/assets/javascript/jquery-4.0.0.min.js' },
       entryPoints
     },
+    routes,
     viewsPath,
     locals,
     filters,

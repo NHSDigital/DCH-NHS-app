@@ -1,34 +1,35 @@
 {% extends 'layout.html' %}
 {% set version = "v5.4" %}
-
-{% set hub = "Opt Out" %}
-
+{% set hub = "Profile" %}
 {% set backLink = true %}
-
 {% set pageHeading = "You have unsubscribed from Age-based messages." %}
+{% set pageDescription = "This is to confirm that you will no longer receive Age-based messages from us." %}
+
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-                You have unsubscribed from Age-based messages.
-            </h1>
-            <p> This is to confirm that you will no longer receive Age-based messages from us. It may take up to one working day to update.
-                <br>
-                <br>
-                Even though you’ve stopped your message, support and guidance for you and your baby is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
-            <br>
-                <br>
-                If you would like to provide some feedback about this service, you can do so at insert link.</p>
-        </legend>
+        <h1 class="nhsuk-heading-l">
+            You have unsubscribed from Age-based messages.
+        </h1>
+        
+        {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+        {{ insetText({
+          html: "<p>" + pageDescription + "</p>"
+        }) }}
 
-        <h2 class="nhsuk-fieldset__heading">
+        <p class="nhsuk-body">It may take up to one working day to update.</p>
+        <p class="nhsuk-body">Even though you’ve stopped your messages, support and guidance for you and your baby is always available at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link">Best Start in Life</a>.</p>
+        <p class="nhsuk-body">If you would like to provide some feedback about this service, you can do so at insert link.</p>
+
+        <h2 class="nhsuk-heading-m">
            More Information
         </h2>
-        <p> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/"class="nhsuk-link--no-visited-state>privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+        <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
  </div>
 </div>
+
+
 {% endblock %}

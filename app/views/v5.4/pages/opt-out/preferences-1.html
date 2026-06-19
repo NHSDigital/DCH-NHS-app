@@ -23,15 +23,15 @@ These are sent at key moments in your baby's first year with reminders and guida
     descriptionMuted: true
     })}}
 
-
+    <form method="post" action="preferences-1-post">
 
     {% from "radios/macro.njk" import radios %}
     {% from "fieldset/macro.njk" import fieldset %}
     {% from "hint/macro.njk" import hint %}
 
     {{ radios({
-    idPrefix: "example-hints",
-    name: "exampleHints",
+    idPrefix: "stop-messages",
+    name: "stop-messages",
     fieldset: {
     legend: {
     text: "Would you like to stop receiving NHS age-based messages?",
@@ -56,11 +56,10 @@ These are sent at key moments in your baby's first year with reminders and guida
 
     {{ button({
     text: "Save",
-    classes: "nhsapp-button",
-    href: "/" + version + "/pages/opt-out/confirmation-saved-yes.html"
+    classes: "nhsapp-button"
     }) }}
 
-
+    </form>
 
   </div>
 </div>

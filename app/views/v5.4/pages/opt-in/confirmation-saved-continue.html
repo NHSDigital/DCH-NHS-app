@@ -4,6 +4,10 @@
 {% set hub = "Opt Out" %}
 
 {% set backLink = true %}
+{% set pageHeading = "Thanks for letting us know." %}
+{% set pageDescription = "This is to confirm that you will continue to receive Age-based messages about your baby." %}
+
+
 
 
 {% block content %}
@@ -15,7 +19,11 @@
       <h1 class="nhsuk-fieldset__heading">
         Thanks for letting us know.
       </h1>
-      <p> This is to confirm that you will continue receiving Age-based messages about your baby. You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
+      {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+      {{ insetText({
+      html: "<p>" + pageDescription + "</p>"
+      }) }}
+      <p> You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
         <br>
         If you would like to provide some feedback about this service, you can do so at insert link.</p>
     </legend>
@@ -23,7 +31,7 @@
     <h2 class="nhsuk-fieldset__heading">
       More Information
     </h2>
-    <p> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/"class="nhsuk-link--no-visited-state>privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
- </div>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+  </div>
 </div>
 {% endblock %}

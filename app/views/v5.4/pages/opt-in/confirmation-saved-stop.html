@@ -4,6 +4,8 @@
 {% set hub = "Opt Out" %}
 
 {% set backLink = true %}
+{% set pageHeading = "Your preference has been saved." %}
+{% set pageDescription = "This is to confirm that you will not receive Age-based messages from us." %}
 
 
 {% block content %}
@@ -15,7 +17,11 @@
       <h1 class="nhsuk-fieldset__heading">
         Your preference has been saved.
       </h1>
-      <p> This is to confirm that you will not receive Age-based messages from us. It may take up to one working day to update your preference.
+      {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+      {{ insetText({
+      html: "<p>" + pageDescription + "</p>"
+      }) }}
+      <p>  It may take up to one working day to update your preference.
         <br>
         Even though you’ve stopped your message, support and guidance for you and your baby is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
         <br>
@@ -25,7 +31,7 @@
     <h2 class="nhsuk-fieldset__heading">
       More Information
     </h2>
-    <p> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/"class="nhsuk-link--no-visited-state>privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
- </div>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+  </div>
 </div>
 {% endblock %}

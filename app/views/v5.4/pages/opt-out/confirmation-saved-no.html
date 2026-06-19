@@ -1,9 +1,9 @@
 {% extends 'layout.html' %}
 {% set version = "v5.4" %}
-
-{% set hub = "Opt Out" %}
-
+{% set hub = "Profile" %}
 {% set backLink = true %}
+{% set pageHeading = "Thanks for letting us know." %}
+{% set pageDescription = "This is to confirm that you will continue to receive Age-based messages about your baby." %}
 
 
 {% block content %}
@@ -11,19 +11,22 @@
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-      <h1 class="nhsuk-fieldset__heading">
-        Your preference has been noted.
+      <h1 class="nhsuk-heading-l">
+        Thanks for letting us know.
       </h1>
-      <p> This is to confirm that you will continue to receive Age-based messages about your baby. You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
-        <br>
-        If you would like to provide some feedback about this service, you can do so at insert link.</p>
-    </legend>
+      
+      {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+      {{ insetText({
+        html: "<p>" + pageDescription + "</p>"
+      }) }}
 
-    <h2 class="nhsuk-fieldset__heading">
+      <p class="nhsuk-body">You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link">Best Start in Life</a>.</p>
+      <p class="nhsuk-body">If you would like to provide some feedback about this service, you can do so at insert link.</p>
+
+    <h2 class="nhsuk-heading-m">
       More Information
     </h2>
-    <p> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/"class="nhsuk-link--no-visited-state>privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
  </div>
 </div>
 {% endblock %}
