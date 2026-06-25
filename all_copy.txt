@@ -1,0 +1,1092 @@
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Unsubscribe from Age-Based Messages" %}
+
+{% block content %}
+<!--
+<nav class="nhsuk-breadcrumb nhsuk-u-margin-bottom-4" aria-label="Breadcrumb">
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="#">Home</a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="#">NHS services</a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="#">Hospitals</a>
+    </li>
+  </ol>
+  <a class="nhsuk-back-link" href="#">
+    <span class="nhsuk-u-visually-hidden">Back to</span> Hospitals
+  </a>
+
+</nav>
+-->
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-u-margin-bottom-6">{{ pageHeading }}</h1>
+
+    <h2 class="nhsuk-heading-l">You can use this service to unsubscribe from these messages.</h2>
+
+    <p class="nhsuk-body">Every parent/carer has been opted into essential age-based messages when they have a new born. These are timed messages based on the age of your baby, reminding you of essential information like appointments, weaning and vitamins. </p>
+
+
+    <!--
+<div class="nhsuk-inset-text">
+<span class="nhsuk-u-visually-hidden">Information: </span>
+<p>We need to verify who you are before you can make your changes.</p>
+</div>
+-->
+
+    <h4 class="nhsuk-heading-m">Before you start</h4>
+
+    <p class="nhsuk-body">We'll need your:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Name</li>
+      <li>Date of birth</li>
+      <li>Postcode or NHS number</li>
+    </ul>
+
+    <p class="nhsuk-body">We'll use these details to verify who you are so that you can unsubscribe.</p>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      How to find your NHS number
+    </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
+        <p>You can find your NHS number by logging in to the NHS App. From your Home screen, go to "Profile" and find your name. Your NHS number is shown under your name and date of birth. Most parents and carers can find their NHS number quickly on recent NHS documents such as:</p>
+        <ul>
+          <li>maternity documents</li>
+          <li>discharge papers</li>
+          <li>appointment letters</li>
+          <li>prescriptions</li>
+        </ul>
+        <p>You can also use the <a href="https://www.nhs.uk/nhs-services/find-nhs-number/" class="nhsuk-link--no-visited-state">Find your NHS Number Service.</a> </p>
+
+      </div>
+    </details>
+
+    <br>
+
+    {{ button({
+    text: "Start now",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-out/enter-your-name.html"
+    }) }}
+
+    <p>
+      <a href="https://your-data-matters.service.nhs.uk/privacy-notice">How your data will be processed using this service</a> (opens in new window).
+    </p>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+{% from "summary-list/macro.njk" import summaryList %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+
+
+{% set pageHeading = "Check your details" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Check your details
+            </h1>
+        </legend>
+
+
+{{ summaryList({
+rows: [
+{
+key: {
+text: "Name"
+},
+value: {
+text: "Joe Bloggs"
+},
+actions: {
+items: [
+{
+href: "/" + version + "/pages/opt-out/enter-your-name.html",
+text: "Change",
+visuallyHiddenText: "name"
+}
+]
+}
+},
+{
+key: {
+text: "Date of birth"
+},
+value: {
+text: "01 06 1990"
+},
+actions: {
+items: [
+{
+href: "/" + version + "/pages/opt-out/enter-your-date-of-birth.html",
+text: "Change",
+visuallyHiddenText: "date of birth"
+}
+]
+}
+},
+{
+key: {
+text: "Postcode"
+},
+value: {
+text: "SW1 1TH"
+},
+actions: {
+items: [
+{
+href: "/" + version + "/pages/opt-out/enter-your-postcode.html",
+text: "Change",
+visuallyHiddenText: "change postcode"
+}
+]
+}
+}
+]
+}) }}
+        {{ button({
+        text: "Confirm",
+        classes: "nhsapp-button",
+        href: "/" + version + "/pages/opt-out/preferences-1.html"
+        }) }}
+    </div>
+</div>
+{% endblock %}{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+{% set hub = "Profile" %}
+{% set backLink = true %}
+{% set pageHeading = "Thanks for letting us know." %}
+{% set pageDescription = "This is to confirm that you will continue to receive Age-based messages about your baby." %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">
+        Thanks for letting us know.
+      </h1>
+      
+      {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+      {{ insetText({
+        html: "<p>" + pageDescription + "</p>"
+      }) }}
+
+      <p class="nhsuk-body">You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link">Best Start in Life</a>.</p>
+      <p class="nhsuk-body">If you would like to provide some feedback about this service, you can do so at insert link.</p>
+
+    <h2 class="nhsuk-heading-m">
+      More Information
+    </h2>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+ </div>
+</div>
+{% endblock %}{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+{% set hub = "Profile" %}
+{% set backLink = true %}
+{% set pageHeading = "You have unsubscribed from Age-based messages." %}
+{% set pageDescription = "This is to confirm that you will no longer receive Age-based messages from us." %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-heading-l">
+            You have unsubscribed from Age-based messages.
+        </h1>
+        
+        {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+        {{ insetText({
+          html: "<p>" + pageDescription + "</p>"
+        }) }}
+
+        <p class="nhsuk-body">It may take up to one working day to update.</p>
+        <p class="nhsuk-body">Even though you’ve stopped your messages, support and guidance for you and your baby is always available at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link">Best Start in Life</a>.</p>
+        <p class="nhsuk-body">If you would like to provide some feedback about this service, you can do so at insert link.</p>
+
+        <h2 class="nhsuk-heading-m">
+           More Information
+        </h2>
+        <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+ </div>
+</div>
+
+
+{% endblock %}{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Do you know your NHS number?
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint">
+      Telling us your NHS number will give us the best chance of matching you to your NHS record.
+    </div>
+    <div class="nhsuk-hint">
+      If you do not know it, you can tell us your postcode instead.
+    </div>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      How to find your NHS number
+    </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
+        <p>You can find your NHS number by logging in to the NHS App. From your Home screen, go to "Profile" and find your name. Your NHS number is shown under your name and date of birth. Most parents and carers can find their NHS number quickly on recent NHS documents such as:</p>
+        <ul>
+          <li>prescriptions</li>
+          <li>test results</li>
+          <li>hospital referral letters</li>
+          <li>appointment letters</li>
+        </ul>
+        <p>You can also find your NHS number by using the <a href="https://www.nhs.uk/nhs-services/find-nhs-number/" class="nhsuk-link--no-visited-state">Find Your NHS Number</a> Service.</p>
+
+      </div>
+    </details>
+
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset">
+        <div class="nhsuk-radios" data-module="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example" name="example" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example">
+              Yes, I know my NHS number
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              No, I do not know my NHS number
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+
+
+    {{ button({
+    text: "Continue",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-out/enter-your-nhs-number.html"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Enter your date of birth" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            What is your date of birth?
+          </h1>
+        </legend>
+        <div class="nhsuk-hint" id="date-of-birth-hint">
+          For example, 15 3 1984
+        </div>
+        <div class="nhsuk-date-input" id="date-of-birth">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day" name="dateOfBirth[day]" type="text" autocomplete="bday-day" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month" name="dateOfBirth[month]" type="text" autocomplete="bday-month" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year" name="dateOfBirth[year]" type="text" autocomplete="bday-year" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+    {{ button({
+    text: "Continue",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-out/enter-your-postcode.html"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Enter your name
+            </h1>
+        </legend>
+
+        <div class="nhsuk-hint">
+            Enter the exact name you used when you registered with your GP practice.
+        </div>
+
+       {% from "input/macro.njk" import input %}
+
+        {{ input({
+        label: {
+        text: "First name"
+        },
+        id: "first-name",
+        name: "first-name"
+        }) }}
+
+        {{ input({
+        label: {
+        text: "Last name"
+        },
+        id: "last-name",
+        name: "last-name"
+        }) }}
+
+        {{ button({
+        text: "Continue",
+        classes: "nhsapp-button",
+        href: "/" + version + "/pages/opt-out/do-you-know-nhs-number.html"
+        }) }}
+
+    </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                What is your NHS number?
+            </h1>
+        </legend>
+
+        <div class="nhsuk-hint">
+            Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.
+        </div>
+
+        {% from "input/macro.njk" import input %}
+
+        {{ input({
+        label: {
+        text: "Your NHS Number"
+        },
+        id: "your-nhs-number",
+        name: "your-nhs-number",
+        classes: "nhsuk-input--width-20"
+        }) }}
+
+
+
+
+
+
+
+        {{ button({
+        text: "Continue",
+        classes: "nhsapp-button",
+        href: "/" + version + "/pages/opt-out/enter-date-of-birth.html"
+        }) }}
+
+    </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Enter your postode" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Enter your postcode
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint">
+      Enter the postoce you registered with your GP practice. For example, SW1 1TH
+    </div>
+
+    {% from "input/macro.njk" import input %}
+
+    {{ input({
+    label: {
+    text: "Postcode"
+    },
+    id: "your-postcode",
+    name: "your-postcode",
+    classes: "nhsuk-input--width-10"
+    }) }}
+
+    {{ button({
+    text: "Continue",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-out/check-your-details.html"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Opt out of sharing your data" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+
+        <h2>Make your choice online</h2>
+
+        <p>Use this service to:</p>
+        <ul class="nhsuk-list">
+            <li>choose if your confidential patient information is used for research and planning</li>
+            <li>change or check your current choice</li>
+        </ul>
+
+        <p>Your choice will be applied by all health and care organisations.</p>
+        <p>Any choice you make will not impact your individual care.</p>
+        <p>
+            <a href="https://digital.nhs.uk/services/national-data-opt-out/understanding-the-national-data-opt-out" class="nhsuk-link--no-visited-state">Read more about the national data opt-out</a>
+        </p>
+
+
+        <h2>Before you start</h2>
+
+        <p>You must:</p>
+        <ul class="nhsuk-list">
+            <li>be aged 13 or older</li>
+            <li>have access to your email or mobile phone</li>
+            <li>have your NHS number or your postcode registered with your GP surgery</li>
+        </ul>
+
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      How to find your NHS number
+    </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
+                <p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
+                <ul>
+                    <li>prescriptions</li>
+                    <li>test results</li>
+                    <li>hospital referral letters</li>
+                    <li>appointment letters</li>
+                </ul>
+                <p>Ask your GP surgery for help if you cannot find your NHS number.</p>
+
+            </div>
+        </details>
+
+
+        {{ button({
+        text: "Start now",
+        classes: "nhsapp-button",
+        href: "/" + version + "/pages/opt-out/start.html"
+        }) }}
+
+    </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+{% set hub = "Profile" %}
+{% set backLink = true %}
+{% set pageHeading = "Unsubscribe from Age-Based Messages" %}
+{% set pageDescription = "You are currently receiving age-based messages.
+<br>
+<br>
+These are sent at key moments in your baby's first year with reminders and guidance about appointments, check-ups and more." %}
+
+{% block content %}
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {{ dynamicPageTitle({
+    title: pageHeading,
+    titleSmall: true,
+    titleHiddenTextBefore: "Message from",
+    description: pageDescription,
+    descriptionMuted: true
+    })}}
+
+    <form method="post" action="preferences-1-post">
+
+    {% from "radios/macro.njk" import radios %}
+    {% from "fieldset/macro.njk" import fieldset %}
+    {% from "hint/macro.njk" import hint %}
+
+    {{ radios({
+    idPrefix: "stop-messages",
+    name: "stop-messages",
+    fieldset: {
+    legend: {
+    text: "Would you like to stop receiving NHS age-based messages?",
+    size: "m",
+    isPageHeading: true
+    }
+    },
+    hint: {
+    text: "Select 1 option"
+    },
+    items: [
+    {
+    value: "Yes",
+    text: "Yes, stop sending me messages"
+    },
+    {
+    value: "No",
+    text: "No, keep sending me messages"
+    }
+    ]
+    }) }}
+
+    {{ button({
+    text: "Save",
+    classes: "nhsapp-button"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+{% set hub = "Profile" %}
+{% set backLink = true %}
+{% set pageHeading = "Unsubscribe from Age-Based Messages" %}
+{% set pageDescription = "You are currently receiving age-based messages. These are sent at key moments in your baby's first year with reminders and guidance about appointments, check-ups and more. Would you like to stop receiving the messages?" %}
+
+{% block content %}
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {{ dynamicPageTitle({
+    title: pageHeading,
+    titleSmall: true,
+    titleHiddenTextBefore: "Message from",
+    description: pageDescription,
+    descriptionMuted: true
+    })}}
+
+
+
+
+
+    {{ button({
+    text: "Ubsubscribe",
+    classes: "nhsapp-button",
+    }) }}
+
+
+  </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Unsubscribe from Age-Based Messages" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+        <p>We'll need your:</p>
+        <ul class="nhsuk-list">
+            <li>Name</li>
+            <li>Date of birth</li>
+            <li>Postcode or NHS number</li>
+        </ul>
+
+        <p>We'll use these details to find your contact details from your health records so we can send you a security code.</p>
+
+        {{ button({
+        text: "Continue",
+        classes: "nhsapp-button",
+        href:
+        }) }}
+
+        <p>
+            <a href="https://your-data-matters.service.nhs.uk/privacy-notice" class="nhsuk-link--no-visited-state">How your data will be processed using this service</a> (opens in new window).
+        </p>
+
+
+
+    </div>
+</div>
+
+{% endblock %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Manage your preferences for Age-Based Messages" %}
+
+{% block content %}
+<!--
+<nav class="nhsuk-breadcrumb nhsuk-u-margin-bottom-4" aria-label="Breadcrumb">
+  <ol class="nhsuk-breadcrumb__list">
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="#">Home</a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="#">NHS services</a>
+    </li>
+    <li class="nhsuk-breadcrumb__list-item">
+      <a class="nhsuk-breadcrumb__link" href="#">Hospitals</a>
+    </li>
+  </ol>
+  <a class="nhsuk-back-link" href="#">
+    <span class="nhsuk-u-visually-hidden">Back to</span> Hospitals
+  </a>
+
+</nav>
+-->
+
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-u-margin-bottom-6">{{ pageHeading }}</h1>
+
+
+        <p class="nhsuk-body">Every parent/carer has been opted into essential age-based messages when they have a new born. These are timed messages based on the age of your baby, reminding you of essential information like appointments, weaning and vitamins. </p>
+        <br>
+        <p class="nhsuk-body">Please note, you can only use this service to manage your preferences Age-based Messages.</p>
+
+            <!--
+        <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>We need to verify who you are before you can make your changes.</p>
+        </div>
+        -->
+
+        <h4 class="nhsuk-heading-m">Before you start</h4>
+
+        <p class="nhsuk-body">To find your record, we'll need a few details.</p>
+        <p class="nhsuk-body">If you know your NHS number:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Your NHS number</li>
+            <li>Your full name</li>
+        </ul>
+        <p class="nhsuk-body">If you don't know your NHS number:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+
+            <li>Your full name</li>
+            <li>Your date of birth</li>
+            <li>Your postcode registered with your GP</li>
+        </ul>
+        <p class="nhsuk-body">We'll use these details to verify who you are so that you can unsubscribe.</p>
+
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                    How to find your NHS number
+                </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
+                <p>You can find your NHS number by logging in to the NHS App. From your Home screen, go to "Profile" and find your name. Your NHS number is shown under your name and date of birth. Most parents and carers can find their NHS number quickly on recent NHS documents such as:</p>
+                <ul>
+                    <li>maternity documents</li>
+                    <li>discharge papers</li>
+                    <li>appointment letters</li>
+                    <li>prescriptions</li>
+                </ul>
+                <p>You can also use the <a href="https://www.nhs.uk/nhs-services/find-nhs-number/" class="nhsuk-link--no-visited-state">Find your NHS Number Service.</a> </p>
+            </div>
+        </details>
+
+        <br>
+
+        {{ button({
+        text: "Start now",
+        classes: "nhsapp-button",
+        href: "/" + version + "/pages/opt-in/check-details.html"
+        }) }}
+
+        <p>
+            <a href="https://your-data-matters.service.nhs.uk/privacy-notice">How your data will be processed using this service</a> (opens in new window).
+        </p>
+
+
+
+    </div>
+</div>
+
+{% endblock %}
+{% from "summary-list/macro.njk" import summaryList %}
+{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+
+
+{% set pageHeading = "Check your details" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Check your details
+      </h1>
+    </legend>
+
+
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+    text: "Name"
+    },
+    value: {
+    text: "Joe Bloggs"
+    },
+    actions: {
+    items: [
+    {
+    href: "/" + version + "/pages/opt-in/preferences-1.html",
+    text: "Change",
+    visuallyHiddenText: "name"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Date of birth"
+    },
+    value: {
+    text: "01 06 1990"
+    },
+    actions: {
+    items: [
+    {
+    href: "/" + version + "/pages/opt-out/enter-your-date-of-birth.html",
+    text: "Change",
+    visuallyHiddenText: "date of birth"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Postcode"
+    },
+    value: {
+    text: "SW1 1TH"
+    },
+    actions: {
+    items: [
+    {
+    href: "/" + version + "/pages/opt-out/enter-your-postcode.html",
+    text: "Change",
+    visuallyHiddenText: "change postcode"
+    }
+    ]
+    }
+    }
+    ]
+    }) }}
+    {{ button({
+    text: "Confirm",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-in/preferences-1.html"
+    }) }}
+  </div>
+</div>
+{% endblock %}{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+{% set pageHeading = "Thanks for letting us know." %}
+{% set pageDescription = "This is to confirm that you will continue to receive Age-based messages about your baby." %}
+
+
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Thanks for letting us know.
+      </h1>
+      {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+      {{ insetText({
+      html: "<p>" + pageDescription + "</p>"
+      }) }}
+      <p> You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
+        <br>
+        If you would like to provide some feedback about this service, you can do so at insert link.</p>
+    </legend>
+
+    <h2 class="nhsuk-fieldset__heading">
+      More Information
+    </h2>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+  </div>
+</div>
+{% endblock %}{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Your preference has been saved.
+      </h1>
+      <p> This is to confirm that you will start receiving Age-based messages about your baby. It may take up to one working day to update your preference.
+        <br>
+        You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
+        <br>
+        If you would like to provide some feedback about this service, you can do so at insert link.</p>
+    </legend>
+
+    <h2 class="nhsuk-fieldset__heading">
+      More Information
+    </h2>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+  </div>
+</div>
+{% endblock %}{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+{% set pageHeading = "Your preference has been saved." %}
+{% set pageDescription = "This is to confirm that you will not receive Age-based messages from us." %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Your preference has been saved.
+      </h1>
+      {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
+      {{ insetText({
+      html: "<p>" + pageDescription + "</p>"
+      }) }}
+      <p>  It may take up to one working day to update your preference.
+        <br>
+        Even though you’ve stopped your message, support and guidance for you and your baby is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
+        <br>
+        If you would like to provide some feedback about this service, you can do so at insert link.</p>
+    </legend>
+
+    <h2 class="nhsuk-fieldset__heading">
+      More Information
+    </h2>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+  </div>
+</div>
+{% endblock %}{% extends 'layout.html' %}
+{% set version = "v5.4" %}
+{% set hub = "Profile" %}
+{% set backLink = true %}
+{% set pageHeading = "Manage your preferences for Age-Based Messaging" %}
+{% set pageDescription = "You can choose whether to receive NHS age-based messages about your baby. These are sent at key moments in your baby's first year with reminders and guidance about appointments, check-ups and more." %}
+
+{% block content %}
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {{ dynamicPageTitle({
+    title: pageHeading,
+    titleSmall: true,
+    titleHiddenTextBefore: "Message from",
+    description: pageDescription,
+    descriptionMuted: true
+    })}}
+      <form method="post" action="preferences-1-post">
+    {{ radios({
+idPrefix: "opt-in-preferences",
+name: "opt-in-preferences",
+fieldset: {
+legend: {
+text: "What would you like to do?",
+size: "m",
+isPageHeading: true
+}
+},
+hint: {
+text: "Select 1 option"
+},
+items: [
+{
+value: "Stop",
+text: "I don’t want to receive any messages"
+},
+{
+value: "Continue",
+text: "Keep sending me messages"
+}
+]
+}) }}
+    {{ button({
+    text: "Save",
+    classes: "nhsapp-button"
+    }) }}
+      </form>
+
+
+  </div>
+</div>
+
+{% endblock %}
