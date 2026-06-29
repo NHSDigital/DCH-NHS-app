@@ -1,0 +1,383 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.4" %}
+
+{% set hub = "Messages" %}
+
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Your messages" %}
+
+{% if data['messages'] > 1 %}
+  {% set pageDescription = "You have " + data['messages'] + " unread messages" %} 
+{% elif data['messages'] == 1 %}
+  {% set pageDescription = "You have " + data['messages'] + " unread message" %}
+{% else %}
+  {% set pageDescription = "" %}
+{% endif %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div class="nhsapp-section-heading nhsuk-u-margin-bottom-5" style="align-items: center;">
+        <a href="/{{ version }}/pages/messages/message-filters" class="app-link app-link--with-icon nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">
+          <svg class="app-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.3302 7.19995H3.66016C3.52209 7.19995 3.41016 7.31188 3.41016 7.44995V8.46995C3.41016 8.60802 3.52209 8.71995 3.66016 8.71995H20.3302C20.4682 8.71995 20.5802 8.60802 20.5802 8.46995V7.44995C20.5802 7.31188 20.4682 7.19995 20.3302 7.19995Z" />
+            <path d="M17.6598 11.24H6.33984C6.20177 11.24 6.08984 11.3519 6.08984 11.49V12.51C6.08984 12.6481 6.20177 12.76 6.33984 12.76H17.6598C17.7979 12.76 17.9098 12.6481 17.9098 12.51V11.49C17.9098 11.3519 17.7979 11.24 17.6598 11.24Z" />
+            <path d="M15.0397 15.24H8.96973C8.83166 15.24 8.71973 15.3519 8.71973 15.49V16.51C8.71973 16.6481 8.83166 16.76 8.96973 16.76H15.0397C15.1778 16.76 15.2897 16.6481 15.2897 16.51V15.49C15.2897 15.3519 15.1778 15.24 15.0397 15.24Z" />
+          </svg>
+          <span class="app-u-gap-0">
+            Filter <span class="nhsuk-u-visually-hidden"> messages </span>
+            {% if data['message-sender'] == "" and data['message-status'] == "" %}
+            {% else %}
+              ({{ data['message-sender'] | length + data['message-status'] | length }})
+              <span class="nhsuk-u-visually-hidden"> 
+                {% if data['message-sender'] | length + data['message-status'] | length > 1 %}
+                filters 
+                {% else %}
+                filter
+                {% endif %}
+                currently selected</span>
+            {% endif %}
+          </span>
+        </a>
+        {% if data['message-sender'] == "" and data['message-status'] == "" %}
+          {% else %}
+          <form id="form-clear" method="post" action="/{{ version }}/pages/abm-messages/your-messages-abm" novalidate="novalidate">
+            <input type="hidden" name="message-sender" value="">
+            <input type="hidden" name="message-status" value="">
+            {% if data['message-sender'] | length + data['message-status'] | length > 1 %}
+              {{ button({
+                text: "Clear filters",
+                classes: "app-button--link nhsuk-u-margin-bottom-0"
+              }) }} 
+            {% else %}
+              {{ button({
+                text: "Clear filter",
+                classes: "app-button--link nhsuk-u-margin-bottom-0"
+              }) }}
+            {% endif %}
+          </form>
+        {% endif %}
+      </div>
+
+      <ul class="nhsapp-cards nhsapp-cards--stacked">
+
+        {% if "Unread" in data['message-status'] and data['message1read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] === "true" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 1 - Welcome message -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
+                  1:02pm
+                </span>
+              </div>
+              <form id="message1" method="post" action="/{{ version }}/pages/abm-messages/1-intro">
+                {% if data['message1read'] === "false" %}
+                <input type="hidden" name="message1read" value="true">
+                <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
+                {% endif %}
+                <a href="#1" onclick="document.getElementById('message1').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                  {% if data['message1read'] === "true" %}
+                  <span class="nhsuk-u-visually-hidden">Read message from </span>
+                   NHS England - Best Start in Life
+                  {% else %}
+                    <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
+                      <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
+                      <span class="nhsuk-u-visually-hidden">Unread message from </span>
+                    </span>NHS England - Best Start in Life
+                  {% endif %}
+                  <span class="nhsuk-u-visually-hidden"> received today at 1:02pm</span> 
+                </a>
+              </form>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  As part of the NHS’ support to babies, parents, carers and families, you will receive a series of messages relevant to the age of your baby.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 2 - Register baby with GP -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block {% if data['message2read'] === 'true' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
+                  Yesterday
+                </span>
+              </div>
+              <form id="message2" method="post" action="/{{ version }}/pages/opt-out/2-gp-message">
+                {% if data['message2read'] === "false" %}
+                <input type="hidden" name="message2read" value="true">
+                <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
+                {% endif %}
+                <a href="#2" onclick="document.getElementById('message2').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                  {% if data['message2read'] === "true" %}
+                  <span class="nhsuk-u-visually-hidden">Read message from </span>
+                   NHS England - Best Start in Life
+                  {% else %}
+                    <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
+                      <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
+                      <span class="nhsuk-u-visually-hidden">Unread message from </span>
+                    </span>NHS England - Best Start in Life
+                  {% endif %}
+                  <span class="nhsuk-u-visually-hidden"> received yesterday at 9:15am </span> 
+                </a>
+              </form>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message2read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Register your baby with a GP. If you or your child get sick, a GP surgery is usually your first contact. They can help you if your baby gets ill or if you are worried about the baby's health.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 3 - Health visitor appointment -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  3 days ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/3-Health-visitor">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life
+                <span class="nhsuk-u-visually-hidden"> received 3 days ago at 10:30am</span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Your health visitor appointment. A health visitor is a qualified nurse or midwife who has had extra training. They're there to help you, your family and your new baby.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 4 - Maternal postnatal consultation -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  5 days ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/4-mat-check">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life
+                <span class="nhsuk-u-visually-hidden"> received 5 days ago at 2:45pm </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Your 6 to 8 week maternal postnatal health consultation. This appointment happens 6 to 8 weeks after your child is born. It is to support your physical health and mental wellbeing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 5 - Baby's 6 to 8 week consultation -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  1 week ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/5-baby-check">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life
+                <span class="nhsuk-u-visually-hidden"> received 1 week ago at 11:00am </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Your baby's 6 to 8 week health consultation. This appointment happens with the GP 6 to 8 weeks after your child is born. It's to check for any general problems with your baby.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 6 - Vitamins advice -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  2 weeks ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/8-vitamins">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life
+                <span class="nhsuk-u-visually-hidden"> received 2 weeks ago at 3:20pm </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Advice on vitamins for babies and young children. Babies and young children may not get enough vitamins A, C and D, even if they feed well. Vitamins help babies grow and stay healthy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 7 - When to introduce solid foods -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  3 weeks ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/6-weaning-1">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life
+                <span class="nhsuk-u-visually-hidden"> received 3 weeks ago at 1:15pm </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  When to introduce solid foods. Introducing solid foods is recommended by the NHS when babies are around 6 months old. You may hear people say they started at 4 months, however the NHS recommends waiting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 8 - How to introduce solid foods -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  1 month ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/7-weaning-2">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life
+                <span class="nhsuk-u-visually-hidden"> received 1 month ago at 4:00pm </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  How to start introducing solid foods. The NHS recommends introducing solid foods when babies are around 6 months old. In the beginning, your baby will only need a small amount of food each day.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS Healthcare services" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 9 - Feedback survey -->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  2 months ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/9-feedback=cohort1">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life  (feedback survey cohort 1)
+                <span class="nhsuk-u-visually-hidden"> received 2 months ago at 10:00am </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Share your feedback to help us. You've been the recipient of a sequence of messages designed to help support you and your child. Please help us improve these messages we send to parents like you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+         <!-- MESSAGE 10 - Feedback survey cohort 2-->
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  2 months ago
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/10-feedback-cohort2">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+               NHS England - Best Start in Life (feedback survey cohort 2)
+                <span class="nhsuk-u-visually-hidden"> received 2 months ago at 10:00am </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Share your feedback to help us. You've been the recipient of a sequence of messages designed to help support you and your child. Please help us improve these messages we send to parents like you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      
+
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
