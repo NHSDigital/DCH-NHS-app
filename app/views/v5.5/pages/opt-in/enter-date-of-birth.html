@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% set version = "v5.5" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Enter your date of birth" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            What is your date of birth?
+          </h1>
+        </legend>
+        <div class="nhsuk-hint" id="date-of-birth-hint">
+          For example, 15 3 1984
+        </div>
+        <div class="nhsuk-date-input" id="date-of-birth">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day" name="dateOfBirth[day]" type="text" autocomplete="bday-day" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month" name="dateOfBirth[month]" type="text" autocomplete="bday-month" inputmode="numeric">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year" name="dateOfBirth[year]" type="text" autocomplete="bday-year" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+    {{ button({
+    text: "Continue",
+    classes: "nhsapp-button",
+    href: "/" v5.5 "/pages/opt-in/enter-your-postcode.html"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

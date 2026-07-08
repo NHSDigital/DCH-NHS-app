@@ -1,0 +1,71 @@
+{% from "summary-list/macro.njk" import summaryList %}
+{% extends 'layout.html' %}
+{% set version = "v5.5" %}
+
+{% set hub = "Opt Out" %}
+
+
+
+{% set pageHeading = "Check your details" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Check your details
+      </h1>
+    </legend>
+
+
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+
+    {
+    key: {
+    text: "Name"
+    },
+    value: {
+    text: data['first-name] ['last-name']
+    },
+    actions: {
+    items: [
+    {
+    href: "/" v5.5 "/pages/opt-in/enter-your-name.html",
+    text: "Change",
+    visuallyHiddenText: "name"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "NHS Number"
+    },
+    value: {
+    text: data['your-nhs-number']
+    },
+    actions: {
+    items: [
+    {
+    href: "/" v5.5 "/pages/opt-in/enter-your-nhs-number.html",
+    text: "Change",
+    visuallyHiddenText: "nhs number"
+    }
+    ]
+    }
+    },
+
+
+    }) }}
+    {{ button({
+    text: "Confirm",
+    classes: "nhsapp-button",
+    href: "/" v5.5 "/pages/opt-in/preferences-1.html"
+    }) }}
+  </div>
+</div>
+{% endblock %}

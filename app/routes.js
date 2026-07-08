@@ -26,5 +26,17 @@
             res.redirect('/v5.4/pages/opt-in/preferences-1')
         }
     })
+    router.post('/v5.5/pages/opt-in/do-you-know-nhs-number', function (req, res) {
+        var input = req.session.data['do-you-know-nhs-number']
+        if (input === 'yes'){
+            res.redirect('/v5.5/pages/opt-in/enter-your-nhs-number')
+        }else if {(input === 'no')
+            res.redirect('/v5.5/pages/opt-in/enter-your-date-of-birth')
+        } else {
+            // fallback
+            res.redirect('/v5.5/pages/opt-in/abm-manage-preferences')
+        }
+    })
+
 
     module.exports = router;
