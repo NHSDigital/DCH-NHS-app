@@ -28,6 +28,12 @@
         }
     })
 
+
+    // Catch the redirect specifically from the enter-your-name form
+    router.post('/v5.5/pages/opt-in/do-you-know-nhs-number-redirect', function (req, res) {
+        res.redirect('/v5.5/pages/opt-in/do-you-know-nhs-number')
+    })
+
     router.post('/v5.5/pages/opt-in/do-you-know-nhs-number', function (req, res) {
         const input = req.session.data['do-you-know-nhs-number']
 

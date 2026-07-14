@@ -23,18 +23,15 @@
     rows: [
     {
     key: {
-
-    {
-    key: {
     text: "Name"
     },
     value: {
-    text: data['first-name] ['last-name']
+    text: data['first-name'] + " " + data['last-name']
     },
     actions: {
     items: [
     {
-    href: "/" v5.5 "/pages/opt-in/enter-your-name.html",
+    href: "/" + version + "/pages/opt-in/enter-your-name",
     text: "Change",
     visuallyHiddenText: "name"
     }
@@ -51,20 +48,19 @@
     actions: {
     items: [
     {
-    href: "/" v5.5 "/pages/opt-in/enter-your-nhs-number.html",
+    href: "/" + version + "/pages/opt-in/enter-your-nhs-number",
     text: "Change",
     visuallyHiddenText: "nhs number"
     }
     ]
     }
-    },
-
-
+    }
+    ]
     }) }}
     {{ button({
     text: "Confirm",
     classes: "nhsapp-button",
-    href: "/" v5.5 "/pages/opt-in/preferences-1.html"
+    href: "/" + version + "/pages/opt-in/preferences-1"
     }) }}
   </div>
 </div>

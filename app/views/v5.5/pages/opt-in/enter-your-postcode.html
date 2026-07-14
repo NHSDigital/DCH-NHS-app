@@ -18,6 +18,8 @@
       </h1>
     </legend>
 
+    <form method="post" action="/{{ version }}/pages/opt-in/check-your-details">
+
     <div class="nhsuk-hint">
       Enter the postoce you registered with your GP practice. For example, SW1 1TH
     </div>
@@ -35,9 +37,10 @@
 
     {{ button({
     text: "Continue",
-    classes: "nhsapp-button",
-    href: "/" + version + "/pages/opt-in/check-your-details"
+    classes: "nhsapp-button"
     }) }}
+
+    </form>
 
   </div>
 </div>
