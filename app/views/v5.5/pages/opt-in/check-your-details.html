@@ -1,6 +1,6 @@
 {% from "summary-list/macro.njk" import summaryList %}
 {% extends 'layout.html' %}
-{% set version = "v5.4" %}
+{% set version = "v5.5" %}
 
 {% set hub = "Opt Out" %}
 
@@ -26,12 +26,12 @@ rows: [
         text: "Name"
         },
         value: {
-        text: data ['first-name] ['last-name']
+            text: data['first-name'] + " " + data['last-name']
         },
         actions: {
         items: [
         {
-        href: "/" v5.5 "/pages/opt-in/enter-your-name.html",
+              href: "/" + version + "/pages/opt-in/enter-your-name",
         text: "Change",
         visuallyHiddenText: "name"
         }
@@ -43,12 +43,12 @@ rows: [
         text: "Date of birth"
         },
         value: {
-        text: data ['date-of-birth-day'] ['date-of-birth-month'] ['date-of-birth-year']
+        text: data['date-of-birth-day'] + " " + data['date-of-birth-month'] + " " + data['date-of-birth-year']
         },
         actions: {
         items: [
         {
-        href: "/" v5.5 "/pages/opt-in/enter-your-date-of-birth.html",
+              href: "/" + version + "/pages/opt-in/enter-your-date-of-birth",
         text: "Change",
         visuallyHiddenText: "date of birth"
         }
@@ -65,21 +65,20 @@ rows: [
         actions: {
         items: [
         {
-        href: "/" v5.5 "/pages/opt-in/enter-your-postcode.html",
+              href: "/" + version + "/pages/opt-in/enter-your-postcode",
         text: "Change",
         visuallyHiddenText: "change postcode"
         }
         ]
         }
         }
-}
-]
-}) }}
-        {{ button({
-        text: "Confirm",
-        classes: "nhsapp-button",
-        href: "/" v5.5 "/pages/opt-in/preferences-1.html"
-        }) }}
+      ]
+    }) }}
+    {{ button({
+    text: "Confirm",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-in/preferences-1"
+    }) }}
     </div>
 </div>
 {% endblock %}

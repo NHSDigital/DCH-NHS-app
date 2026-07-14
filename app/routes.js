@@ -34,7 +34,7 @@
         if (input === 'yes') {
             res.redirect('/v5.5/pages/opt-in/enter-your-nhs-number')
         } else if (input === 'no') {
-            res.redirect('/v5.5/pages/opt-in/enter-your-date-of-birth')
+            res.redirect('/v5.5/pages/opt-in/enter-date-of-birth')
         } else {
             // fallback
             res.redirect('/v5.5/pages/opt-in/abm-manage-preferences')
