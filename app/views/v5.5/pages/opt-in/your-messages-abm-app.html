@@ -84,7 +84,7 @@
                   1:02pm
                 </span>
               </div>
-              <form id="message1" method="post" action="/{{ version }}/pages/abm-messages/1-intro">
+              <form id="message1" method="post" action="/v5.4/pages/abm-messages/1-intro">
                 {% if data['message1read'] === "false" %}
                 <input type="hidden" name="message1read" value="true">
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
@@ -166,7 +166,7 @@
                   3 days ago
                 </span>
               </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/{{ version }}/pages/abm-messages/3-Health-visitor">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/v5.4/pages/abm-messages/3-Health-visitor">
                 <span class="nhsuk-u-visually-hidden">Read message from </span>
                NHS England - Best Start in Life
                 <span class="nhsuk-u-visually-hidden"> received 3 days ago at 10:30am</span> 
