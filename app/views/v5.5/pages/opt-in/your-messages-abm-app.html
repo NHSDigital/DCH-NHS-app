@@ -1,5 +1,5 @@
 {% extends 'layout-app.html' %}
-{% set version = "v5.4" %}
+{% set version = "v5.5" %}
 
 {% set hub = "Messages" %}
 
@@ -125,7 +125,7 @@
                   Yesterday
                 </span>
               </div>
-              <form id="message2" method="post" action="/{{ version }}/pages/opt-out/2-gp-message">
+              <form id="message2" method="post" action="/{{ version }}/pages/opt-in/2-gp-message">
                 {% if data['message2read'] === "false" %}
                 <input type="hidden" name="message2read" value="true">
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">

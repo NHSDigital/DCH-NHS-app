@@ -1,5 +1,5 @@
 {% extends 'layout-app.html' %}
-{% set version = "v5.3" %}
+{% set version = "v5.4" %}
 
 {% set hub = "Home" %}
 
@@ -39,6 +39,20 @@
           {
             title: "Documents",
             href: "/" + version + "/pages/documents/documents-p9"
+          }
+        ]
+      }) }}
+
+      <!-- MESSAGES CARD -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        heading: 'Messages',
+        cards: [
+          {
+            title: "View your messages",
+            href: "/v5.5/pages/opt-in/your-messages-abm-app",
+            icon: true,
+            messages: 1
           }
         ]
       }) }}
