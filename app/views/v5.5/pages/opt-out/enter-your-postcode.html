@@ -6,7 +6,7 @@
 {% set backLink = true %}
 
 
-{% set pageHeading = "What is your postcode?" %}
+{% set pageHeading = "Enter your postode" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
@@ -18,10 +18,8 @@
       </h1>
     </legend>
 
-    <form method="post" action="/{{ version }}/pages/opt-in/check-your-details">
-
     <div class="nhsuk-hint">
-      Enter the postcode you registered with your GP practice. For example, SW1 1TH
+      Enter the postoce you registered with your GP practice. For example, SW1 1TH
     </div>
 
     {% from "input/macro.njk" import input %}
@@ -37,10 +35,9 @@
 
     {{ button({
     text: "Continue",
-    classes: "nhsapp-button"
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-out/check-your-details.html"
     }) }}
-
-    </form>
 
   </div>
 </div>

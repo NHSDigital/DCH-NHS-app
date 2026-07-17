@@ -1,5 +1,5 @@
 {% extends 'layout-app.html' %}
-{% set version = "v5.5" %}
+{% set version = "v5.4" %}
 {% set hub = "Messages" %}
 {% set backLink = true %}
 
@@ -31,7 +31,7 @@
         <p>If you haven't registered already, you can register by:</p>
         <ul>
           <li>using the NHS website or NHS app to <a href="https://www.nhs.uk/service-search/find-a-gp?wt.mc_id=AGERELATED-DCHinform01&wt.tsrc=app">register with a GP surgery</a></li>
-          <li>downloading the <a href="https://gp-registration.nhs.uk/register-with-a-gp-surgery-paper-form?wt.mc_id=AGERELATED-DCHinform01&wt.tsrc=app">register with a GP surgery paper form</a>, filling it in and taking it to the surgery.</li>
+          <li>downloading the <a href="https://gp-registration.nhs.uk/register-with-a-gp-surgery-paper-form?wt.mc_id=AGERELATED-DCHinform01&wt.tsrc=app">register with a GP surgery paper form</a>, filling it in and taking it to the surgery</li>
           <li>or going to the surgery</li>
         </ul>
         <p>You can register with a GP even if you have not already registered the baby’s birth.</p>
@@ -39,10 +39,11 @@
         <h2 class="nhsuk-heading-s">Found this useful? Sign up for email support</h2>
         </p><p><a href="https://www.nhs.uk/best-start-in-life/start-for-life-emails/?wt.mc_id=AGERELATED-DCHinform01&wt.tsrc=app">Sign up for free</a> to receive regular emails tailored to your baby's age.</p>
                 <h2 class="nhsuk-heading-s">If you do not want to receive these messages</h2>
-        <p class="nhsuk-body">This is a trial of a new service. You can<a href="/v5.5/pages/opt-in/abm-manage-preferences">manage your preferences</a> at any time. </p>
+       <p class="nhsuk-body">This is a trial of a new service. You can unsubscribe by visiting <a href="/{{ version }}/pages/opt-out/abm-opt-out">www.nhs.uk/age-based-messsages/unsubscribe</a></p>
                           <h2 class="nhsuk-heading-s">Data protection</h2>
-        <p class="nhsuk-body"><p>Read NHS age-based messages <a href="http://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/dch-privacy-notice">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied.</p>
-      </div>
+<p class="nhsuk-body"><p>Read NHS Age Based Messaging's <a href="http://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/dch-privacy-notice">privacy notice.</a>
+    </div>
   </div>
-</div>
 {% endblock %}
+
+

@@ -1,0 +1,37 @@
+{% extends 'layout-app.html' %}
+{% set version = "v4" %}
+{% set hub = "Messages" %}
+{% set backLink = true %}
+
+{% set pageHeading = "Confirmation" %}
+
+
+{% set pageDescription = "Received today at 1:02pm" %}
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <!-- DYNAMIC PAGE TITLE -->
+    {{ dynamicPageTitle({
+    title: pageHeading,
+    titleSmall: true,
+    titleHiddenTextBefore: "Message from",
+    description: pageDescription,
+    descriptionMuted: true
+    })}}
+
+    <div class="nhsuk-u-margin-bottom-7">
+      <p class="nhsuk-body">Your preference has been saved</p>
+      <p>You’ve unsubscribed from age-based messages.</p>
+
+        <p>You will not receive any more  messages about age-based messaging from us.</p>
+      <p>We have sent you a confirmation by text.</p>
+
+        <p>It may take up to one working day to update.</P>
+
+    </div>
+
+
+    <p> Read how we use your data for age-based messages in the <a href="https://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/digital-best-start-age-based-messaging-privacy-statement"privacy notice</a>.</p>
+  </div>
+</div>
+{% endblock %}        
