@@ -30,8 +30,13 @@
 
 
     // Catch the redirect specifically from the enter-your-name form
-    router.post('/v5.5/pages/opt-in/do-you-know-nhs-number-redirect', function (req, res) {
-        res.redirect('/v5.5/pages/opt-in/do-you-know-nhs-number')
+    router.post('/v5.5/pages/opt-in/enter-your-name-post', function (req, res) {
+        const knowsNhsNumber = req.session.data['do-you-know-nhs-number'];
+        if (knowsNhsNumber === 'yes') {
+             res.redirect('/v5.5/pages/opt-in/nhs-check-details');
+        } else {
+             res.redirect('/v5.5/pages/opt-in/enter-date-of-birth');
+        }
     })
 
     router.post('/v5.5/pages/opt-in/do-you-know-nhs-number', function (req, res) {
@@ -40,7 +45,7 @@
         if (input === 'yes') {
             res.redirect('/v5.5/pages/opt-in/enter-your-nhs-number')
         } else if (input === 'no') {
-            res.redirect('/v5.5/pages/opt-in/enter-date-of-birth')
+            res.redirect('/v5.5/pages/opt-in/enter-your-name')
         } else {
             // fallback
             res.redirect('/v5.5/pages/opt-in/abm-manage-preferences')

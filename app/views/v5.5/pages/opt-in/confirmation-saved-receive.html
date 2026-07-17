@@ -9,29 +9,27 @@
 
 
 
+{% from "panel/macro.njk" import panel %}
+{% from "summary-list/macro.njk" import summaryList %}
 
 {% block content %}
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-      <h1 class="nhsuk-fieldset__heading">
-        Thanks for letting us know.
-      </h1>
-      {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
-      {{ insetText({
-      html: "<p>" + pageDescription + "</p>"
-      }) }}
-      <p> You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/">Best Start in Life</a>.
-        <br>
-      <p class="nhsuk-body">If you would like to provide some feedback about this service, you can <a href="https://www.england.nhs.uk/contact-us/feedback-and-complaints/complaint/">fill out this form</a>.</p>
-    </legend>
+    {{ panel({
+    titleText: "Thanks for letting us know.",
+    text: "This is to confirm that you will continue to receive age-based messages about your baby."
+    }) }}
+    <p class="nhsuk-body"> You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link--no-visited-state">Best Start in Life</a>.</p>
+    <p class="nhsuk-body">If you would like to provide some feedback about this service, you can <a href="https://www.england.nhs.uk/contact-us/feedback-and-complaints/complaint/" class="nhsuk-link--no-visited-state">fill out this form</a>.</p>
 
     <h2 class="nhsuk-heading-m">
       More Information
     </h2>
-    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link nhsuk-link--no-visited-state">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+
+
+
   </div>
 </div>
 {% endblock %}
