@@ -23,8 +23,10 @@
         } else if (input === 'dont-receive') {
             res.redirect('/v5.5/pages/opt-in/confirmation-saved-dont-receive')
         } else {
-            // fallback
-            res.redirect('/v5.5/pages/opt-in/preferences-1')
+            // Validation fallback if they select nothing
+            res.render('v5.5/pages/opt-in/preferences-1', {
+                error: true
+            })
         }
     })
 
@@ -47,8 +49,10 @@
         } else if (input === 'no') {
             res.redirect('/v5.5/pages/opt-in/enter-your-name')
         } else {
-            // fallback
-            res.redirect('/v5.5/pages/opt-in/abm-manage-preferences')
+            // Validation fallback if they select nothing
+            res.render('v5.5/pages/opt-in/do-you-know-nhs-number', {
+                error: true
+            })
         }
     })
 
