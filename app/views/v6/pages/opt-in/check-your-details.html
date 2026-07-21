@@ -1,0 +1,84 @@
+{% from "summary-list/macro.njk" import summaryList %}
+{% extends 'layout.html' %}
+{% set version = "v5.5" %}
+
+{% set hub = "Opt Out" %}
+
+
+
+{% set pageHeading = "Check your details" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Check your details
+            </h1>
+        </legend>
+
+
+{{ summaryList({
+rows: [
+        {
+        key: {
+        text: "Name"
+        },
+        value: {
+            text: data['first-name'] + " " + data['last-name']
+        },
+        actions: {
+        items: [
+        {
+              href: "/" + version + "/pages/opt-in/enter-your-name",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Date of birth"
+        },
+        value: {
+        text: data['dateOfBirth']['day'] + " " + data['dateOfBirth']['month'] + " " + data['dateOfBirth']['year']
+        },
+        actions: {
+        items: [
+        {
+              href: "/" + version + "/pages/opt-in/enter-your-date-of-birth",
+        text: "Change",
+        visuallyHiddenText: "date of birth"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Postcode"
+        },
+        value: {
+        text: data['your-postcode']
+        },
+        actions: {
+        items: [
+        {
+              href: "/" + version + "/pages/opt-in/enter-your-postcode",
+        text: "Change",
+        visuallyHiddenText: "change postcode"
+        }
+        ]
+        }
+        }
+      ]
+    }) }}
+    {{ button({
+    text: "Confirm",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-in/preferences-1"
+    }) }}
+    </div>
+</div>
+{% endblock %}

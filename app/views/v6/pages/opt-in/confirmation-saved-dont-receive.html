@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% set version = "v5.5" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+{% set pageHeading = "Your preference has been saved." %}
+{% set pageDescription = "This is to confirm that you will no longer receive age-based messages from us." %}
+
+
+
+{% from "panel/macro.njk" import panel %}
+{% from "summary-list/macro.njk" import summaryList %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {{ panel({
+    titleText: "Your preference has been saved.",
+    text: "This is to confirm that you will no longer receive age-based messages from us."
+    }) }}
+    <p class="nhsuk-body">It may take up to one working day to update your preference.</p>
+    <p class="nhsuk-body"> You can also find support and guidance for you and your baby which is always available at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link--no-visited-state">Best Start in Life</a>.</p>
+    <p class="nhsuk-body">If you would like to provide some feedback about this service, you can <a href="https://www.england.nhs.uk/contact-us/feedback-and-complaints/complaint/" class="nhsuk-link--no-visited-state">fill out this form</a>.</p>
+
+    <h2 class="nhsuk-heading-m">
+      More Information
+    </h2>
+    <p class="nhsuk-body"> Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link nhsuk-link--no-visited-state">privacy notice</a> for more information on how the NHS uses your data, and how your change will be applied. </p>
+
+
+
+  </div>
+</div>
+{% endblock %}

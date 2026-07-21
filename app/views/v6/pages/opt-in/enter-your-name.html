@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% set version = "v5.5" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                What is your name?
+            </h1>
+        </legend>
+
+        <form method="post" action="/v5.5/pages/opt-in/enter-your-name-post">
+
+        <div class="nhsuk-hint">
+            Enter the exact name you used when you registered with your GP practice.
+        </div>
+
+       {% from "input/macro.njk" import input %}
+
+        {{ input({
+        label: {
+        text: "First name"
+        },
+        id: "first-name",
+        name: "first-name"
+        }) }}
+
+        {{ input({
+        label: {
+        text: "Last name"
+        },
+        id: "last-name",
+        name: "last-name"
+        }) }}
+
+    {{ button({
+    text: "Continue",
+    classes: "nhsapp-button"
+    }) }}
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% set version = "v5.5" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <form action="/v5.5/pages/opt-in/do-you-know-nhs-number" method="post">
+
+    {% if error %}
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <ul class="nhsuk-list nhsuk-error-summary__list">
+            <li>
+              <a href="#example">Select yes if you know your NHS number</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="nhsuk-form-group {% if error %}nhsuk-form-group--error{% endif %}">
+      <fieldset class="nhsuk-fieldset">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Do you know your NHS number?
+          </h1>
+        </legend>
+
+        <div class="nhsuk-hint">
+          Telling us your NHS number will give us the best chance of matching you to your NHS record. Your NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.
+        </div>
+        <div class="nhsuk-hint">
+          If you do not know it, you can tell us your postcode and date of birth instead.
+        </div>
+
+        {% if error %}
+          <span class="nhsuk-error-message" id="example-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you know your NHS number
+          </span>
+        {% endif %}
+
+        <div class="nhsuk-radios" data-module="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example" name="do-you-know-nhs-number" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example">
+              Yes, I know my NHS number
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="do-you-know-nhs-number" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              No, I do not know my NHS number
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    {{ button({
+    text: "Continue",
+    classes: "nhsapp-button"
+    }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}

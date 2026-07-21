@@ -1,0 +1,58 @@
+{% extends 'layout-app.html' %}
+{% set version = "v5.4" %}
+{% set hub = "Messages" %}
+{% set backLink = true %}
+
+{% set pageHeading = "NHS Best Start in Life" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+<div class="nhsuk-u-margin-bottom-7">
+      <h1 class="nhsuk-heading-m">When to introduce solid foods</h1>
+
+        <h2 class="nhsuk-heading-s">Don't begin weaning too early</h2>
+        <p>Introducing solid foods is recommended by the NHS when babies are around 6 months old.</p>
+        <p>You may hear people say they started at 4 months, however the NHS recommends waiting to around 6 months when a baby is able to:</p>
+        <ul>
+          <li>stay in a sitting position, holding their head steady</li>
+          <li>coordinate their eyes, hands and mouth so they can look at their food, pick it up and put it in their mouth</li>
+          <li>swallow food (rather than spit it back out)</li>  </ul>
+        <p>  At this stage, babies need more than milk alone. Solid foods provide extra energy and nutrients to support healthy growth and development.</p>
+        <p></p>
+      
+        
+        <p>This process of introducing solid foods is sometimes called 'complementary feeding' or 'weaning'.</p>
+        <p>When you begin, this may vary from baby to baby, but should start around 6 months. Every baby is different.</p><p>If your baby was premature, you may wish to discuss timing with a health visitor. If you are concerned about your baby's development or readiness to start solid foods, it is best to speak to your GP or health visitor.</p>
+        
+        <h2 class="nhsuk-heading-s">Get advice on weaning</h2>
+        <p>Visit our <a href="https://www.nhs.uk/best-start-in-life/baby/weaning/?wt.mc_id=AGERELATED-DCHinform01&wt.tsrc=app">NHS Best Start In Life weaning page</a> for:</p>
+        <ul>
+          <li>expert advice</li>
+          <li>simple, healthy weaning recipe and meal ideas</li>
+          <li>tips from other parents</li>
+          <li><a href="https://www.nhs.uk/best-start-in-life/baby/weaning/ready-or-not-weaning-quiz/?wt.mc_id=AGERELATED-DCHinform01&wt.tsrc=app">our quiz to find out if your baby is ready to start weaning</a> </li>
+        </ul>
+        <p>You can also speak to your health visitor if you have any questions.</p>
+
+             <h2 class="nhsuk-heading-s">Found this useful? Sign up for email support</h2>
+        <p><a href="https://www.nhs.uk/best-start-in-life/start-for-life-emails/?wt.mc_id=AGERELATED-DCHinform01&wt.tsrc=app">Sign up for free</a> to receive regular emails tailored to your baby's age.</p>
+                <h2 class="nhsuk-heading-s">If you do not want to receive these messages</h2>
+       <p class="nhsuk-body">This is a trial of a new service. You can opt out by visiting <a href="https://www.nhs.uk/your-nhs-data-matters/manage-your-choice">www.nhs.uk/your-nhs-data-matters/manage-your-choice</a></p>
+                          <h2 class="nhsuk-heading-s">Data protection</h2>
+<p class="nhsuk-body"><p>Read NHS Age Based Messaging's <a href="http://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/dch-privacy-notice">privacy notice.</a>
+
+    </div>
+  </div>
+{% endblock %}        

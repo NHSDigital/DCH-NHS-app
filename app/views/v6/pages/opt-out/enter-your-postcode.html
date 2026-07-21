@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% set version = "v5.5" %}
+
+{% set hub = "Opt Out" %}
+
+{% set backLink = true %}
+
+
+{% set pageHeading = "Enter your postode" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Enter your postcode
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint">
+      Enter the postoce you registered with your GP practice. For example, SW1 1TH
+    </div>
+
+    {% from "input/macro.njk" import input %}
+
+    {{ input({
+    label: {
+    text: "Postcode"
+    },
+    id: "your-postcode",
+    name: "your-postcode",
+    classes: "nhsuk-input--width-10"
+    }) }}
+
+    {{ button({
+    text: "Continue",
+    classes: "nhsapp-button",
+    href: "/" + version + "/pages/opt-out/check-your-details.html"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
