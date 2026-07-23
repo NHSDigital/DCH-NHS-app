@@ -11,7 +11,7 @@
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
-    <form action="/v6/pages/opt-in/do-you-know-nhs-number" method="post">
+    <form action="do-you-know-nhs-number-post" method="post">
 
     {% if error %}
       <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
@@ -21,48 +21,46 @@
         <div class="nhsuk-error-summary__body">
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#example">Select yes if you know your NHS number</a>
+              <a href="#example-error">Select yes if you know your NHS number</a>
             </li>
           </ul>
         </div>
       </div>
     {% endif %}
 
-    <div class="nhsuk-form-group {% if error %}nhsuk-form-group--error{% endif %}">
-      <fieldset class="nhsuk-fieldset">
+    {% set errorMsg = null %}
+    {% if error %}
+        {% set errorMsg = { text: "Select yes if you know your NHS number" } %}
+    {% endif %}
 
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h1 class="nhsuk-fieldset__heading">
-            Do you know your NHS number?
-          </h1>
-        </legend>
+{% from "radios/macro.njk" import radios %}
 
-        <div class="nhsuk-hint">
-          This is a 10 digit number that you can find on an NHS letter, prescriptions or in the NHS App. </div>
+{{ radios({
+idPrefix: "example-error",
+name: "do-you-know-nhs-number",
+errorMessage: errorMsg,
+fieldset: {
+legend: {
+text: "Do you know your NHS number?",
+size: "l",
+isPageHeading: true
+}
+},
+hint: {
+text: "This is a 10 digit number that you can find on an NHS letter, prescriptions or in the NHS App."
+},
+items: [
+{
+value: "yes",
+text: "Yes, I know my NHS number"
+},
+{
+value: "no",
+text: "No, I do not know my NHS number"
+}
+]
+}) }}
 
-        {% if error %}
-          <span class="nhsuk-error-message" id="example-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you know your NHS number
-          </span>
-        {% endif %}
-
-        <div class="nhsuk-radios" data-module="nhsuk-radios">
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example" name="do-you-know-nhs-number" type="radio" value="yes">
-            <label class="nhsuk-label nhsuk-radios__label" for="example">
-              Yes, I know my NHS number
-            </label>
-          </div>
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="do-you-know-nhs-number" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              No, I do not know my NHS number
-            </label>
-          </div>
-        </div>
-
-      </fieldset>
-    </div>
 
     {{ button({
     text: "Continue",

@@ -17,21 +17,42 @@
     titleHiddenTextBefore: "Message from"
     })}}
       <form method="post" action="preferences-1-post">
-    {{ radios({
-idPrefix: "opt-in-preferences",
-name: "opt-in-preferences",
 
-items: [
-{
-value: "receive",
-text: "Keep receiving age-based messages"
-},
-{
-value: "dont-receive",
-text: "Unsubscribe from age-based messages"
-}
-]
-}) }}
+      {% if error %}
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="nhsuk-error-summary__body">
+            <ul class="nhsuk-list nhsuk-error-summary__list">
+              <li>
+                <a href="#opt-in-preferences">A selection is required: Please select if you want to unsubscribe from receiving messages</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
+      {% set errorMsg = null %}
+      {% if error %}
+          {% set errorMsg = { text: "A selection is required: Please select if you want to unsubscribe from receiving messages" } %}
+      {% endif %}
+
+    {{ radios({
+    idPrefix: "opt-in-preferences",
+    name: "opt-in-preferences",
+    errorMessage: errorMsg,
+    items: [
+    {
+    value: "receive",
+    text: "Keep receiving age-based messages"
+    },
+    {
+    value: "dont-receive",
+    text: "Unsubscribe from age-based messages"
+    }
+    ]
+    }) }}
     {{ button({
     text: "Save",
     classes: "nhsapp-button"
