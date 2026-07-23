@@ -1,9 +1,9 @@
 {% extends 'layout.html' %}
-{% set version = "v5.5" %}
+{% set version = "v6" %}
 
 {% set backLink = true %}
 
-{% set pageHeading = "Manage your preferences for age-based messages" %}
+{% set pageHeading = "Unsubscribe form age-based messages" %}
 
 {% block content %}
 <!--
@@ -33,9 +33,9 @@
         <h1 class="nhsuk-u-margin-bottom-6">{{ pageHeading }}</h1>
 
 
-        <p class="nhsuk-body">Parents and carers are automatically signed up for age-based messages when they have a baby. These are timed messages based on the age of your baby, reminding you of important information like appointments, weaning and vitamins. </p>
+        <p class="nhsuk-body">You were automatically signed for this service. up to receive timed reminders based on your baby's age, including information about appointments, check-ups and more. </p>
         <br>
-        <p class="nhsuk-body">You can only use this service to manage your preferences for age-based messages.</p>
+        <p class="nhsuk-body">You'll need to confirm your identity before you can make changes.</p>
 
             <!--
         <div class="nhsuk-inset-text">
@@ -46,52 +46,23 @@
 
         <h4 class="nhsuk-heading-m">Before you start</h4>
 
-        <p class="nhsuk-body">To find your record, we'll need a few details.</p>
-        <p class="nhsuk-body">If you know your NHS number:</p>
+        <p class="nhsuk-body">To find your record, we'll need your:</p>
+
         <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Your NHS number</li>
-            <li>Your full name</li>
-
-
+            <li>Name</li>
+            <li>Date of birth</li>
+            <li>Postcode or NHS number</li>
         </ul>
-        <p class="nhsuk-body">If you don't know your NHS number:</p>
-        <ul class="nhsuk-list nhsuk-list--bullet">
 
-            <li>Your full name</li>
-            <li>Your date of birth</li>
-            <li>Your postcode registered with your GP</li>
-        </ul>
-        <p class="nhsuk-body">We'll use these details to verify who you are so that you can manage your preferences.</p>
-
-        <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                    How to find your NHS number
-                </span>
-            </summary>
-            <div class="nhsuk-details__text">
-                <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
-                <p>You can find your NHS number by logging in to the NHS App. From your Home screen, go to "Profile" and find your name. Your NHS number is shown under your name and date of birth. Most parents and carers can find their NHS number on recent NHS documents such as:</p>
-                <ul>
-                    <li>Maternity documents</li>
-                    <li>Discharge papers</li>
-                    <li>Appointment letters</li>
-                    <li>Prescriptions</li>
-                </ul>
-                <p>You can also use the <a href="https://www.nhs.uk/nhs-services/find-nhs-number/" class="nhsuk-link--no-visited-state">Find your NHS number service.</a> </p>
-            </div>
-        </details>
-
-        <br>
 
     {{ button({
     text: "Start now",
     classes: "nhsapp-button",
-    href: "/v5.5/pages/opt-in/do-you-know-nhs-number"
+    href: "/v6/pages/opt-in/do-you-know-nhs-number"
     }) }}
 
         <p>
-            <a href="https://your-data-matters.service.nhs.uk/privacy-notice">Read how your data will be processed using this service.</a>
+            <a href="https://your-data-matters.service.nhs.uk/privacy-notice" target="_blank" rel="noopener noreferrer">Read how your data will be processed using this service</a> (opens in a new window).
         </p>
 
 

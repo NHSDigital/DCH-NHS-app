@@ -1,9 +1,8 @@
 {% extends 'layout.html' %}
-{% set version = "v5.5" %}
+{% set version = "v6" %}
 {% set hub = "Profile" %}
 {% set backLink = true %}
-{% set pageHeading = "Manage your preferences for age-based messages" %}
-{% set pageDescription = "You can choose whether to receive NHS age-based messages about your baby. These are sent at key moments in your baby's first year with reminders and guidance about appointments, check-ups and more." %}
+{% set pageHeading = "Do you want to unsubscribe from age-based messages?" %}
 
 {% block content %}
 
@@ -15,29 +14,21 @@
     {{ dynamicPageTitle({
     title: pageHeading,
     titleSmall: true,
-    titleHiddenTextBefore: "Message from",
-    description: pageDescription,
-    descriptionMuted: true
+    titleHiddenTextBefore: "Message from"
     })}}
       <form method="post" action="preferences-1-post">
     {{ radios({
 idPrefix: "opt-in-preferences",
 name: "opt-in-preferences",
-fieldset: {
-legend: {
-text: "Choose your preference for age-based messages",
-size: "m",
-isPageHeading: true
-}
-},
+
 items: [
 {
 value: "receive",
-text: "I want to receive age-based messages"
+text: "I do not want to unsubscribe from age-based messages"
 },
 {
 value: "dont-receive",
-text: "I do not want to receive age-based messages"
+text: "I want to unsubscribe from age-based messages"
 }
 ]
 }) }}
