@@ -34,7 +34,7 @@
           </a>
         </li>
         <li class="app-bottom-navigation__item">
-          <a class="app-bottom-navigation__link" href="/{{ version }}/pages/messages/messages-{{ data['accountType'] }}">
+          <a class="app-bottom-navigation__link" href="/{{ version }}/pages/{% if version == 'v1' %}abm-messages/your-messages-abm{% else %}messages/messages-{{ data['accountType'] }}{% endif %}">
             {% if hub === "Messages" %}
               {% if data['messages'] > 0 %}
                 {{ nhsappIcon('messagesUnreadFilled') }}
