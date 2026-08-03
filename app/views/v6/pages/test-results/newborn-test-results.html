@@ -1,0 +1,41 @@
+{% extends 'layout-app.html' %}
+{% set version = "v6" %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Newborn test results" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Newborn blood spot test results",
+            href: "/" + version + "/pages/test-results/blood-spot"
+          },
+          {
+            title: "Hearing test results",
+            href: "/" + version + "/pages/test-results/hearing-screening"
+          },          
+          {
+            title: "Newborn and infant physical examination results",
+            href: "/" + version + "/pages/test-results/nipe"
+          }    
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

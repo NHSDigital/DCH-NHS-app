@@ -1,0 +1,124 @@
+{% extends 'layout-app.html' %}
+{% set version = "v6" %}
+
+{% set hub = "Home" %}
+{% set linkedProfile = true %}
+{% set pageHeading = "Newborn blood spot screening results" %}
+
+{% set backLink = true %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE 
+      {% if data['web'] !== "yes" %}
+        {{ dynamicPageTitle({
+          linkedProfile: {
+            name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+            age: data['linkedProfileAge'], 
+            nhsNumber: data['nhsNumber']
+          }
+        })}}
+      {% endif %} -->
+
+      <!-- Page heading -->
+      <h1 class="nhsuk-heading-l">Newborn blood spot screening results</h1>
+
+            <!-- Summary  card -->
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test date</dt>
+              <dd class="nhsuk-summary-list__value">21 September 2025</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Test results</dt>
+              <dd class="nhsuk-summary-list__value">No conditions suspected.</dd>
+            </div>
+          </dl>     
+        </div>
+      </div>     
+
+
+      <!-- Summary of results -->
+      <h2 class="nhsuk-heading-m">Summary of results</h2>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <p>Your baby is not thought to have any of the rare conditions listed below that were tested for.</p>
+          <p>Screening tests are not 100% accurate. If you have any concerns about your baby, contact your GP, midwife or health visitor.</p>
+          
+          <p>Learn more about <a href="https://www.nhs.uk/baby/newborn-screening/blood-spot-test/">Newborn blood spot screening.</a></p>
+        </div>
+      </div>
+
+      <!-- Results table -->
+      <h2 class="nhsuk-heading-m">Results</h2>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <table class="nhsuk-table">
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Test</th>
+                <th class="nhsuk-table__header" scope="col">Result</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Congenital hypothyroidism (CHT)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Cystic fibrosis (CF)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Glutaric acidura type 1 (GA1)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Homocystinuria (pyridoxine unresponsive) (HCU)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Isovaleric acidaemia (IVA)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Maple syrup urine disease (MSUD)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Medium-chain acyl-CoA dehydrogenase deficiency (MCADD)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Phenylketonuria (PKU)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Severe combined immunodeficiency (SCID)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Sickle cell disease (SCD)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Hereditary Tyrosinaemia Type 1 (HT1)</td>
+                <td class="nhsuk-table__cell">Not suspected</td>
+              </tr>              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

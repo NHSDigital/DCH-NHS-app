@@ -1,0 +1,38 @@
+{% extends 'layout-app.html' %}
+{% set version = "v6" %}
+
+{% set hub = "Your health" %}
+
+
+{% set linkedProfile = true %}
+{% set backLink = true %}
+
+{% set pageHeading = "Teddy's health record" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <!-- PANEL LINK CARD - Your health -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Birth details",
+            href: "/" + version + "/pages/baby/birth-details"
+          }
+        ]
+      })}}
+
+    </div>
+  </div>
+
+{% endblock %}

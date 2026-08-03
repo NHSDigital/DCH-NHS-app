@@ -1,0 +1,277 @@
+{% extends 'layout-app.html' %}
+{% set hub = "Profile" %}
+{% set version = "v6" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Family and carer access" %}
+{% set pageDescription = "Support family members and people you care for, or allow trusted people to help you" %}
+
+{% block content %}
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <h2 class="nhsuk-heading-s">
+        People you care for
+      </h2>
+
+
+<ul class="nhsapp-cards">
+
+
+<!--name1-->
+
+  <li class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+
+
+
+              <form id="linkedProfile1" method="post" action="/{{ version }}/pages/profile/patient-manage-preview">
+                <input type="hidden" name="linkedProfile" value="1">
+                <a href="/{{ version }}/pages/profile/patient-manage-preview" onclick="document.getElementById('linkedProfile1').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-font-size-22">
+                  {{ data['linkedProfileFirstName'] }} {{ data['linkedProfileLastName'] }}
+                </a>
+              </form>
+
+
+<p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-top-1">
+                {{ data['linkedProfileAge'] }} years old
+</p>
+
+</div>
+
+
+
+
+<svg
+class="nhsapp-icon nhsapp-icon--chevron-right"
+xmlns="http://www.w3.org/2000/svg"
+aria-hidden="true"
+focusable="false"
+height="2rem"
+width="2rem"
+viewBox="0 0 24 24">
+<path
+d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+/>
+</svg>
+</div>
+</li>
+
+<!--name2-->
+
+  <li class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+
+
+
+            <form id="linkedProfile2" method="post" action="#">
+                <input type="hidden" name="linkedProfile" value="2">
+                <a href="#1" onclick="document.getElementById('linkedProfile2').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-font-size-22">
+                  {{ data['linkedProfile2FirstName'] }} {{ data['linkedProfile2LastName'] }}
+                </a>
+              </form>
+
+
+<p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-top-1">
+                {{ data['linkedProfile2Age'] }} years old
+</p>
+
+</div>
+
+
+
+
+<svg
+class="nhsapp-icon nhsapp-icon--chevron-right"
+xmlns="http://www.w3.org/2000/svg"
+aria-hidden="true"
+focusable="false"
+height="2rem"
+width="2rem"
+viewBox="0 0 24 24">
+<path
+d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+/>
+</svg>
+</div>
+</li>
+
+<!--name4-->
+
+  <li class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+
+
+
+            <form id="linkedProfile4" method="post" action="#">
+                <input type="hidden" name="linkedProfile" value="4">
+                <a href="#1" onclick="document.getElementById('linkedProfile4').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-font-size-22">
+                  {{ data['linkedProfile4FirstName'] }} {{ data['linkedProfile4LastName'] }}
+                </a>
+              </form>
+
+
+<p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-top-1">
+                {{ data['linkedProfile4Age'] }} years old
+</p>
+
+</div>
+
+
+
+
+<svg
+class="nhsapp-icon nhsapp-icon--chevron-right"
+xmlns="http://www.w3.org/2000/svg"
+aria-hidden="true"
+focusable="false"
+height="2rem"
+width="2rem"
+viewBox="0 0 24 24">
+<path
+d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+/>
+</svg>
+</div>
+</li>
+
+
+
+
+
+</ul>
+      
+       
+{% from 'button/macro.njk' import button %}
+
+{{ button({
+  text: 'Add someone you care for',
+    href: '#',
+  classes: 'nhsuk-button--secondary nhsapp-button'
+}) }}
+
+
+
+  <div class="nhsuk-u-padding-bottom-4"></div>
+
+      <h2 class="nhsuk-heading-s">
+        Your trusted people
+      </h2>
+
+
+<ul class="nhsapp-cards">
+
+{% if not data.linkedProfile3Removed %}  
+  <li class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+
+
+
+              <form id="linkedProfile3" method="post" action="#">
+                <input type="hidden" name="linkedProfile" value="3">
+                <a href="#1" onclick="document.getElementById('linkedProfile3').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-font-size-22">
+                  {{ data['linkedProfile3FirstName'] }} {{ data['linkedProfile3LastName'] }}
+                </a>
+              </form>
+
+
+<p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-top-1">
+{{ data['linkedProfile3Age'] }} years old</p>
+
+</div>
+
+
+
+
+<svg
+class="nhsapp-icon nhsapp-icon--chevron-right"
+xmlns="http://www.w3.org/2000/svg"
+aria-hidden="true"
+focusable="false"
+height="2rem"
+width="2rem"
+viewBox="0 0 24 24">
+<path
+d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+/>
+</svg>
+</div>
+</li>
+{% endif %}
+
+{% if not data.linkedProfile5Removed %}
+ <li class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+
+
+
+              <form id="linkedProfile5" method="post" action="#">
+                <input type="hidden" name="linkedProfile" value="5">
+                <a href="#1" onclick="document.getElementById('linkedProfile5').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-font-size-22">
+                  {{ data['linkedProfile5FirstName'] }} {{ data['linkedProfile5LastName'] }}
+                </a>
+              </form>
+
+
+<p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-top-1">
+                {{ data['linkedProfile5Age'] }} years old</p>
+
+</div>
+
+
+
+
+<svg
+class="nhsapp-icon nhsapp-icon--chevron-right"
+xmlns="http://www.w3.org/2000/svg"
+aria-hidden="true"
+focusable="false"
+height="2rem"
+width="2rem"
+viewBox="0 0 24 24">
+<path
+d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+/>
+</svg>
+</div>
+</li>
+
+{% endif %}
+
+
+
+<li>
+{% if data.linkedProfile3Removed and data.linkedProfile5Removed %}
+
+
+  <p class="nhsuk-body">You do not have any trusted people added to your NHS App.</p>
+{% endif %}
+
+
+</li>
+
+</ul>
+
+
+
+
+
+{{ button({
+  text: 'Add a trusted person',
+    href: '#',
+  classes: 'nhsuk-button--secondary nhsapp-button'
+}) }}
+
+
+  {% endblock %}
