@@ -13,7 +13,7 @@
           </a>
         </li>
         <li class="app-bottom-navigation__item">
-          <a class="app-bottom-navigation__link" href="/{% if version == 'v2' or version == 'v3' %}{{ version }}/pages/{% if abmContext === true %}abm-messages/your-messages-abm{% else %}messages/{% if linkedProfile === true %}messages-linked-profiles{% else %}messages-p9{% endif %}{% endif %}{% elif version == 'v4' or version == 'v4.5' or version == 'v5.1' or version == 'v5.2' or version == 'v5.3' or version == 'v5.4' or version == 'v5.5' %}{{ version }}/pages/{% if abmContext === true %}abm-messages/your-messages-abm{% else %}messages/{% if linkedProfile === true %}messages-linked-profiles{% elif data['accountType'] == 'p5' %}messages-p5{% else %}messages-p9{% endif %}{% endif %}{% elif version == 'v6' %}v6/pages/opt-in/your-messages-abm-app{% else %}{{ version }}/pages/opt-in/your-messages-abm-app{% endif %}">
+          <a class="app-bottom-navigation__link" href="/{% if version == 'v6' %}v6/pages/opt-in/your-messages-abm-app{% else %}{{ version }}/pages/abm-messages/your-messages-abm{% endif %}">
             {% if hub === "Messages" %}
               {% if data['messages'] > 0 %}
                 {{ nhsappIcon('messagesUnreadFilled') }}

@@ -320,7 +320,7 @@
                                         <p class="nhsuk-body">Your preference has been saved.</p>
                                         <p class="nhsuk-body">You’ve unsubscribed from age-based messages. You will not receive any more from us.</p>
                                         <p>It may take up to one working day to update.</p>
-                                        <p class="nhsuk-body">You can start receiving age-based messages again by <a href="pages/v5.4/opt-in/abm-manage-preferences.html">managing your preferences</a>.</a></p>
+                                        <p class="nhsuk-body">You can start receiving age-based messages again by <a href="pages/{{ version }}/opt-in/abm-manage-preferences.html">managing your preferences</a>.</p>
                                         <p class="nhsuk-body">Visit our <a href="https://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/digital-best-start-age-based-messaging-privacy-statement">privacy notice</a> for more information about your data.</p>
                                     </div>
                                 </div>
@@ -377,4 +377,3 @@
         window.addEventListener('load', handleHashChange);
     </script>
 {% endblock %}
-    document.querySelectorAll('.message-content').forEach(article => {
