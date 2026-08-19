@@ -1,7 +1,7 @@
 <header class="app-global-navigation-native">
   <div class="nhsuk-width-container">
     <nav class="app-global-navigation-native__nav">
-      <a class="app-global-navigation-native__logo" href="/{{ version }}/pages/home-{{ data['accountType'] }}">
+      <a class="app-global-navigation-native__logo" href="/{{ version }}/pages/home-{% if linkedProfile === true %}linked-profiles{% else %}{{ data['accountType'] }}{% endif %}">
         <svg class="nhsuk-logo nhsuk-u-display-block" xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 40 16" height="28" width="69" aria-describedby="nhs-logo-title" role="img">
           <title id="nhs-logo-title">NHS</title>
           <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>

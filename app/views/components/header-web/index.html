@@ -2,7 +2,7 @@
 {{ header({
   service: {
     text: 'App<span class="nhsuk-u-visually-hidden"> homepage</span>' | safe,
-    href: "pages/home-" + data['accountType']
+    href: "pages/home-" + ("linked-profiles" if linkedProfile else data['accountType'])
   },
   account: {
     classes: 'nhsapp-u-hide-until-tablet',
@@ -13,7 +13,7 @@
       },
       {
         text: 'Account',
-        href:  "pages/account-and-settings-" + data['accountType']
+        href:  "pages/account-and-settings-" + ("linked-profiles" if linkedProfile else data['accountType'])
       },
       {
         text: 'Log out',
@@ -25,19 +25,19 @@
     items: [
       {
         text: 'Home',
-        href: "pages/home-" + data['accountType']
+        href: "pages/home-" + ("linked-profiles" if linkedProfile else data['accountType'])
       },
       {
         text: 'Services',
-        href:  "pages/services-" + data['accountType']
+        href:  "pages/services-" + ("linked-profiles" if linkedProfile else data['accountType'])
       },
       {
         text: 'Your health',
-        href:  "pages/your-health-" + data['accountType']
+        href:  "pages/your-health-" + ("linked-profiles" if linkedProfile else data['accountType'])
       },
       {
         text: 'Messages',
-        href: version === 'v6' ? "pages/opt-in/your-messages-abm-app" : (version === 'v1' ? "pages/abm-messages/your-messages-abm" : "pages/messages-" + data['accountType'])
+        href: linkedProfile ? "pages/messages/messages-linked-profiles" : (version === 'v6' ? "pages/opt-in/your-messages-abm-app" : (version === 'v1' ? "pages/abm-messages/your-messages-abm" : "pages/messages-" + data['accountType']))
       },
       {
         text: 'Help and support',
@@ -46,7 +46,7 @@
       },
       {
         text: 'Account',
-        href:  "pages/account-and-settings-" + data['accountType'],
+        href:  "pages/account-and-settings-" + ("linked-profiles" if linkedProfile else data['accountType']),
         classes: 'nhsapp-u-hide-from-tablet'
       },
       {
