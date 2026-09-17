@@ -58,7 +58,17 @@ flowchart TD
   The rest of this prototype's pages set `{% set backLink = true %}`. which
   `layout.html` does not read, so that flag renders nothing — that pattern
   is left as-is elsewhere to avoid touching unrelated journeys.
-- All pages in this journey extend `app/views/layout-website.html` (not
+- `start.html` extends a separate layout, `app/views/layout-nhsuk-website.html`,
+  not `layout-website.html`. Start pages for services like this are usually
+  hosted on the main NHS.UK website, with the full NHS.UK header (search +
+  navigation) and breadcrumbs, per the
+  [start page pattern](https://service-manual.nhs.uk/design-system/patterns/start-page).
+  The "Start now" button then takes the user off nhs.uk and into the
+  transactional service itself, which is why every other page in this
+  journey switches to the simpler logo + service name header
+  (`layout-website.html`) - matching how real services like "Find your NHS
+  number" work in production.
+- All other pages in this journey extend `app/views/layout-website.html` (not
   `layout.html`/`layout-app.html` directly). It overrides only the header
   and footer to match the standard NHS.UK transactional-service pattern —
   logo + service name, no app navigation, and a footer with Accessibility

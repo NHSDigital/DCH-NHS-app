@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+<!--
+  Layout for the start page of the NHS website opt-out journey only.
+
+  Start pages for services like this are typically hosted on the main
+  NHS.UK website (nhs.uk) - with the full NHS.UK header (search and
+  navigation) and breadcrumbs placing the page in the wider site - and the
+  "Start now" button takes the user out of nhs.uk and into the transactional
+  service itself. See:
+  https://service-manual.nhs.uk/design-system/patterns/start-page
+
+  Once the user clicks "Start now" they move into the transactional service,
+  which uses the simpler logo + service name header (layout-website.html) -
+  matching the pattern used by real NHS.UK services like "Find your NHS
+  number".
+
+  Only start.html extends this layout - it does not affect any other page
+  in this journey, or any other app journey.
+-->
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Unsubscribe from age-based messages – NHS
+{% endblock %}
+
+<!-- Full NHS.UK website header: logo, search and navigation, as this page
+     is hosted on the main NHS.UK website rather than within the service -->
+{% block header %}
+  {{ header({
+    search: {
+      action: "https://www.nhs.uk/search"
+    },
+    navigation: {
+      items: [
+        { href: "https://www.nhs.uk/nhs-services/", text: "NHS services" },
+        { href: "https://www.nhs.uk/conditions/", text: "Health A to Z" },
+        { href: "https://www.nhs.uk/live-well/", text: "Live Well" },
+        { href: "https://www.nhs.uk/mental-health/", text: "Mental health" },
+        { href: "https://www.nhs.uk/care-and-support/", text: "Care and support" },
+        { href: "https://www.nhs.uk/pregnancy/", text: "Pregnancy" }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+<!-- Breadcrumb placing this start page within the wider NHS.UK website -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      { href: "https://www.nhs.uk", text: "Home" },
+      { href: "https://www.nhs.uk/nhs-services/", text: "NHS services" },
+      { href: "https://www.nhs.uk/nhs-services/online-services/", text: "Online services" }
+    ]
+  }) }}
+{% endblock %}
+
+<!-- Standard NHS.UK footer meta links, matching the design -->
+{% block footer %}
+  {{ footer({
+    copyright: {
+      text: "© NHS England"
+    },
+    meta: {
+      items: [
+        {
+          href: "#",
+          text: "Accessibility statement"
+        },
+        {
+          href: "#",
+          text: "Contact us"
+        },
+        {
+          href: "#",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Privacy policy"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
+          text: "Reset data"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
