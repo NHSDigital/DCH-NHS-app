@@ -70,6 +70,23 @@
         }
     })
 
+    // Website (non-app) journey routes
+
+    router.post('/website/pages/opt-out/preferences-1-post', function (req, res) {
+        const input = req.session.data['stop-messages']
+
+        if (input === 'Yes') {
+            res.redirect('/website/pages/opt-out/confirmation-saved-yes')
+        } else if (input === 'No') {
+            res.redirect('/website/pages/opt-out/confirmation-saved-no')
+        } else {
+            // Validation fallback if they select nothing
+            res.render('website/pages/opt-out/preferences-1', {
+                error: true
+            })
+        }
+    })
+
     // V6 Routes
 
     router.post('/v6/pages/opt-in/preferences-1-post', function (req, res) {

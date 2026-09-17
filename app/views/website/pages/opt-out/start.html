@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% set version = "website" %}
+{% set hub = "Opt Out" %}
+{% set backLink = true %}
+{% set pageHeading = "Stop receiving age-based messages" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+    <p>We'll need your:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>name</li>
+      <li>date of birth</li>
+      <li>postcode or NHS number</li>
+    </ul>
+
+    <p>We'll use these details to find your contact details from your health records so we can confirm your preference.</p>
+
+    {{ button({
+      text: "Continue",
+      href: "/website/pages/opt-out/preferences-1"
+    }) }}
+
+    <p>
+      <a href="https://your-data-matters.service.nhs.uk/privacy-notice" class="nhsuk-link">How your data will be processed using this service</a> (opens in new window).
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

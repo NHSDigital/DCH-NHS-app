@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% set version = "website" %}
+{% set hub = "Opt Out" %}
+{% set backLink = true %}
+{% set pageHeading = "Would you like to stop receiving NHS age-based messages?" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form method="post" action="preferences-1-post">
+
+      {% from "radios/macro.njk" import radios %}
+
+      {{ radios({
+        idPrefix: "stop-messages",
+        name: "stop-messages",
+        errorMessage: { text: "Select an option" } if error,
+        fieldset: {
+          legend: {
+            text: pageHeading,
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        hint: {
+          text: "Select 1 option"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, stop sending me messages"
+          },
+          {
+            value: "No",
+            text: "No, keep sending me messages"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        text: "Save"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
