@@ -1,6 +1,12 @@
 // apple ios dynamic text
+// Scoped to .nhs-app-native only (set in app/views/layout-app.html for the
+// native app webview) so this doesn't override typography site-wide -
+// otherwise Safari/WebKit (including desktop Safari) applies the system
+// Dynamic Type body size to every page, making text on the NHS website
+// journey (and any other non-native-app page) render smaller than it
+// should.
 @supports (font: -apple-system-body) {
-  html {
+  .nhs-app-native {
     font: -apple-system-body !important;
   }
 }
