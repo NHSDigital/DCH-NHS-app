@@ -56,39 +56,48 @@
   }) }}
 {% endblock %}
 
-<!-- Standard NHS.UK footer meta links, matching the design -->
+<!-- Standard NHS.UK website footer: full navigation footer (not the
+     simpler service-specific meta footer used once inside the service),
+     matching https://www.nhs.uk/nhs-services/hospitals/book-an-appointment/ -->
 {% block footer %}
   {{ footer({
     copyright: {
-      text: "© NHS England"
+      text: "© Crown copyright"
     },
-    meta: {
-      items: [
-        {
-          href: "#",
-          text: "Accessibility statement"
-        },
-        {
-          href: "#",
-          text: "Contact us"
-        },
-        {
-          href: "#",
-          text: "Cookies"
-        },
-        {
-          href: "#",
-          text: "Privacy policy"
-        },
-        {
-          href: "#",
-          text: "Terms and conditions"
-        },
-        {
-          href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
-          text: "Reset data"
-        }
-      ]
-    }
+    navigation: [
+      {
+        items: [
+          { href: "https://www.nhs.uk/", text: "Home" },
+          { href: "https://www.nhs.uk/health-a-to-z/", text: "Health A to Z" },
+          { href: "https://www.nhs.uk/nhs-services/", text: "NHS services" },
+          { href: "https://www.nhs.uk/live-well/", text: "Healthy living" },
+          { href: "https://www.nhs.uk/mental-health/", text: "Mental health" },
+          { href: "https://www.nhs.uk/social-care-and-support/", text: "Care and support" }
+        ]
+      },
+      {
+        items: [
+          { href: "https://www.nhs.uk/nhs-app/", text: "NHS App" },
+          { href: "https://www.nhs.uk/nhs-services/online-services/find-nhs-number/", text: "Find my NHS number" },
+          { href: "https://www.nhs.uk/using-the-nhs/about-the-nhs/", text: "About the NHS" },
+          { href: "https://www.nhs.uk/using-the-nhs/healthcare-abroad/", text: "Healthcare abroad" }
+        ]
+      },
+      {
+        items: [
+          { href: "https://www.nhs.uk/our-policies/manage-nhs-profiles/", text: "Manage NHS profiles" },
+          { href: "https://www.nhs.uk/nhs-sites/", text: "Other NHS websites" }
+        ]
+      },
+      {
+        items: [
+          { href: "https://www.nhs.uk/about-us/", text: "About us" },
+          { href: "https://www.nhs.uk/accessibility-statement/", text: "Accessibility statement" },
+          { href: "https://www.nhs.uk/our-policies/", text: "Our policies" },
+          { href: "https://www.nhs.uk/our-policies/choose-your-cookie-settings/", text: "Cookies" },
+          { href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode), text: "Reset data" }
+        ]
+      }
+    ]
   }) }}
 {% endblock %}
