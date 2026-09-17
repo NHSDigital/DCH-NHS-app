@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+<!--
+  Layout for the standalone NHS website opt-out journey only.
+  This overrides the header and footer to use the standard NHS.UK
+  transactional-service pattern (logo + service name, no app navigation)
+  instead of the NHS App prototype branding used elsewhere in layout.html.
+  Only views that extend this layout are affected - the app journeys
+  (layout-app.html and friends) are untouched.
+-->
+
+<!-- Question pages use a smaller top main wrapper padding alongside a back link -->
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Digital Child Health – NHS
+{% endblock %}
+
+<!-- Standard NHS.UK header: logo and service name only, no navigation or
+     search, as recommended for a transactional service journey -->
+{% block header %}
+  {{ header({
+    service: {
+      text: "Digital Child Health",
+      href: "/website/pages/opt-out/start"
+    }
+  }) }}
+{% endblock %}
+
+<!-- Standard NHS.UK footer meta links, matching the design -->
+{% block footer %}
+  {{ footer({
+    copyright: {
+      text: "© Crown copyright"
+    },
+    meta: {
+      items: [
+        {
+          href: "#",
+          text: "Accessibility statement"
+        },
+        {
+          href: "#",
+          text: "Contact us"
+        },
+        {
+          href: "#",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Privacy policy"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
+          text: "Reset data"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}

@@ -58,3 +58,17 @@ flowchart TD
   The rest of this prototype's pages set `{% set backLink = true %}`. which
   `layout.html` does not read, so that flag renders nothing — that pattern
   is left as-is elsewhere to avoid touching unrelated journeys.
+- All pages in this journey extend `app/views/layout-website.html` (not
+  `layout.html`/`layout-app.html` directly). It overrides only the header
+  and footer to match the standard NHS.UK transactional-service pattern —
+  logo + service name, no app navigation, and a footer with Accessibility
+  statement / Contact us / Cookies / Privacy policy / Terms and conditions
+  links per the [header](https://service-manual.nhs.uk/design-system/components/header)
+  and [footer](https://service-manual.nhs.uk/design-system/components/footer)
+  guidance — and sets `mainClasses = "nhsuk-main-wrapper--s"` as recommended
+  by the [question pages](https://service-manual.nhs.uk/design-system/patterns/question-pages)
+  and [start page](https://service-manual.nhs.uk/design-system/patterns/start-page)
+  patterns, which fixes the excess top padding that showed above the back
+  link. This override is scoped to `layout-website.html` only, so the app
+  journeys (which still extend `layout.html`/`layout-app.html`) are
+  unaffected.
