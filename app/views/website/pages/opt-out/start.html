@@ -2,7 +2,7 @@
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
 {% set backLink = true %}
-{% set pageHeading = "Stop receiving age-based messages" %}
+{% set pageHeading = "Unsubscribe from Age-Based Messages" %}
 
 {% block content %}
 
@@ -11,23 +11,24 @@
 
     <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
 
+    <p>You were automatically signed up to receive timed reminders based on your baby's age, including information about appointments, check-ups and more.</p>
+
+    <p>You can use this service to unsubscribe from these messages.</p>
+
+    <p><strong>You'll need to confirm your identity before you can make changes.</strong></p>
+
     <p>We'll need your:</p>
     <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>NHS number</li>
+      <li>or date of birth</li>
       <li>name</li>
-      <li>date of birth</li>
-      <li>postcode or NHS number</li>
+      <li>postcode</li>
     </ul>
-
-    <p>We'll use these details to find your contact details from your health records so we can confirm your preference.</p>
 
     {{ button({
       text: "Continue",
       href: "/website/pages/opt-out/preferences-1"
     }) }}
-
-    <p>
-      <a href="https://your-data-matters.service.nhs.uk/privacy-notice" class="nhsuk-link">How your data will be processed using this service</a> (opens in new window).
-    </p>
 
   </div>
 </div>
