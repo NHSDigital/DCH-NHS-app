@@ -46,3 +46,15 @@ flowchart TD
   `do-you-know-nhs-number` to retry.
 - Both confirmation pages (`confirmation-saved-yes` / `confirmation-saved-no`)
   use the standard `nhsuk-frontend` panel component, not app-specific styling.
+- Session data keys use `camelCase` (`knowsNhsNumber`, `nhsNumber`, `firstName`,
+  `lastName`, `postcode`, `dateOfBirth`, `confirmUnsubscribe`), and radio
+  values match their visible text exactly, per the
+  [NHS prototype kit guide](https://github.com/edwardhorsford/NHS-LLM-documentation).
+- POST routes use the `-answer` suffix (for example `enter-your-name-answer`)
+  rather than `-post`, and only exist where branching or validation is
+  needed — `enter-date-of-birth` posts straight to `check-your-details`
+  since no route is required there.
+- Back links use the real `backLink()` component in a `beforeContent` block.
+  The rest of this prototype's pages set `{% set backLink = true %}`. which
+  `layout.html` does not read, so that flag renders nothing — that pattern
+  is left as-is elsewhere to avoid touching unrelated journeys.

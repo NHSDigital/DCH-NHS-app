@@ -1,34 +1,48 @@
 {% extends 'layout.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% set backLink = true %}
-{% set pageHeading = "Enter your full name" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/website/pages/opt-out/do-you-know-nhs-number",
+    text: "Back"
+  }) }}
+{% endblock %}
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form method="post" action="enter-your-name-post">
+    <form method="post" action="enter-your-name-answer">
 
-      <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
-      <p class="nhsuk-hint">Use the same full name that you registered with your GP surgery.</p>
+      {% call fieldset({
+        legend: {
+          text: "Enter your full name",
+          size: "l",
+          isPageHeading: true
+        }
+      }) %}
 
-      {% from "input/macro.njk" import input %}
+        <p class="nhsuk-hint">Use the same full name that you registered with your GP surgery</p>
 
-      {{ input({
-        label: { text: "First name" },
-        errorMessage: { text: "Enter your first name" } if error,
-        id: "first-name",
-        name: "first-name"
-      }) }}
+        {{ input({
+          label: { text: "First name" },
+          errorMessage: { text: "Enter your first name" } if error,
+          id: "firstName",
+          name: "firstName",
+          value: data.firstName
+        }) }}
 
-      {{ input({
-        label: { text: "Last name" },
-        errorMessage: { text: "Enter your last name" } if error,
-        id: "last-name",
-        name: "last-name"
-      }) }}
+        {{ input({
+          label: { text: "Last name" },
+          errorMessage: { text: "Enter your last name" } if error,
+          id: "lastName",
+          name: "lastName",
+          value: data.lastName
+        }) }}
+
+      {% endcall %}
 
       {{ button({
         text: "Continue"

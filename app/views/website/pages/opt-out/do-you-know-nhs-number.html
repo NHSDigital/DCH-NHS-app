@@ -1,36 +1,40 @@
 {% extends 'layout.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% set backLink = true %}
-{% set pageHeading = "Do you know your NHS number?" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/website/pages/opt-out/start",
+    text: "Back"
+  }) }}
+{% endblock %}
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form method="post" action="do-you-know-nhs-number-post">
-
-      {% from "radios/macro.njk" import radios %}
+    <form method="post" action="do-you-know-nhs-number-answer">
 
       {{ radios({
-        idPrefix: "do-you-know-nhs-number",
-        name: "do-you-know-nhs-number",
+        idPrefix: "knowsNhsNumber",
+        name: "knowsNhsNumber",
         errorMessage: { text: "Select an option" } if error,
         fieldset: {
           legend: {
-            text: pageHeading,
-            classes: "nhsuk-fieldset__legend--l",
+            text: "Do you know your NHS number?",
+            size: "l",
             isPageHeading: true
           }
         },
+        value: data.knowsNhsNumber,
         items: [
           {
-            value: "yes",
+            value: "Yes",
             text: "Yes, I know my NHS number"
           },
           {
-            value: "no",
+            value: "No",
             text: "No, I do not know my NHS number"
           }
         ]

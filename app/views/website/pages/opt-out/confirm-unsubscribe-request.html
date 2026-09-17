@@ -1,36 +1,33 @@
 {% extends 'layout.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% set backLink = true %}
-{% set pageHeading = "Confirm your unsubscribe request" %}
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form method="post" action="confirm-unsubscribe-request-post">
-
-      {% from "radios/macro.njk" import radios %}
+    <form method="post" action="confirm-unsubscribe-request-answer">
 
       {{ radios({
-        idPrefix: "confirm-unsubscribe",
-        name: "confirm-unsubscribe",
+        idPrefix: "confirmUnsubscribe",
+        name: "confirmUnsubscribe",
         errorMessage: { text: "Select an option" } if error,
         fieldset: {
           legend: {
-            text: pageHeading,
-            classes: "nhsuk-fieldset__legend--l",
+            text: "Confirm your unsubscribe request",
+            size: "l",
             isPageHeading: true
           }
         },
+        value: data.confirmUnsubscribe,
         items: [
           {
-            value: "keep",
+            value: "Keep receiving age-based messages",
             text: "Keep receiving age-based messages"
           },
           {
-            value: "unsubscribe",
+            value: "Unsubscribe from age-based messages",
             text: "Unsubscribe from age-based messages"
           }
         ]

@@ -1,9 +1,13 @@
-{% from "summary-list/macro.njk" import summaryList %}
 {% extends 'layout.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% set backLink = true %}
-{% set pageHeading = "Confirm your details" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/website/pages/opt-out/enter-date-of-birth",
+    text: "Back"
+  }) }}
+{% endblock %}
 
 {% block content %}
 
@@ -12,13 +16,13 @@
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
 
-        <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+        <h1 class="nhsuk-heading-l">Confirm your details</h1>
 
         {{ summaryList({
           rows: [
             {
               key: { text: "Name" },
-              value: { text: "First Middle Surname" },
+              value: { text: data.firstName + " " + data.lastName },
               actions: {
                 items: [
                   { href: "/website/pages/opt-out/enter-your-name", text: "Change", visuallyHiddenText: "name" }
@@ -27,7 +31,7 @@
             },
             {
               key: { text: "Date of birth" },
-              value: { text: "01 January 1980" },
+              value: { text: data.dateOfBirth.day + " " + data.dateOfBirth.month + " " + data.dateOfBirth.year },
               actions: {
                 items: [
                   { href: "/website/pages/opt-out/enter-date-of-birth", text: "Change", visuallyHiddenText: "date of birth" }
@@ -36,7 +40,7 @@
             },
             {
               key: { text: "Post code" },
-              value: { text: data['your-postcode'] or "SW1 2CV" },
+              value: { text: data.postcode },
               actions: {
                 items: [
                   { href: "/website/pages/opt-out/enter-your-postcode", text: "Change", visuallyHiddenText: "postcode" }
@@ -46,7 +50,7 @@
           ]
         }) }}
 
-        <form method="post" action="check-your-details-post">
+        <form method="post" action="check-your-details-answer">
           {{ button({
             text: "Confirm details"
           }) }}

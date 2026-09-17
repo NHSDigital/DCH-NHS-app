@@ -1,43 +1,39 @@
 {% extends 'layout.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% set backLink = true %}
-{% set pageHeading = "What is your date of birth?" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/website/pages/opt-out/enter-your-postcode",
+    text: "Back"
+  }) }}
+{% endblock %}
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form method="post" action="enter-date-of-birth-post">
+    <!-- No branching happens after this page, so it posts straight to the
+         next page in the flow rather than a dedicated route -->
+    <form method="post" action="check-your-details">
 
-      <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">{{ pageHeading }}</h1>
-          </legend>
-          <div class="nhsuk-date-input" id="date-of-birth">
-            <div class="nhsuk-date-input__item">
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-day">Day</label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day" name="dateOfBirth[day]" type="text" autocomplete="bday-day" inputmode="numeric">
-              </div>
-            </div>
-            <div class="nhsuk-date-input__item">
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-month">Month</label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month" name="dateOfBirth[month]" type="text" autocomplete="bday-month" inputmode="numeric">
-              </div>
-            </div>
-            <div class="nhsuk-date-input__item">
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-year">Year</label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year" name="dateOfBirth[year]" type="text" autocomplete="bday-year" inputmode="numeric">
-              </div>
-            </div>
-          </div>
-        </fieldset>
-      </div>
+      {{ dateInput({
+        id: "dateOfBirth",
+        namePrefix: "dateOfBirth",
+        fieldset: {
+          legend: {
+            text: "What is your date of birth?",
+            size: "l",
+            isPageHeading: true
+          }
+        },
+        items: [
+          { name: "day", value: data.dateOfBirth.day },
+          { name: "month", value: data.dateOfBirth.month },
+          { name: "year", value: data.dateOfBirth.year }
+        ]
+      }) }}
 
       {{ button({
         text: "Continue"
