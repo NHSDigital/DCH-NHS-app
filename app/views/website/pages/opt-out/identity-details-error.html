@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% set version = "website" %}
+{% set hub = "Opt Out" %}
+{% set backLink = true %}
+{% set pageHeading = "We're sorry. We can't identify you at this time. Please check your details and try again." %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+    {{ button({
+      text: "Continue",
+      href: "/website/pages/opt-out/do-you-know-nhs-number"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

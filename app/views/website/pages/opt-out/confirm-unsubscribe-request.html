@@ -2,20 +2,20 @@
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
 {% set backLink = true %}
-{% set pageHeading = "Would you like to stop receiving NHS age-based messages?" %}
+{% set pageHeading = "Confirm your unsubscribe request" %}
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form method="post" action="preferences-1-post">
+    <form method="post" action="confirm-unsubscribe-request-post">
 
       {% from "radios/macro.njk" import radios %}
 
       {{ radios({
-        idPrefix: "stop-messages",
-        name: "stop-messages",
+        idPrefix: "confirm-unsubscribe",
+        name: "confirm-unsubscribe",
         errorMessage: { text: "Select an option" } if error,
         fieldset: {
           legend: {
@@ -24,23 +24,20 @@
             isPageHeading: true
           }
         },
-        hint: {
-          text: "Select 1 option"
-        },
         items: [
           {
-            value: "Yes",
-            text: "Yes, stop sending me messages"
+            value: "keep",
+            text: "Keep receiving age-based messages"
           },
           {
-            value: "No",
-            text: "No, keep sending me messages"
+            value: "unsubscribe",
+            text: "Unsubscribe from age-based messages"
           }
         ]
       }) }}
 
       {{ button({
-        text: "Save"
+        text: "Submit"
       }) }}
 
     </form>

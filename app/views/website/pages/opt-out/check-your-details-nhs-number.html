@@ -1,0 +1,51 @@
+{% from "summary-list/macro.njk" import summaryList %}
+{% extends 'layout.html' %}
+{% set version = "website" %}
+{% set hub = "Opt Out" %}
+{% set backLink = true %}
+{% set pageHeading = "Confirm your details" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+
+        <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+        {{ summaryList({
+          rows: [
+            {
+              key: { text: "NHS number" },
+              value: { text: data['your-nhs-number'] or "2345678912" },
+              actions: {
+                items: [
+                  { href: "/website/pages/opt-out/enter-your-nhs-number", text: "Change", visuallyHiddenText: "NHS number" }
+                ]
+              }
+            },
+            {
+              key: { text: "Post code" },
+              value: { text: data['your-postcode'] or "SW1 2CV" },
+              actions: {
+                items: [
+                  { href: "/website/pages/opt-out/enter-your-postcode", text: "Change", visuallyHiddenText: "postcode" }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        <form method="post" action="check-your-details-nhs-number-post">
+          {{ button({
+            text: "Confirm details"
+          }) }}
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

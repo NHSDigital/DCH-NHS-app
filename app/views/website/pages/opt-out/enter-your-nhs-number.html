@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% set version = "website" %}
+{% set hub = "Opt Out" %}
+{% set backLink = true %}
+{% set pageHeading = "What is your NHS number?" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form method="post" action="enter-your-nhs-number-post">
+
+      {% from "input/macro.njk" import input %}
+
+      {{ input({
+        label: {
+          text: pageHeading,
+          classes: "nhsuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456."
+        },
+        errorMessage: { text: "Enter your NHS number" } if error,
+        id: "your-nhs-number",
+        name: "your-nhs-number",
+        classes: "nhsuk-input--width-20"
+      }) }}
+
+      {{ button({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

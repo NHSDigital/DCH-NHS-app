@@ -1,26 +1,28 @@
+{% from "panel/macro.njk" import panel %}
 {% extends 'layout.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% set backLink = true %}
-{% set pageHeading = "You have unsubscribed from age-based messages" %}
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
-
-    {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
-    {{ insetText({
-      html: "<p>This confirms that you will no longer receive age-based messages from us.</p>"
+    {{ panel({
+      titleText: "You will no longer receive age-based messages.",
+      titleSize: "l"
     }) }}
 
+    <h2 class="nhsuk-heading-m">What happens next</h2>
     <p class="nhsuk-body">It may take up to one working day to update.</p>
-    <p class="nhsuk-body">Support and guidance for you and your baby is always available at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link">Best Start in Life</a>.</p>
+    <p class="nhsuk-body">You can find support and guidance for you and your baby at <a href="https://www.nhs.uk/best-start-in-life/" class="nhsuk-link">Best Start In Life</a>.</p>
 
-    <h2 class="nhsuk-heading-m">More information</h2>
-    <p class="nhsuk-body">Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data.</p>
+    <h2 class="nhsuk-heading-m">Before you leave this page</h2>
+    <p class="nhsuk-body">You can:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li><a href="#" class="nhsuk-link">give feedback to help us improve this service</a></li>
+      <li><a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">check how the NHS uses your data</a></li>
+    </ul>
 
   </div>
 </div>

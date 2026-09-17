@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% set version = "website" %}
+{% set hub = "Opt Out" %}
+{% set backLink = true %}
+{% set pageHeading = "What is your post code" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form method="post" action="enter-your-postcode-post">
+
+      <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+      {% from "input/macro.njk" import input %}
+
+      {{ input({
+        label: { text: "Enter post code" },
+        hint: { text: "For this prototype, enter SW1 2CV to pass identity verification." },
+        errorMessage: { text: "Enter your postcode" } if error,
+        id: "your-postcode",
+        name: "your-postcode",
+        classes: "nhsuk-input--width-10"
+      }) }}
+
+      {{ button({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

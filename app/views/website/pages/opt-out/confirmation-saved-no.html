@@ -1,25 +1,27 @@
+{% from "panel/macro.njk" import panel %}
 {% extends 'layout.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% set backLink = true %}
-{% set pageHeading = "Your preference has been saved" %}
 
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
-
-    {% from 'nhsuk/components/inset-text/macro.njk' import insetText %}
-    {{ insetText({
-      html: "<p>You will continue to receive age-based messages from us.</p>"
+    {{ panel({
+      titleText: "You will continue to receive age-based messages.",
+      titleSize: "l"
     }) }}
 
-    <p class="nhsuk-body">You can change this preference at any time.</p>
+    <h2 class="nhsuk-heading-m">What happens next</h2>
+    <p class="nhsuk-body">You do not need to do anything else. We will keep sending you timed reminders based on your baby's age.</p>
 
-    <h2 class="nhsuk-heading-m">More information</h2>
-    <p class="nhsuk-body">Visit our <a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">privacy notice</a> for more information on how the NHS uses your data.</p>
+    <h2 class="nhsuk-heading-m">Before you leave this page</h2>
+    <p class="nhsuk-body">You can:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li><a href="#" class="nhsuk-link">give feedback to help us improve this service</a></li>
+      <li><a href="https://www.england.nhs.uk/contact-us/privacy-notice/" class="nhsuk-link">check how the NHS uses your data</a></li>
+    </ul>
 
   </div>
 </div>

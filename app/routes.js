@@ -70,18 +70,102 @@
         }
     })
 
-    // Website (non-app) journey routes
+    // Website (non-app) opt-out journey routes
 
-    router.post('/website/pages/opt-out/preferences-1-post', function (req, res) {
-        const input = req.session.data['stop-messages']
+    router.post('/website/pages/opt-out/do-you-know-nhs-number-post', function (req, res) {
+        const input = req.session.data['do-you-know-nhs-number']
 
-        if (input === 'Yes') {
+        if (input === 'yes') {
+            res.redirect('/website/pages/opt-out/enter-your-nhs-number')
+        } else if (input === 'no') {
+            res.redirect('/website/pages/opt-out/enter-your-name')
+        } else {
+            // Validation fallback if they select nothing
+            res.render('website/pages/opt-out/do-you-know-nhs-number', {
+                error: true
+            })
+        }
+    })
+
+    router.post('/website/pages/opt-out/enter-your-nhs-number-post', function (req, res) {
+        const input = req.session.data['your-nhs-number']
+
+        if (!input || input.trim() === '') {
+            res.render('website/pages/opt-out/enter-your-nhs-number', {
+                error: true
+            })
+        } else {
+            res.redirect('/website/pages/opt-out/enter-your-postcode')
+        }
+    })
+
+    router.post('/website/pages/opt-out/enter-your-name-post', function (req, res) {
+        const firstName = req.session.data['first-name']
+        const lastName = req.session.data['last-name']
+
+        if (!firstName || !lastName) {
+            res.render('website/pages/opt-out/enter-your-name', {
+                error: true
+            })
+        } else {
+            res.redirect('/website/pages/opt-out/enter-your-postcode')
+        }
+    })
+
+    // The postcode page is shared by both the NHS number and name/date of
+    // birth routes through identity verification - branch based on whether
+    // an NHS number was already given.
+    router.post('/website/pages/opt-out/enter-your-postcode-post', function (req, res) {
+        const postcode = req.session.data['your-postcode']
+        const hasNhsNumber = req.session.data['do-you-know-nhs-number'] === 'yes'
+
+        if (!postcode || postcode.trim() === '') {
+            res.render('website/pages/opt-out/enter-your-postcode', {
+                error: true
+            })
+        } else if (hasNhsNumber) {
+            res.redirect('/website/pages/opt-out/check-your-details-nhs-number')
+        } else {
+            res.redirect('/website/pages/opt-out/enter-date-of-birth')
+        }
+    })
+
+    router.post('/website/pages/opt-out/enter-date-of-birth-post', function (req, res) {
+        res.redirect('/website/pages/opt-out/check-your-details')
+    })
+
+    router.post('/website/pages/opt-out/check-your-details-nhs-number-post', function (req, res) {
+        // Simulate an identity check against the example patient record
+        const postcode = (req.session.data['your-postcode'] || '').replace(/\s+/g, '').toUpperCase()
+
+        if (postcode !== 'SW12CV') {
+            res.redirect('/website/pages/opt-out/identity-details-error')
+        } else {
+            res.redirect('/website/pages/opt-out/confirm-unsubscribe-request')
+        }
+    })
+
+    router.post('/website/pages/opt-out/check-your-details-post', function (req, res) {
+        // Simulate an identity check against the example patient record
+        const postcode = (req.session.data['your-postcode'] || '').replace(/\s+/g, '').toUpperCase()
+
+        if (postcode !== 'SW12CV') {
+            res.redirect('/website/pages/opt-out/identity-details-error')
+        } else {
+            res.redirect('/website/pages/opt-out/confirm-unsubscribe-request')
+        }
+    })
+
+    router.post('/website/pages/opt-out/confirm-unsubscribe-request-post', function (req, res) {
+        const input = req.session.data['confirm-unsubscribe']
+
+        if (input === 'unsubscribe') {
             res.redirect('/website/pages/opt-out/confirmation-saved-yes')
-        } else if (input === 'No') {
+        } else if (input === 'keep') {
             res.redirect('/website/pages/opt-out/confirmation-saved-no')
         } else {
             // Validation fallback if they select nothing
-            res.render('website/pages/opt-out/preferences-1', {
+            res.render('website/pages/opt-out/confirm-unsubscribe-request', {
                 error: true
             })
         }
