@@ -7,11 +7,11 @@ Routes live under `/website/pages/opt-out/`, views in
 ```mermaid
 flowchart TD
     start["01 start<br/>Unsubscribe introduction"]
-    nhsChoice["05 do-you-know-nhs-number<br/>Do you know your NHS number?"] If yes, we go to enterNHS. If No, we go to enterName.
-    enterNhs["06 enter-your-nhs-number<br/>What is your NHS number?"] Goes to the confirm details with NHS number only page.
+    nhsChoice["05 do-you-know-nhs-number<br/>Do you know your NHS number?"]
+    enterNhs["06 enter-your-nhs-number<br/>What is your NHS number?"]
     enterName["09 enter-your-name<br/>Enter your full name"]
     postcode["03 enter-your-postcode<br/>What is your post code"]
-    dob["02 enter-date-of-birth<br/>What is your date of birth ?"]
+    dob["02 enter-date-of-birth<br/>What is your date of birth?"]
     checkNhs["07 check-your-details-nhs-number<br/>Confirm details (NHS number + postcode)"]
     checkNoNhs["08 check-your-details<br/>Confirm details (name, DOB, postcode)"]
     error["04 identity-details-error<br/>We can't identify you"]
@@ -38,13 +38,12 @@ flowchart TD
 
 ## Notes
 
-- The postcode step is only part of the name + date of birth identity
-  path. The NHS number path goes straight to its own check page.
-- The identity check is simulated in `app/routes.js`: any non-blank
-  postcode passes verification and continues to the unsubscribe
-  confirmation. A blank postcode routes to the `identity-details-error`
-  page, whose Continue button loops back to `do-you-know-nhs-number` to
-  retry.
+- The postcode step is shared by both identity paths (NHS number, or
+  name + date of birth).
+- The identity check is simulated in `app/routes.js`: enter postcode
+  `SW1 2CV` to pass verification on either path; anything else routes to
+  the `identity-details-error` page, whose Continue button loops back to
+  `do-you-know-nhs-number` to retry.
 - Both confirmation pages (`confirmation-saved-yes` / `confirmation-saved-no`)
   use the standard `nhsuk-frontend` panel component, not app-specific styling.
 - Session data keys use `camelCase` (`knowsNhsNumber`, `nhsNumber`, `firstName`,
@@ -63,8 +62,7 @@ flowchart TD
   not `layout-website.html`. Start pages for services like this are usually
   hosted on the main NHS.UK website, with the full NHS.UK header (search +
   navigation) and breadcrumbs, per the
-  [start page pattern](https://service-manual.nhs.uk/design-system/patterns/start-page). However, as this is a standalone journey/service, the header and footer are
-  simpler and more consistent with the rest of the NHS.UK website.
+  [start page pattern](https://service-manual.nhs.uk/design-system/patterns/start-page).
   The "Start now" button then takes the user off nhs.uk and into the
   transactional service itself, which is why every other page in this
   journey switches to the simpler logo + service name header

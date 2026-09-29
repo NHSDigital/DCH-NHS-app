@@ -95,7 +95,7 @@
                 error: true
             })
         } else {
-            res.redirect('/website/pages/opt-out/enter-your-postcode')
+            res.redirect('/website/pages/opt-out/check-your-details-nhs-number')
         }
     })
 
@@ -107,43 +107,47 @@
                 error: true
             })
         } else {
+            res.redirect('/website/pages/opt-out/enter-date-of-birth')
+        }
+    })
+
+    router.post('/website/pages/opt-out/enter-date-of-birth-answer', function (req, res) {
+        const { day, month, year } = req.session.data.dateOfBirth || {}
+
+        if (!day || !month || !year) {
+            res.render('website/pages/opt-out/enter-date-of-birth', {
+                error: true
+            })
+        } else {
             res.redirect('/website/pages/opt-out/enter-your-postcode')
         }
     })
 
-    // The postcode page is shared by both the NHS number and name/date of
-    // birth routes through identity verification - branch based on whether
-    // an NHS number was already given.
+    // Postcode is only collected in the "no NHS number" branch, so after a
+    // valid postcode we always continue to the full check-your-details page.
     router.post('/website/pages/opt-out/enter-your-postcode-answer', function (req, res) {
-        const { postcode, knowsNhsNumber } = req.session.data
+        const { postcode } = req.session.data
 
         if (!postcode || postcode.trim() === '') {
             res.render('website/pages/opt-out/enter-your-postcode', {
                 error: true
             })
-        } else if (knowsNhsNumber === 'Yes') {
-            res.redirect('/website/pages/opt-out/check-your-details-nhs-number')
         } else {
-            res.redirect('/website/pages/opt-out/enter-date-of-birth')
+            res.redirect('/website/pages/opt-out/check-your-details')
         }
     })
 
     router.post('/website/pages/opt-out/check-your-details-nhs-number-answer', function (req, res) {
-        // Simulate an identity check against the example patient record
-        const postcode = (req.session.data.postcode || '').replace(/\s+/g, '').toUpperCase()
-
-        if (postcode !== 'SW12CV') {
-            res.redirect('/website/pages/opt-out/identity-details-error')
-        } else {
-            res.redirect('/website/pages/opt-out/confirm-unsubscribe-request')
-        }
+        // The NHS number itself identifies the patient in this branch, so no
+        // further identity verification is simulated here.
+        res.redirect('/website/pages/opt-out/confirm-unsubscribe-request')
     })
 
     router.post('/website/pages/opt-out/check-your-details-answer', function (req, res) {
-        // Simulate an identity check against the example patient record
-        const postcode = (req.session.data.postcode || '').replace(/\s+/g, '').toUpperCase()
+        // Simulate an identity check: any non-blank postcode passes
+        const postcode = (req.session.data.postcode || '').trim()
 
-        if (postcode !== 'SW12CV') {
+        if (!postcode) {
             res.redirect('/website/pages/opt-out/identity-details-error')
         } else {
             res.redirect('/website/pages/opt-out/confirm-unsubscribe-request')

@@ -4,7 +4,7 @@
 
 {% block beforeContent %}
   {{ backLink({
-    href: "/website/pages/opt-out/enter-your-postcode",
+    href: "/website/pages/opt-out/enter-your-nhs-number",
     text: "Back"
   }) }}
 {% endblock %}
@@ -26,15 +26,6 @@
               actions: {
                 items: [
                   { href: "/website/pages/opt-out/enter-your-nhs-number", text: "Change", visuallyHiddenText: "NHS number" }
-                ]
-              }
-            },
-            {
-              key: { text: "Post code" },
-              value: { text: data.postcode },
-              actions: {
-                items: [
-                  { href: "/website/pages/opt-out/enter-your-postcode", text: "Change", visuallyHiddenText: "postcode" }
                 ]
               }
             }

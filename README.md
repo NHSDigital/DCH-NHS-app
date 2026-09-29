@@ -6,9 +6,38 @@ The NHS App prototype enables you to make interactive prototypes that will look 
 
 Built using the [NHS prototype kit](https://prototype-kit.service-manual.nhs.uk/) with added code from the [NHS App frontend](https://github.com/nhsuk/nhsapp-frontend) for [NHS App specific components](https://design-system.nhsapp.service.nhs.uk/components/).
 
+### Requirements
+
+- [Node.js](https://nodejs.org/) `^22.11.0` or `^24.11.0` (see `engines` in `package.json`).
+
 ### Running the kit
 
-Start the kit with `npm run watch`.
+Install dependencies once:
+
+```
+npm install
+```
+
+Then start the prototype in development mode:
+
+```
+npm run dev
+```
+
+`npm start`, `npm run dev` and `npm run watch` are equivalent — they all run
+the kit with live reload. It watches the `app/` folder, so changes to
+templates **and** to `app/routes.js` are picked up automatically (route
+changes trigger a server restart via nodemon; view changes reload instantly).
+
+The prototype is then available at http://localhost:3000 (the kit will pick
+the next free port if 3000 is in use).
+
+To run it in production mode (no live reload, e.g. for hosting a deployed
+prototype):
+
+```
+npm run serve
+```
 
 ### Help improve the NHS App prototype
 

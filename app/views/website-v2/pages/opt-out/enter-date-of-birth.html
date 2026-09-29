@@ -1,40 +1,26 @@
 {% extends 'layout-website.html' %}
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
-{% from "back-link/macro.njk" import backLink %}
-{% from "button/macro.njk" import button %}
-{% from "error-summary/macro.njk" import errorSummary %}
-{% from "input/macro.njk" import input %}
 
 {% block beforeContent %}
   {{ backLink({
-    href: "/website/pages/opt-out/enter-your-name",
+    href: "/website/pages/opt-out/enter-your-postcode",
     text: "Back"
   }) }}
 {% endblock %}
 
 {% block content %}
-{% if error %}
-{{ errorSummary({
-titleText: "There is a problem",
-errorList: [
-{
-text: "Enter your date of birth",
-href: "#dateOfBirth-day"
-}
-]
-}) }}
-{% endif %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form method="post" action="enter-date-of-birth-answer">
+    <!-- No branching happens after this page, so it posts straight to the
+         next page in the flow rather than a dedicated route -->
+    <form method="post" action="check-your-details">
 
       {{ dateInput({
         id: "dateOfBirth",
         namePrefix: "dateOfBirth",
-        errorMessage: { text: "Enter your date of birth" } if error,
         fieldset: {
           legend: {
             text: "What is your date of birth?",
@@ -42,9 +28,6 @@ href: "#dateOfBirth-day"
             isPageHeading: true
           }
         },
-      hint: {
-      text: "For example, 485 777 3456"
-      },
         items: [
           { name: "day", value: data.dateOfBirth.day },
           { name: "month", value: data.dateOfBirth.month },

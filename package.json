@@ -5,13 +5,19 @@
   "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "dev": "node .",
+    "watch": "node .",
+    "serve": "cross-env NODE_ENV=production node ."
   },
   "dependencies": {
     "lodash": "^4.17.23",
     "nhsapp-frontend": "^5.0.1",
     "nhsuk-frontend": "^10.3.1",
     "nhsuk-prototype-kit": "^8.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   },
   "engines": {
     "node": "^22.11.0 || ^24.11.0"

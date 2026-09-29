@@ -2,30 +2,14 @@
 {% set version = "website" %}
 {% set hub = "Opt Out" %}
 
-{% from "back-link/macro.njk" import backLink %}
-{% from "button/macro.njk" import button %}
-{% from "error-summary/macro.njk" import errorSummary %}
-{% from "input/macro.njk" import input %}
-
 {% block beforeContent %}
   {{ backLink({
-    href: "/website/pages/opt-out/enter-date-of-birth",
+    href: "javascript:history.back()",
     text: "Back"
   }) }}
 {% endblock %}
 
 {% block content %}
-{% if error %}
-{{ errorSummary({
-titleText: "There is a problem",
-errorList: [
-{
-text: "Enter your postcode",
-href: "#postcode"
-}
-]
-}) }}
-{% endif %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
@@ -34,12 +18,12 @@ href: "#postcode"
 
       {{ input({
         label: {
-          text: "What is your postcode?",
+          text: "What is your post code",
           size: "l",
           isPageHeading: true
         },
         hint: {
-          text: "For example, LS1 5AB"
+          text: "For this prototype, enter SW1 2CV to pass identity verification"
         },
         errorMessage: { text: "Enter your postcode" } if error,
         id: "postcode",

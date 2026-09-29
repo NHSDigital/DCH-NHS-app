@@ -21,25 +21,16 @@
         {{ summaryList({
           rows: [
             {
-              key: { text: "Name" },
-              value: { text: data.firstName + " " + data.lastName },
+              key: { text: "NHS number" },
+              value: { text: data.nhsNumber },
               actions: {
                 items: [
-                  { href: "/website/pages/opt-out/enter-your-name", text: "Change", visuallyHiddenText: "name" }
+                  { href: "/website/pages/opt-out/enter-your-nhs-number", text: "Change", visuallyHiddenText: "NHS number" }
                 ]
               }
             },
             {
-              key: { text: "Date of birth" },
-              value: { text: data.dateOfBirth.day + " " + data.dateOfBirth.month + " " + data.dateOfBirth.year },
-              actions: {
-                items: [
-                  { href: "/website/pages/opt-out/enter-date-of-birth", text: "Change", visuallyHiddenText: "date of birth" }
-                ]
-              }
-            },
-            {
-              key: { text: "Postcode" },
+              key: { text: "Post code" },
               value: { text: data.postcode },
               actions: {
                 items: [
@@ -50,7 +41,7 @@
           ]
         }) }}
 
-        <form method="post" action="check-your-details-answer">
+        <form method="post" action="check-your-details-nhs-number-answer">
           {{ button({
             text: "Confirm details"
           }) }}
