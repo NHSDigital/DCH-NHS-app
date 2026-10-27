@@ -1,4 +1,4 @@
-{% extends 'layout-app.html' %}
+{% extends "../../layout-app.html" %}
 {% set version = "v6" %}
 {% set hub = "Messages" %}
 {% set backLink = true %}
@@ -22,19 +22,43 @@
         descriptionMuted: true
       })}}
       <div class="nhsuk-u-margin-bottom-7">
-       <p>This is sleep message 2. Sleep is important for your baby's development and health.</p>
-       <p>Safe sleeping practices include: </p>
-       <ul>
-         <li>Placing baby on their back to sleep</li>
-         <li>Keeping the cot clear of loose objects</li>
-         <li>Maintaining a comfortable room temperature</li>
-         <li>Avoiding co-sleeping with young infants</li>  
-       </ul>
-       <p class="nhsuk-body">You were automatically signed up for this service.</p>
-       <p class="nhsuk-body"><a href="/v6/pages/opt-in/abm-manage-preferences" class="nhsuk-link--no-visited-state">Unsubscribe from age-based messages.</a></p>
-       <h2 class="nhsuk-heading-s">Data protection</h2>
-       <p class="nhsuk-body"><a href="https://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/digital-best-start-age-based-messaging-privacy-statement" class="nhsuk-link--no-visited-state">Read NHS age-based messaging's privacy notice. </a> </p>
-       <p class="nhsuk-body"><a href="/v6/pages/topic-testing/sleep-and-safety/sleep-message-3" class="nhsuk-link--no-visited-state">Click here for next message.</a></p>
+        <h1 class="nhsuk-heading-l">How to co-sleep more safely</h1>
+        <p>The safest place for a baby to sleep is in their own cot or Moses basket, free from anything that could cover their face and head.</p>
+        <p>However, you may find yourself sharing a bed with your baby, whether you planned to or fell asleep unintentionally.</p>
+        <p>If this happens, it is important to do it safely.</p>
+
+        <h2 class="nhsuk-heading-s">When it is not safe to co-sleep</h2>
+        <p>You should never share a bed with your baby if:</p>
+        <ul>
+          <li>you are extremely tired.</li>
+          <li>you or your partner smoke.</li>
+          <li>you have drunk alcohol or taken drugs, including medications that makes you drowsy.</li>
+          <li>your baby has a fever or any signs of illness.</li>
+          <li>your baby was born prematurely (before 37 weeks).</li>
+          <li>your baby has a low birth weight (under 2.5kg or 5.5lb).</li>
+        </ul>
+        <p><strong>Never fall asleep on a sofa or armchair with your baby.</strong></p>
+        <p>This significantly increases the risk of <a href="https://www.nhs.uk/baby/caring-for-a-newborn/sudden-infant-death-syndrome-sids/">sudden infant death syndrome (SIDS)</a>.</p>
+
+        <h2 class="nhsuk-heading-s">How to make bed-sharing safer</h2>
+        <p>Adult beds have not been designed or safety tested for infant sleep in the same way as a cot or Moses basket.</p>
+        <p>If you do share your bed with your baby, make sure you:</p>
+        <ul>
+          <li>always put your baby to sleep on their back, not their front or side.</li>
+          <li>don't bring other children or pets into bed with you.</li>
+          <li>check that your baby cannot fall out of bed, or become trapped between the mattress and the wall.</li>
+          <li>keep the bed clear of pillows, sheets, blankets or anything that could cover their face and head.</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-s">Get additional help and support</h2>
+        <p>The Lullaby Trust has additional information and advice on safer sleep for parents.</p>
+        <p class="nhsuk-body"><a href="https://www.lullabytrust.org.uk/safer-sleep-advice/co-sleeping/">Read more about co-sleeping with your baby</a>.</p>
+
+        <p class="nhsuk-body">You were automatically signed up for this service.</p>
+        <p class="nhsuk-body"><a href="/v6/pages/opt-in/abm-manage-preferences" class="nhsuk-link--no-visited-state">Unsubscribe from age-based messages.</a></p>
+        <h2 class="nhsuk-heading-s">Data protection</h2>
+        <p class="nhsuk-body"><a href="https://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/digital-best-start-age-based-messaging-privacy-statement" class="nhsuk-link--no-visited-state">Read NHS age-based messaging's privacy notice. </a> </p>
+        <p class="nhsuk-body"><a href="/topic-testing/sleep-and-safety/sleep-message-3" class="nhsuk-link--no-visited-state">Click here for next message.</a></p>
       </div>
     </div>
   </div>
