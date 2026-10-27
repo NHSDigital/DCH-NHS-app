@@ -1,0 +1,1 @@
+sed -i '' 's/href="\/v6\/pages\/profile\/profile-{{ data\['\''accountType'\''\] }}"/href="\/{% if version == '\''v5.5'\'' %}v6{% else %}{{ version }}{% endif %}\/pages\/profile\/profile-{{ data\['\''accountType'\''\] }}"/g' app/views/components/app-bottom-navigation/include.html

@@ -1,0 +1,12 @@
+sed -i '' 's/\/v5.4\/pages\/home-p9/\/v6\/pages\/home-p9/g' app/views/index.html
+sed -i '' 's/\/v5.4\/pages\/home-linked-profiles/\/v6\/pages\/home-linked-profiles/g' app/views/index.html
+sed -i '' 's/\/v4\/pages\/ios-notification-message/\/v6\/pages\/ios-notification-message/g' app/views/index.html
+sed -i '' 's/\/v4\/pages\/abm-messages\/all-abm-messages/\/v6\/pages\/abm-messages\/all-abm-messages/g' app/views/index.html
+sed -i '' 's/\/v4\/pages\/abm-messages\/your-messages-abm/\/v6\/pages\/abm-messages\/your-messages-abm/g' app/views/index.html
+sed -i '' 's/\/v4\/pages\/home-p9/\/v6\/pages\/home-p9/g' app/views/index.html
+sed -i '' 's/\/v4\/pages\/home-linked-profiles/\/v6\/pages\/home-linked-profiles/g' app/views/index.html
+sed -i '' 's/\/v3\/pages\/ios-notification-message/\/v6\/pages\/ios-notification-message/g' app/views/index.html
+sed -i '' 's/\/v3\/pages\/abm-messages\/all-abm-messages/\/v6\/pages\/abm-messages\/all-abm-messages/g' app/views/index.html
+sed -i '' 's/\/v3\/pages\/abm-messages\/your-messages-abm/\/v6\/pages\/abm-messages\/your-messages-abm/g' app/views/index.html
+sed -i '' 's/\/v3\/pages\/home-p9/\/v6\/pages\/home-p9/g' app/views/index.html
+sed -i '' 's/\/v3\/pages\/home-linked-profiles/\/v6\/pages\/home-linked-profiles/g' app/views/index.html

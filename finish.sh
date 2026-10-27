@@ -1,0 +1,1 @@
+echo "The missing links in account-and-settings/account-and-settings-p9.html, profile-p5.html, and profile-p9.html have been fixed. Contact Details does not have an existing page in the repo, so it is left as '#' which is expected behavior for placeholder links."

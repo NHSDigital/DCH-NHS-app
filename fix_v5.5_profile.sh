@@ -1,0 +1,1 @@
+sed -i '' 's/href="\/{{ version }}\/pages\/profile\/profile-{{ data\['\''accountType'\''\] }}"/href="\/v6\/pages\/profile\/profile-{{ data\['\''accountType'\''\] }}"/g' app/views/components/app-bottom-navigation/include.html

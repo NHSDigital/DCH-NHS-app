@@ -1,69 +1,83 @@
-{% extends 'layout-app.html' %}
-{% set version = "v6" %}
-{% set hub = "Messages" %}
-{% set backLink = true %}
+{% extends "layouts/layout-app.html" %}
+
+{% block pageTitle %}
+  Sleep, safety and vaccine message set - Version 6
+{% endblock %}
+
 {% set backLinkURL = false %}
 {% set disableBottomNav = true %}
-{% set pageHeading = "Reduce the risk of sudden infant death (SIDS)" %}
-{% set pageDescription = "Received today at 1:02pm" %}
 
+{% block header %}
+  <!-- Header with logo -->
+  {{ super() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
 
 {% block content %}
 
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <!-- DYNAMIC PAGE TITLE -->
-      {{ dynamicPageTitle({
-        title: pageHeading,
-        titleSmall: true,
-        titleHiddenTextBefore: "Message from",
-        description: pageDescription,
-        descriptionMuted: true
-      })}}
-      <div class="nhsuk-u-margin-bottom-7">
-       <p>Sudden infant death syndrome (SIDS) is the sudden and unexplained death of an apparently healthy baby under 1 year old. It used to be called cot death.</p>
-       <p>While it is rare, it does still happen.</p>
-       <p>SIDS is more likely to happen in the first 6 months of a baby's life. It can happen anytime a baby is asleep, day or night.</p>
-        
-       <h2 class="nhsuk-heading-s">How to keep your baby safe</h2>
-       <p>There are simple things you can do to lower the risk of SIDS.</p>
-        
-       <h3 class="nhsuk-heading-s">Put your baby on their back to sleep</h3>
-       <ul>
-         <li>Always place your baby on their back to sleep, not their front or side</li>
-         <li>Use the "feet-to-foot" position, placing their feet at the bottom of the cot</li>
-         <li>Gently roll them onto their back if they roll over</li>
-       </ul>
-        
-       <h3 class="nhsuk-heading-s">Share a room with your baby</h3>
-       <ul>
-         <li>Put your baby in a separate cot or Moses basket</li>
-         <li>Keep your baby in your room for every sleep, day and night, for at least the first 6 months</li>
-       </ul>
-        
-       <h3 class="nhsuk-heading-s">Keep your baby's cot clear</h3>
-       <ul>
-         <li>Use a firm, flat mattress with a fitted sheet</li>
-         <li>Keep the cot clear of pillows, duvets, cot bumpers, loose bedding or anything that could cover their face and head</li>
-         <li>Avoid soft toys, sleep positioners, pods or nests</li>
-       </ul>
-        
-       <h3 class="nhsuk-heading-s">Keep a good room temperature</h3>
-       <ul>
-         <li>Aim to keep the room temperature between 16C and 20C</li>
-         <li>Check your baby's chest or the back of their neck to make sure they are not sweating or hot to touch</li>
-         <li>Take off hats and outdoor clothing as soon as you come indoors</li>
-       </ul>
-        
-       <h2 class="nhsuk-heading-s">Get additional help and support</h2>
-       <p>The Lullaby Trust has additional information and advice on safer sleep for parents. They also provide support for families affected by sudden infant death syndrome (SIDS).</p>
-       <p class="nhsuk-body"><a href="https://www.lullabytrust.org.uk" class="nhsuk-link--no-visited-state">Visit The Lullaby Trust website for more information</a></p>
-       <p>Exposure to cigarette smoke or unsafe sleep environments (like sleeping on a sofa with your baby) also increases the risk.</p>
-         
 
-       <p class="nhsuk-body"><a href="/v6/pages/topic-testing/sleep-and-safety/sleep-message-2" class="nhsuk-link--no-visited-state">Click here for next message.</a></p>
+      <!-- Main content -->
+      <div class="nhsuk-u-margin-bottom-7">
+        <p>Sudden infant death syndrome (SIDS) is the sudden and unexplained death of an apparently healthy baby under 1 year old. It used to be called cot death.</p>
+        <p>While it is rare, it does still happen.</p>
+        <p>SIDS is more likely to happen in the first 6 months of a baby's life. It can happen anytime a baby is asleep, day or night.</p>
+
+        <p>Any baby can be affected, but babies are more at risk if they:</p>
+        <ul>
+          <li>were born prematurely (before 37 weeks).</li>
+          <li>had a low birth weight (under 2.5kg or 5.5lb).</li>
+          <li>are twins or multiples.</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-s">How to keep your baby safe</h2>
+        <p>There are simple things you can do to lower the risk of SIDS.</p>
+        <p>If your baby was born prematurely, follow the advice from their due date, not the date they were born.</p>
+
+        <h3 class="nhsuk-heading-s">Put your baby on their back to sleep</h3>
+        <ul>
+          <li>Always place your baby on their back to sleep, not their front or side.</li>
+          <li>Use the "feet-to-foot" position, placing their feet at the bottom of the cot so they cannot wriggle down under the covers.</li>
+          <li>Gently roll them onto their back if they roll over, until they can roll both ways on their own.</li>
+        </ul>
+
+        <h3 class="nhsuk-heading-s">Share a room with your baby</h3>
+        <ul>
+          <li>Put your baby in a separate cot or Moses basket.</li>
+          <li>Keep your baby in your room for every sleep, day and night, for at least the first 6 months.</li>
+        </ul>
+
+        <h3 class="nhsuk-heading-s">Keep your baby's cot clear</h3>
+        <ul>
+          <li>Use a firm, flat mattress with a fitted sheet.</li>
+          <li>Keep the cot clear of pillows, duvets, cot bumpers, loose bedding or anything that could cover their face and head.</li>
+          <li>Avoid soft toys, sleep positioners, pods or nests.</li>
+        </ul>
+
+        <h3 class="nhsuk-heading-s">Keep a good room temperature</h3>
+        <ul>
+          <li>Aim to keep the room temperature between 16C and 20C.</li>
+          <li>Check your baby's chest or the back of their neck to make sure they are not sweating or hot to touch.</li>
+          <li>Take off hats and outdoor clothing as soon as you come indoors.</li>
+        </ul>
+
+        <h2 class="nhsuk-heading-s">Get additional help and support</h2>
+        <p>The Lullaby Trust has additional information and advice on safer sleep for parents. They also provide support for families affected by sudden infant death syndrome (SIDS).</p>
+        <p class="nhsuk-body"><a href="https://www.lullabytrust.org.uk" class="nhsuk-link--no-visited-state">Visit The Lullaby Trust website for more information</a>.</p>
+        <p>Exposure to cigarette smoke or unsafe sleep environments (like sleeping on a sofa with your baby) also increases the risk.</p>
+
+        <p class="nhsuk-body">You were automatically signed up for this service.</p>
+        <p class="nhsuk-body"><a href="/v6/pages/opt-in/abm-manage-preferences" class="nhsuk-link--no-visited-state">Unsubscribe from age-based messages.</a></p>
+        <h2 class="nhsuk-heading-s">Data protection</h2>
+        <p class="nhsuk-body"><a href="https://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/digital-best-start-age-based-messaging-privacy-statement" class="nhsuk-link--no-visited-state">Read NHS age-based messaging's privacy notice. </a> </p>
+
+        <p class="nhsuk-body"><a href="/v6/pages/sleep-message-2" class="nhsuk-link--no-visited-state">Click here for next message.</a></p>
       </div>
+
     </div>
   </div>
+
 {% endblock %}

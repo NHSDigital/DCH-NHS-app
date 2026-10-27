@@ -1,0 +1,55 @@
+{% extends 'layout-app.html' %}
+{% set version = "v6" %}
+
+{% set hub = "Messages" %}
+
+{% set linkedProfile = true %}
+{% set backLink = true %}
+
+
+{% set pageHeading = "Your messages" %}
+{% set pageDescription = "" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <ul class="nhsapp-cards nhsapp-cards--stacked">
+
+        <li class="nhsapp-card nhsuk-u-padding-left-6">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  1:02pm
+                </span>
+              </div>
+              <a href="/{{ version }}/pages/messages/blood-spot-v2" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+                 North West London Child Health Information Service
+                <span class="nhsuk-u-visually-hidden"> received today at 1:02pm</span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Newborn blood spot screening results. The test results of newborn blood spot screening for your baby show that none of the conditions tested for are suspected.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
