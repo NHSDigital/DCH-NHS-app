@@ -1,0 +1,42 @@
+{% extends 'layout-app.html' %}
+{% set version = "v6" %}
+{% set hub = "Messages" %}
+{% set backLink = true %}
+{% set backLinkURL = false %}
+{% set disableBottomNav = true %}
+{% set pageHeading = "NHS Best Start in Life" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+      <div class="nhsuk-u-margin-bottom-7">
+        <p>As part of the NHS support for babies, parents and families, you will receive a series of messages. These will be relevant to your baby's age.</p>
+        <p>These messages are sent via the NHS App or SMS. They offer trusted information on topics like: </p>
+        <ul>
+          <li>What to expect from a health visitor appointment</li>
+          <li>About your 6-8 week baby and mother checkups</li>
+          <li>When to introduce solid food</li>
+          <li>Vitamins for your baby</li>  
+        </ul>
+        <p class="nhsuk-body">You were automatically signed up for this service.</p>
+        <p class="nhsuk-body"><a href="/v6/pages/opt-in/abm-manage-preferences" class="nhsuk-link--no-visited-state">Unsubscribe from age-based messages.</a></p>
+      <h2 class="nhsuk-heading-s">Data protection</h2>
+      <p class="nhsuk-body"><a href="https://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/digital-best-start-age-based-messaging-privacy-statement" class="nhsuk-link--no-visited-state">Read NHS age-based messaging's privacy notice. </a> </p>
+      <p class="nhsuk-body"><a href="/v6/pages/sleep-message-2" class="nhsuk-link--no-visited-state">Click here for next message.</a></p>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

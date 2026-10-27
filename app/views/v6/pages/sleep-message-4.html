@@ -1,0 +1,41 @@
+{% extends 'layout-app.html' %}
+{% set version = "v6" %}
+{% set hub = "Messages" %}
+{% set backLink = true %}
+{% set backLinkURL = false %}
+{% set disableBottomNav = true %}
+{% set pageHeading = "NHS Best Start in Life" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+      <div class="nhsuk-u-margin-bottom-7">
+       <p>This is sleep message 4. Creating a safe sleep environment is crucial for your baby's wellbeing.</p>
+       <p>Safety tips for your baby's sleep space: </p>
+       <ul>
+         <li>Use a firm, flat mattress in a safe cot or Moses basket</li>
+         <li>Keep the room smoke-free, alcohol-free and drug-free</li>
+         <li>Room temperature should be between 16-20 degrees Celsius</li>
+         <li>Avoid overheating by using appropriate bedding</li>  
+       </ul>
+       <p class="nhsuk-body">You were automatically signed up for this service.</p>
+       <p class="nhsuk-body"><a href="/v6/pages/opt-in/abm-manage-preferences" class="nhsuk-link--no-visited-state">Unsubscribe from age-based messages.</a></p>
+       <h2 class="nhsuk-heading-s">Data protection</h2>
+       <p class="nhsuk-body"><a href="https://digital.nhs.uk/developer/api-catalogue/digital-child-health-fhir/digital-best-start-age-based-messaging-privacy-statement" class="nhsuk-link--no-visited-state">Read NHS age-based messaging's privacy notice. </a> </p>
+       <p class="nhsuk-body"><a href="/v6/pages/vaccines-message-5" class="nhsuk-link--no-visited-state">Click here for next message.</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
