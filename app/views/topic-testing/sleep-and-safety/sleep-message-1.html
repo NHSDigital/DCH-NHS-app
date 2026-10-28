@@ -4,8 +4,12 @@
   Sleep, safety and vaccine message set - Version 6
 {% endblock %}
 
+{% set hub = "Messages" %}
+{% set backLink = true %}
 {% set backLinkURL = false %}
 {% set disableBottomNav = true %}
+{% set pageHeading = "NHS Best Start in Life" %}
+{% set pageDescription = "Received today at 1:02pm" %}
 
 {% block header %}
   <!-- Header with logo -->
@@ -19,6 +23,14 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
 
       <!-- Main content -->
       <div class="nhsuk-u-margin-bottom-7">
